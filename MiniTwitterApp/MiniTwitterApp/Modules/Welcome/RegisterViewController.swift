@@ -7,6 +7,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 class RegisterViewController: UIViewController {
 //   MARK: - Outlets
@@ -43,5 +45,27 @@ class RegisterViewController: UIViewController {
             NotificationBanner(title: "Error", subtitle: "Names can not be empty", style: .warning).show()
             return
         }
+        
+        let request = RegisterRequest(email: email, names: names, password: password)
+        
+        SVProgressHUD.show()
+        
+        SN.post(endpoint: Endpoints.register, model: request) {( response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+             
+            SVProgressHUD.dismiss()
+            
+            switch response {
+            case .success(let user):
+                self.performSegue(withIdentifier: "showHome", sender: nil)
+            case .error(let error):
+                NotificationBanner(title: "Error", subtitle: "An error has ocurred: \(error.localizedDescription)", style: .danger).show()
+                return
+            case .errorResult(let entity):
+                NotificationBanner(title: "Error", subtitle: "Ups, something went wrong: \(entity.error)", style: .warning).show()
+                return
+            }
+        }
+        
+        
     }
 }
