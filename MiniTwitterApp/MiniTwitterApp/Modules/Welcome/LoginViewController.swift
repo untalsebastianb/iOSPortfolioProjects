@@ -7,6 +7,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 //  MARK: - Outlets
@@ -37,6 +39,26 @@ class LoginViewController: UIViewController {
         guard let password = passwordTextField.text, !password.isEmpty else {
             NotificationBanner(title: "Error", subtitle: "Password can not be empty", style: .warning).show()
             return
+        }
+        
+        let request = LoginRequest(email: email, password: password)
+        
+        SVProgressHUD.show()
+        
+        SN.post(endpoint: Endpoints.login, model: request) {( response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+            
+            SVProgressHUD.dismiss()
+            
+            switch response {
+            case .success(let user):
+                NotificationBanner(title: "Success", subtitle: "welcome \(user.user.names)", style: .success).show()
+            case .error(let error):
+                NotificationBanner(title: "Error", subtitle: "An error has ocurred: \(error.localizedDescription)", style: .danger).show()
+                return
+            case .errorResult(let entity):
+                NotificationBanner(title: "Error", subtitle: "Ups, something went wrong: \(entity.error)", style: .warning).show()
+                return
+            }
         }
     }
     

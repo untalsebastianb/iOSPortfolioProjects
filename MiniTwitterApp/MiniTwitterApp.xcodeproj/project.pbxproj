@@ -13,6 +13,8 @@
 		9E032F9427DF66A700FE6184 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9327DF66A700FE6184 /* LoginViewController.swift */; };
 		9E032F9627DF66B400FE6184 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9527DF66B400FE6184 /* RegisterViewController.swift */; };
 		9E032F9927DF6B2800FE6184 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E032F9827DF6B2800FE6184 /* Home.storyboard */; };
+		9E032F9C27DF6C7F00FE6184 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9B27DF6C7F00FE6184 /* Endpoints.swift */; };
+		9E032F9E27DF6C8D00FE6184 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9D27DF6C8D00FE6184 /* Models.swift */; };
 		9EA0C1A427DCFC90001F2422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1A327DCFC90001F2422 /* AppDelegate.swift */; };
 		9EA0C1A827DCFC90001F2422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1A727DCFC90001F2422 /* ViewController.swift */; };
 		9EA0C1AD27DCFC90001F2422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA0C1AC27DCFC90001F2422 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		9E032F9327DF66A700FE6184 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9E032F9527DF66B400FE6184 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9E032F9827DF6B2800FE6184 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		9E032F9B27DF6C7F00FE6184 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		9E032F9D27DF6C8D00FE6184 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		9EA0C1A027DCFC90001F2422 /* MiniTwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA0C1A327DCFC90001F2422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA0C1A727DCFC90001F2422 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		9E032F9A27DF6C6400FE6184 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9E032F9B27DF6C7F00FE6184 /* Endpoints.swift */,
+				9E032F9D27DF6C8D00FE6184 /* Models.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		9EA0C19727DCFC90001F2422 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +168,7 @@
 			children = (
 				9EA0C1D427DCFE68001F2422 /* Modules */,
 				9EA0C1D327DCFE59001F2422 /* Commons */,
+				9E032F9A27DF6C6400FE6184 /* Network */,
 				9EA0C1B127DCFC90001F2422 /* Info.plist */,
 			);
 			path = MiniTwitterApp;
@@ -452,7 +466,9 @@
 				9E032F9627DF66B400FE6184 /* RegisterViewController.swift in Sources */,
 				9E032F9227DF669F00FE6184 /* WelcomeViewController.swift in Sources */,
 				9EA0C1A827DCFC90001F2422 /* ViewController.swift in Sources */,
+				9E032F9C27DF6C7F00FE6184 /* Endpoints.swift in Sources */,
 				9EA0C1A427DCFC90001F2422 /* AppDelegate.swift in Sources */,
+				9E032F9E27DF6C8D00FE6184 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
