@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="WelcomeViewController" customModule="MiniTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,6 +90,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NCd-EQ-3Lb"/>
+                    <connections>
+                        <outlet property="signInButton" destination="Daz-7s-eQ7" id="2st-7g-hxc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +101,7 @@
         <!--Sign in-->
         <scene sceneID="m9g-bG-gAN">
             <objects>
-                <viewController id="RNR-4L-aRv" sceneMemberID="viewController">
+                <viewController id="RNR-4L-aRv" customClass="LoginViewController" customModule="MiniTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4o-eG-a2j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,6 +130,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Sign in">
                                             <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signInButtonAction:" destination="RNR-4L-aRv" eventType="touchUpInside" id="GLA-ih-dtA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -149,6 +155,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign in" id="vJg-ul-bE3"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="ncm-on-Fkp" id="DSz-JZ-rpI"/>
+                        <outlet property="passwordTextField" destination="FOU-D4-VBn" id="h7h-FD-wN7"/>
+                        <outlet property="signInButton" destination="tH1-Rc-zTe" id="qZY-lU-cAA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpI-I0-uts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,7 +168,7 @@
         <!--Sign up-->
         <scene sceneID="bBP-F0-5c1">
             <objects>
-                <viewController id="1HH-bh-7MR" sceneMemberID="viewController">
+                <viewController id="1HH-bh-7MR" customClass="RegisterViewController" customModule="MiniTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qFH-kW-dRa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,6 +202,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Done">
                                             <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="doneAction:" destination="1HH-bh-7MR" eventType="touchUpInside" id="tGG-Lc-Qa9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -204,6 +218,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign up" id="Vm6-ZW-VJp"/>
+                    <connections>
+                        <outlet property="doneButton" destination="eh8-1Z-1BA" id="YyU-VZ-Zmn"/>
+                        <outlet property="emailTextField" destination="rFJ-RI-cSK" id="gEO-q5-9tL"/>
+                        <outlet property="nameTextField" destination="ujG-ix-Ju3" id="uS8-t6-Raz"/>
+                        <outlet property="passwordTextField" destination="fkG-JZ-f8M" id="V04-fY-l6f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bv-bk-Fh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

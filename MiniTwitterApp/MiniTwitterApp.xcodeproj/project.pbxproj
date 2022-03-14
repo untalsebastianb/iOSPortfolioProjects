@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8F4BDF257D34D82D41B49519 /* Pods_MiniTwitterApp_MiniTwitterAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35436D3F90A4FD2EE2CF199 /* Pods_MiniTwitterApp_MiniTwitterAppUITests.framework */; };
 		94F046A49669146F99AED253 /* Pods_MiniTwitterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA92CFCB75BD91928D72F437 /* Pods_MiniTwitterApp.framework */; };
+		9E032F9227DF669F00FE6184 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9127DF669F00FE6184 /* WelcomeViewController.swift */; };
+		9E032F9427DF66A700FE6184 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9327DF66A700FE6184 /* LoginViewController.swift */; };
+		9E032F9627DF66B400FE6184 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9527DF66B400FE6184 /* RegisterViewController.swift */; };
 		9EA0C1A427DCFC90001F2422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1A327DCFC90001F2422 /* AppDelegate.swift */; };
 		9EA0C1A827DCFC90001F2422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1A727DCFC90001F2422 /* ViewController.swift */; };
 		9EA0C1AD27DCFC90001F2422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA0C1AC27DCFC90001F2422 /* Assets.xcassets */; };
@@ -17,7 +20,6 @@
 		9EA0C1C527DCFC90001F2422 /* MiniTwitterAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1C427DCFC90001F2422 /* MiniTwitterAppUITests.swift */; };
 		9EA0C1C727DCFC90001F2422 /* MiniTwitterAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1C627DCFC90001F2422 /* MiniTwitterAppUITestsLaunchTests.swift */; };
 		9EA0C1D727DCFEA1001F2422 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA0C1D627DCFEA1001F2422 /* Welcome.storyboard */; };
-		9EA0C1D927DD0AF4001F2422 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9EA0C1D827DD0AF4001F2422 /* .gitignore */; };
 		DFBC25FBDAEF0D41B2D2A069 /* Pods_MiniTwitterAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C226B07C84950AE3F6D7B631 /* Pods_MiniTwitterAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,9 @@
 		1E679D4A68709BD6601C08DA /* Pods-MiniTwitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniTwitterApp.debug.xcconfig"; path = "Target Support Files/Pods-MiniTwitterApp/Pods-MiniTwitterApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2F0A93FF5EB670A5AB20CF72 /* Pods-MiniTwitterAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniTwitterAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MiniTwitterAppTests/Pods-MiniTwitterAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9697B269A586E2A293DC828D /* Pods-MiniTwitterApp-MiniTwitterAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniTwitterApp-MiniTwitterAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-MiniTwitterApp-MiniTwitterAppUITests/Pods-MiniTwitterApp-MiniTwitterAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E032F9127DF669F00FE6184 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		9E032F9327DF66A700FE6184 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9E032F9527DF66B400FE6184 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9EA0C1A027DCFC90001F2422 /* MiniTwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA0C1A327DCFC90001F2422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA0C1A727DCFC90001F2422 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +60,6 @@
 		9EA0C1C427DCFC90001F2422 /* MiniTwitterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTwitterAppUITests.swift; sourceTree = "<group>"; };
 		9EA0C1C627DCFC90001F2422 /* MiniTwitterAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTwitterAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9EA0C1D627DCFEA1001F2422 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
-		9EA0C1D827DD0AF4001F2422 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A44F8E144C387547C98D1010 /* Pods-MiniTwitterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniTwitterApp.release.xcconfig"; path = "Target Support Files/Pods-MiniTwitterApp/Pods-MiniTwitterApp.release.xcconfig"; sourceTree = "<group>"; };
 		B35436D3F90A4FD2EE2CF199 /* Pods_MiniTwitterApp_MiniTwitterAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniTwitterApp_MiniTwitterAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C226B07C84950AE3F6D7B631 /* Pods_MiniTwitterAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniTwitterAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +121,6 @@
 		9EA0C19727DCFC90001F2422 = {
 			isa = PBXGroup;
 			children = (
-				9EA0C1D827DD0AF4001F2422 /* .gitignore */,
 				9EA0C1A227DCFC90001F2422 /* MiniTwitterApp */,
 				9EA0C1B927DCFC90001F2422 /* MiniTwitterAppTests */,
 				9EA0C1C327DCFC90001F2422 /* MiniTwitterAppUITests */,
@@ -187,6 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				9EA0C1D627DCFEA1001F2422 /* Welcome.storyboard */,
+				9E032F9127DF669F00FE6184 /* WelcomeViewController.swift */,
+				9E032F9327DF66A700FE6184 /* LoginViewController.swift */,
+				9E032F9527DF66B400FE6184 /* RegisterViewController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -300,7 +306,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EA0C1D927DD0AF4001F2422 /* .gitignore in Resources */,
 				9EA0C1B027DCFC90001F2422 /* LaunchScreen.storyboard in Resources */,
 				9EA0C1AD27DCFC90001F2422 /* Assets.xcassets in Resources */,
 				9EA0C1D727DCFEA1001F2422 /* Welcome.storyboard in Resources */,
@@ -431,6 +436,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E032F9427DF66A700FE6184 /* LoginViewController.swift in Sources */,
+				9E032F9627DF66B400FE6184 /* RegisterViewController.swift in Sources */,
+				9E032F9227DF669F00FE6184 /* WelcomeViewController.swift in Sources */,
 				9EA0C1A827DCFC90001F2422 /* ViewController.swift in Sources */,
 				9EA0C1A427DCFC90001F2422 /* AppDelegate.swift in Sources */,
 			);
