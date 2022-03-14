@@ -43,7 +43,7 @@ struct RegisterResponse: Codable {
     let token: String
 }
 
-struct TweetResponse: Codable {
+struct TwiitResponse: Codable {
     let id: String
     let author: User
     let imageUrl: String
@@ -56,14 +56,14 @@ struct TweetResponse: Codable {
     let createdAt: String
 }
 
-struct Tweet: Codable {
+struct Twiit: Codable {
     let imageUrl: String?
     let text: String
     let videoUrl: String?
     let location: Location?
 }
 
-struct DeleteTweetResponse: Codable {
+struct DeleteTwiitResponse: Codable {
     let isDone: Bool
     let message: String
 }

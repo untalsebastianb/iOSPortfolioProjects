@@ -15,6 +15,9 @@
 		9E032F9927DF6B2800FE6184 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E032F9827DF6B2800FE6184 /* Home.storyboard */; };
 		9E032F9C27DF6C7F00FE6184 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9B27DF6C7F00FE6184 /* Endpoints.swift */; };
 		9E032F9E27DF6C8D00FE6184 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9D27DF6C8D00FE6184 /* Models.swift */; };
+		9E032FA027DF746300FE6184 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032F9F27DF746300FE6184 /* HomeViewController.swift */; };
+		9E032FA427DF753600FE6184 /* TwitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E032FA227DF753600FE6184 /* TwitTableViewCell.swift */; };
+		9E032FA527DF753600FE6184 /* TwitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E032FA327DF753600FE6184 /* TwitTableViewCell.xib */; };
 		9EA0C1A427DCFC90001F2422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1A327DCFC90001F2422 /* AppDelegate.swift */; };
 		9EA0C1A827DCFC90001F2422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0C1A727DCFC90001F2422 /* ViewController.swift */; };
 		9EA0C1AD27DCFC90001F2422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA0C1AC27DCFC90001F2422 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		9E032F9827DF6B2800FE6184 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9E032F9B27DF6C7F00FE6184 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		9E032F9D27DF6C8D00FE6184 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9E032F9F27DF746300FE6184 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9E032FA227DF753600FE6184 /* TwitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitTableViewCell.swift; sourceTree = "<group>"; };
+		9E032FA327DF753600FE6184 /* TwitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitTableViewCell.xib; sourceTree = "<group>"; };
 		9EA0C1A027DCFC90001F2422 /* MiniTwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA0C1A327DCFC90001F2422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA0C1A727DCFC90001F2422 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +133,9 @@
 		9E032F9727DF6B1C00FE6184 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9E032FA127DF751500FE6184 /* Cells */,
 				9E032F9827DF6B2800FE6184 /* Home.storyboard */,
+				9E032F9F27DF746300FE6184 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -139,6 +147,15 @@
 				9E032F9D27DF6C8D00FE6184 /* Models.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		9E032FA127DF751500FE6184 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9E032FA227DF753600FE6184 /* TwitTableViewCell.swift */,
+				9E032FA327DF753600FE6184 /* TwitTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9EA0C19727DCFC90001F2422 = {
@@ -333,6 +350,7 @@
 			files = (
 				9EA0C1B027DCFC90001F2422 /* LaunchScreen.storyboard in Resources */,
 				9EA0C1AD27DCFC90001F2422 /* Assets.xcassets in Resources */,
+				9E032FA527DF753600FE6184 /* TwitTableViewCell.xib in Resources */,
 				9EA0C1D727DCFEA1001F2422 /* Welcome.storyboard in Resources */,
 				9E032F9927DF6B2800FE6184 /* Home.storyboard in Resources */,
 			);
@@ -465,10 +483,12 @@
 				9E032F9427DF66A700FE6184 /* LoginViewController.swift in Sources */,
 				9E032F9627DF66B400FE6184 /* RegisterViewController.swift in Sources */,
 				9E032F9227DF669F00FE6184 /* WelcomeViewController.swift in Sources */,
+				9E032FA027DF746300FE6184 /* HomeViewController.swift in Sources */,
 				9EA0C1A827DCFC90001F2422 /* ViewController.swift in Sources */,
 				9E032F9C27DF6C7F00FE6184 /* Endpoints.swift in Sources */,
 				9EA0C1A427DCFC90001F2422 /* AppDelegate.swift in Sources */,
 				9E032F9E27DF6C8D00FE6184 /* Models.swift in Sources */,
+				9E032FA427DF753600FE6184 /* TwitTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,14 +12,29 @@
         <!--Twiits-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="MiniTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uag-kc-Trj">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Uag-kc-Trj" secondAttribute="trailing" id="Cjm-GK-8w3"/>
+                            <constraint firstItem="Uag-kc-Trj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VyN-ck-qj1"/>
+                            <constraint firstItem="Uag-kc-Trj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="d6f-ym-jTm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Uag-kc-Trj" secondAttribute="bottom" id="wsv-U9-Upr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Twiits" id="pxE-2X-UcK"/>
+                    <connections>
+                        <outlet property="twitsTable" destination="Uag-kc-Trj" id="nE0-Kd-BcS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
