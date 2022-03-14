@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
 //  MARK: - Actions
     @IBAction func signInButtonAction(_ sender: Any) {
+        view.endEditing(true)
         performLogin()
     }
     

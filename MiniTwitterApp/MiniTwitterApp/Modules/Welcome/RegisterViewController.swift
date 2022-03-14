@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     
 //  MARK: - Action
     @IBAction func doneAction(_ sender: Any) {
+        view.endEditing(true)
         performLogin()
     }
     

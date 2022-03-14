@@ -159,6 +159,7 @@
                         <outlet property="emailTextField" destination="ncm-on-Fkp" id="DSz-JZ-rpI"/>
                         <outlet property="passwordTextField" destination="FOU-D4-VBn" id="h7h-FD-wN7"/>
                         <outlet property="signInButton" destination="tH1-Rc-zTe" id="qZY-lU-cAA"/>
+                        <segue destination="PFd-zz-tS9" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="X6j-Ez-CA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpI-I0-uts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,11 +224,20 @@
                         <outlet property="emailTextField" destination="rFJ-RI-cSK" id="gEO-q5-9tL"/>
                         <outlet property="nameTextField" destination="ujG-ix-Ju3" id="uS8-t6-Raz"/>
                         <outlet property="passwordTextField" destination="fkG-JZ-f8M" id="V04-fY-l6f"/>
+                        <segue destination="PFd-zz-tS9" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="PuQ-Ka-Seh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bv-bk-Fh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2014.4927536231885" y="581.91964285714278"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="79K-n8-hfm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="PFd-zz-tS9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="47v-qE-YFS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3343" y="234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZTi-FW-0h8">
@@ -248,6 +258,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PuQ-Ka-Seh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bottomImage" width="351.5" height="123"/>
         <image name="loginBg" width="640" height="425"/>
