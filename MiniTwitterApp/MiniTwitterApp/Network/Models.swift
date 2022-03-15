@@ -56,7 +56,7 @@ struct TwiitResponse: Codable {
     let createdAt: String
 }
 
-struct Twiit: Codable {
+struct TwiitRequest: Codable {
     let imageUrl: String?
     let text: String
     let videoUrl: String?

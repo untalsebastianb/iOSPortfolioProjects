@@ -25,6 +25,11 @@ class HomeViewController: UIViewController {
         getTwiits()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getTwiits()
+    }
+    
     private func setupUI(){
         twitsTable.dataSource = self
         twitsTable.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)

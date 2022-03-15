@@ -30,11 +30,12 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="+"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                    <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="S7t-f8-FPk" kind="presentation" id="XuS-Gl-LiP"/>
+                                    <segue destination="S7t-f8-FPk" kind="presentation" modalPresentationStyle="fullScreen" id="XuS-Gl-LiP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,17 +65,17 @@
             <objects>
                 <viewController id="S7t-f8-FPk" customClass="CreateTwiitViewController" customModule="MiniTwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NaK-BX-eWU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Twiit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-eU-gLe">
-                                <rect key="frame" x="20" y="20" width="374" height="43"/>
+                                <rect key="frame" x="20" y="64" width="374" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-Rf-7H3">
-                                <rect key="frame" x="338" y="26" width="56" height="31"/>
+                                <rect key="frame" x="338" y="70" width="56" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
@@ -82,7 +83,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JN2-g5-lUU">
-                                <rect key="frame" x="20" y="73" width="374" height="177"/>
+                                <rect key="frame" x="20" y="117" width="374" height="177"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m1i-TN-sIx">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
@@ -113,7 +114,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="V85-J9-qgF">
-                                <rect key="frame" x="0.0" y="717" width="414" height="125"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="qHH-iF-1d1"/>
                                 </constraints>
