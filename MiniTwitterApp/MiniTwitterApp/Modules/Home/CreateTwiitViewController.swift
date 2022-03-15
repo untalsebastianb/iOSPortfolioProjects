@@ -12,10 +12,10 @@ import NotificationBannerSwift
 
 class CreateTwiitViewController: UIViewController {
     
-//  MARK: - Outlets
+    //  MARK: - Outlets
     @IBOutlet weak var postTextView: UITextView!
     
-//  MARK: - Actions
+    //  MARK: - Actions
     @IBAction func postButtonAction(_ sender: Any) {
         savePost()
     }

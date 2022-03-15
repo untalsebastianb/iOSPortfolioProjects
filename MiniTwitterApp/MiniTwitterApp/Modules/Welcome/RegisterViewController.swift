@@ -11,13 +11,13 @@ import Simple_Networking
 import SVProgressHUD
 
 class RegisterViewController: UIViewController {
-//   MARK: - Outlets
+    //   MARK: - Outlets
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-//  MARK: - Action
+    //  MARK: - Action
     @IBAction func doneAction(_ sender: Any) {
         view.endEditing(true)
         performLogin()
