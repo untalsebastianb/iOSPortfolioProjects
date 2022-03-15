@@ -13,8 +13,9 @@ import SVProgressHUD
 class HomeViewController: UIViewController {
 //    MARK: - Outlets
     @IBOutlet weak var twitsTable: UITableView!
+    @IBOutlet weak var newTwiitButton: UIButton!
     
-//   MARK: - Properties
+    //   MARK: - Properties
     private let cellId = "TwitTableViewCell"
     private var dataSource = [TwiitResponse]()
 
