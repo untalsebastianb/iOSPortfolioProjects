@@ -7,9 +7,9 @@ From there you can create your own tweet and see it on the board view, but if yo
 
 Also for the purpose of this project I've used CocoaPods to add some libraries to create a full experience using the app, here are the POD's:
 
-pod 'NotificationBannerSwift', '~> 3.0.0'
-pod 'SVProgressHUD'
-pod 'Simple-Networking', '~> 0.3.2'
+NotificationBannerSwift
+SVProgressHUD
+Simple-Networking'
 
 
 Try the app by your own, and let me know your thoughts about it. Thanks you for being here!!
