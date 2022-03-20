@@ -5,6 +5,13 @@ The Mini Twitter app is basically the result of putting together Tables, Network
 
 From there you can create your own tweet and see it on the board view, but if you change your mind, using the Swipe gesture you can delete your mess 🚮 , while using the app you will find banners to improve your experience and some progress elements to let you know that views is loading.
 
+Also for the purpose of this project I've used CocoaPods to add some libraries to create a full experience using the app, here are the POD's:
+
+pod 'NotificationBannerSwift', '~> 3.0.0'
+pod 'SVProgressHUD'
+pod 'Simple-Networking', '~> 0.3.2'
+
+
 Try the app by your own, and let me know your thoughts about it. Thanks you for being here!!
 
 **Built with** [Swift](https://www.swift.org/)
