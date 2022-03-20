@@ -11,7 +11,7 @@ NotificationBannerSwift
 SVProgressHUD
 Simple-Networking'
 
-![](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/1part.mp4)
+<iframe src="https://giphy.com/embed/0rkZAb44iBIZVCJEqq" width="232" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/0rkZAb44iBIZVCJEqq">via GIPHY</a></p>
 
 
 
