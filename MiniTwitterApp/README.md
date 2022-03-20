@@ -11,6 +11,9 @@ NotificationBannerSwift
 SVProgressHUD
 Simple-Networking'
 
+![](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/1part.mp4)
+
+
 
 Try the app by your own, and let me know your thoughts about it. Thanks you for being here!!
 
