@@ -161,6 +161,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		9E3B4D4727E78A36008A0879 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9EA0C19727DCFC90001F2422 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +177,7 @@
 				9EA0C1A127DCFC90001F2422 /* Products */,
 				5C656B3181E0BF2D04770671 /* Pods */,
 				5EAA59343C61CFB6640176BE /* Frameworks */,
+				9E3B4D4727E78A36008A0879 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
