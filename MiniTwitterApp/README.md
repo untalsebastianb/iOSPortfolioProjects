@@ -11,9 +11,11 @@ NotificationBannerSwift<br>
 SVProgressHUD<br>
 Simple-Networking<br>
 
-![SignIn & SignUp](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/1.gif)
-![Board and create twiit](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/2.gif)
-![Delete Twiit](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/3.gif)
+
+# Demo
+![SignIn & SignUp](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/1.gif)<br>
+![Board and create twiit](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/2.gif)<br>
+![Delete Twiit](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/MiniTwitterApp/3.gif)<br>
 
 
 
