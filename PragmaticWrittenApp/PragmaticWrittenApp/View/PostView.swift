@@ -66,7 +66,7 @@ class PostView: UIView {
             make.size.equalTo(60)
         }
         
-        let postedByLabel = UILabel()
+        let postedByLabel = SmallLabel()
         postedByLabel.text = "J Bueno"
         
         leftSideStackView.addArrangedSubview(imageView)
@@ -75,8 +75,8 @@ class PostView: UIView {
     
     private func setupRightSideStackView(){
         mainStackView.addArrangedSubview(rightSideStackView)
-        let titleLabel = UILabel()
-        let subtitleLabel = UILabel()
+        let titleLabel = PrimaryLabel()
+        let subtitleLabel = SecondaryLabel()
         titleLabel.text = "Sell my car"
         subtitleLabel.text = "a good one"
         
