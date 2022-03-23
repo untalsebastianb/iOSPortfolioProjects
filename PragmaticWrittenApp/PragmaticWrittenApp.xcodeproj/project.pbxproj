@@ -22,6 +22,8 @@
 		9E3B4D8E27E9ED41008A0879 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D8D27E9ED41008A0879 /* PostViewCell.swift */; };
 		9E3B4D9227E9F807008A0879 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9127E9F807008A0879 /* DesignSystem.swift */; };
 		9E3B4D9427E9F838008A0879 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9327E9F838008A0879 /* Labels.swift */; };
+		9E3B4D9727EB63C9008A0879 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9627EB63C9008A0879 /* NetworkClient.swift */; };
+		9E3B4D9A27EB645B008A0879 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9927EB645B008A0879 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		9E3B4D8D27E9ED41008A0879 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		9E3B4D9127E9F807008A0879 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		9E3B4D9327E9F838008A0879 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
+		9E3B4D9627EB63C9008A0879 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		9E3B4D9927EB645B008A0879 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 		9E3B4D5327E8C5C3008A0879 /* PragmaticWrittenApp */ = {
 			isa = PBXGroup;
 			children = (
+				9E3B4D9827EB6449008A0879 /* Model */,
+				9E3B4D9527EB63AB008A0879 /* Networking */,
 				9E3B4D9027E9F7ED008A0879 /* UIElements */,
 				9E3B4D8F27E9F7E4008A0879 /* Extensions */,
 				9E3B4D8C27E9ED32008A0879 /* View */,
@@ -188,6 +194,22 @@
 				9E3B4D9327E9F838008A0879 /* Labels.swift */,
 			);
 			path = UIElements;
+			sourceTree = "<group>";
+		};
+		9E3B4D9527EB63AB008A0879 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9E3B4D9627EB63C9008A0879 /* NetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9E3B4D9827EB6449008A0879 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E3B4D9927EB645B008A0879 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,8 +343,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3B4D9727EB63C9008A0879 /* NetworkClient.swift in Sources */,
 				9E3B4D5927E8C5C3008A0879 /* MainController.swift in Sources */,
 				9E3B4D9227E9F807008A0879 /* DesignSystem.swift in Sources */,
+				9E3B4D9A27EB645B008A0879 /* Post.swift in Sources */,
 				9E3B4D9427E9F838008A0879 /* Labels.swift in Sources */,
 				9E3B4D5527E8C5C3008A0879 /* AppDelegate.swift in Sources */,
 				9E3B4D8E27E9ED41008A0879 /* PostViewCell.swift in Sources */,

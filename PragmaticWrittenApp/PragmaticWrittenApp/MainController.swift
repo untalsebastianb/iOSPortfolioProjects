@@ -11,6 +11,21 @@ import MagazineLayout
 
 class MainController: UIViewController, UICollectionViewDataSource {
     
+    let networkClient = NetworkClient.shared
+    
+    var fetchedPost: [PostDetailResponseModel] = [PostDetailResponseModel]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    let mockPost: [PostCollectionViewCell.ViewModel] = [
+        PostCollectionViewCell.ViewModel(title: "Adopt", subtitle: "Beatiful Dog", postedBy: "Maria"),
+        PostCollectionViewCell.ViewModel(title: "Adopt", subtitle: "Beatiful Cat", postedBy: "Pedro"),
+        PostCollectionViewCell.ViewModel(title: "Sell", subtitle: "Beatiful Car", postedBy: "Jose"),
+        PostCollectionViewCell.ViewModel(title: "Rent", subtitle: "Big Apartment", postedBy: "Antonio")
+    ]
+    
     private lazy var collectionView: UICollectionView = {
         let layout = MagazineLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -21,11 +36,13 @@ class MainController: UIViewController, UICollectionViewDataSource {
     }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return fetchedPost.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as? PostCollectionViewCell else { return UICollectionViewCell() }
+        let viewModel = PostCollectionViewCell.ViewModel(title: fetchedPost[indexPath.item].name, subtitle: fetchedPost[indexPath.item].name, postedBy: fetchedPost[indexPath.item].name)
+        cell.set(viewModel)
         return cell
     }
 
@@ -34,6 +51,16 @@ class MainController: UIViewController, UICollectionViewDataSource {
         view.backgroundColor = .white
         collectionView.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
         setupCollectionView()
+        let task = networkClient.getPost { (post, error ) in
+            if let _ = error {
+                print(" there was an error ⚠️")
+            }
+            guard let post = post else { return }
+            DispatchQueue.main.async {
+                self.fetchedPost = post.results
+            }
+           
+        }
     }
     
     private func setupCollectionView(){
@@ -46,7 +73,7 @@ class MainController: UIViewController, UICollectionViewDataSource {
 
 extension MainController: UICollectionViewDelegateMagazineLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetsForSectionAtIndex index: Int) -> UIEdgeInsets {
-        UIEdgeInsets.zero
+        UIEdgeInsets(top: 60, left: 0, bottom: 30, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetsForItemsInSectionAtIndex index: Int) -> UIEdgeInsets {

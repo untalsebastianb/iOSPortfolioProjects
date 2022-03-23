@@ -11,6 +11,16 @@ import MagazineLayout
 
 class PostCollectionViewCell: MagazineLayoutCollectionViewCell {
     
+    struct ViewModel {
+        let title: String
+        let subtitle: String
+        let postedBy: String
+    }
+    
+    let titleLabel = PrimaryLabel()
+    let subtitleLabel = SecondaryLabel()
+    let postedByLabel = SmallLabel()
+    
     let mainStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -66,21 +76,13 @@ class PostCollectionViewCell: MagazineLayoutCollectionViewCell {
         imageView.snp.makeConstraints { make in
             make.size.equalTo(60)
         }
-        
-        let postedByLabel = SmallLabel()
-        postedByLabel.text = "J Bueno"
-        
+
         leftSideStackView.addArrangedSubview(imageView)
         leftSideStackView.addArrangedSubview(postedByLabel)
     }
     
     private func setupRightSideStackView(){
         mainStackView.addArrangedSubview(rightSideStackView)
-        let titleLabel = PrimaryLabel()
-        let subtitleLabel = SecondaryLabel()
-        titleLabel.text = "Sell my car"
-        subtitleLabel.text = "a good one"
-        
         rightSideStackView.addArrangedSubview(titleLabel)
         rightSideStackView.addArrangedSubview(subtitleLabel)
         
@@ -93,5 +95,11 @@ class PostCollectionViewCell: MagazineLayoutCollectionViewCell {
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.2
+    }
+    
+    func set(_ viewModel: ViewModel) {
+        titleLabel.text = viewModel.title
+        subtitleLabel.text = viewModel.subtitle
+        postedByLabel.text = viewModel.postedBy
     }
 }
