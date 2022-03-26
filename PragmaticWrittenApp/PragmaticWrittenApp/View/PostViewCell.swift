@@ -56,7 +56,7 @@ class PostCollectionViewCell: MagazineLayoutCollectionViewCell {
     private func setupMainStackView(){
         addSubview(mainStackView)
         mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(8)
         }
     }
     

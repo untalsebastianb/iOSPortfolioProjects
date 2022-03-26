@@ -24,6 +24,7 @@
 		9E3B4D9427E9F838008A0879 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9327E9F838008A0879 /* Labels.swift */; };
 		9E3B4D9727EB63C9008A0879 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9627EB63C9008A0879 /* NetworkClient.swift */; };
 		9E3B4D9A27EB645B008A0879 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9927EB645B008A0879 /* Post.swift */; };
+		9E3B4D9C27EF57FE008A0879 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9B27EF57FE008A0879 /* UIColor+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		9E3B4D9327E9F838008A0879 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		9E3B4D9627EB63C9008A0879 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9E3B4D9927EB645B008A0879 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		9E3B4D9B27EF57FE008A0879 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		9E3B4D8F27E9F7E4008A0879 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9E3B4D9B27EF57FE008A0879 /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				9E3B4D9727EB63C9008A0879 /* NetworkClient.swift in Sources */,
 				9E3B4D5927E8C5C3008A0879 /* MainController.swift in Sources */,
 				9E3B4D9227E9F807008A0879 /* DesignSystem.swift in Sources */,
+				9E3B4D9C27EF57FE008A0879 /* UIColor+Hex.swift in Sources */,
 				9E3B4D9A27EB645B008A0879 /* Post.swift in Sources */,
 				9E3B4D9427E9F838008A0879 /* Labels.swift in Sources */,
 				9E3B4D5527E8C5C3008A0879 /* AppDelegate.swift in Sources */,

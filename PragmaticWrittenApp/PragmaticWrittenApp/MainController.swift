@@ -51,7 +51,7 @@ class MainController: UIViewController, UICollectionViewDataSource {
         view.backgroundColor = .white
         collectionView.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
         setupCollectionView()
-        let task = networkClient.getPost { (post, error ) in
+        networkClient.getPost { (post, error ) in
             if let _ = error {
                 print(" there was an error ⚠️")
             }
