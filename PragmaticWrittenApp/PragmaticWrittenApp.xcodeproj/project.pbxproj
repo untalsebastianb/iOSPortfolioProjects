@@ -27,6 +27,7 @@
 		9E3B4D9C27EF57FE008A0879 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9B27EF57FE008A0879 /* UIColor+Hex.swift */; };
 		9E3B4D9E27EF5871008A0879 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9D27EF5871008A0879 /* Colors.swift */; };
 		9E3B4DA027EF6A03008A0879 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4D9F27EF6A03008A0879 /* OnboardingViewController.swift */; };
+		9E3B4DA227EF74BA008A0879 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B4DA127EF74BA008A0879 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		9E3B4D9B27EF57FE008A0879 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		9E3B4D9D27EF5871008A0879 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9E3B4D9F27EF6A03008A0879 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		9E3B4DA127EF74BA008A0879 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			children = (
 				9E3B4D8D27E9ED41008A0879 /* PostViewCell.swift */,
 				9E3B4D9F27EF6A03008A0879 /* OnboardingViewController.swift */,
+				9E3B4DA127EF74BA008A0879 /* RegisterViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				9E3B4D9727EB63C9008A0879 /* NetworkClient.swift in Sources */,
 				9E3B4D9E27EF5871008A0879 /* Colors.swift in Sources */,
 				9E3B4D5927E8C5C3008A0879 /* MainController.swift in Sources */,
+				9E3B4DA227EF74BA008A0879 /* RegisterViewController.swift in Sources */,
 				9E3B4D9227E9F807008A0879 /* DesignSystem.swift in Sources */,
 				9E3B4D9C27EF57FE008A0879 /* UIColor+Hex.swift in Sources */,
 				9E3B4D9A27EB645B008A0879 /* Post.swift in Sources */,

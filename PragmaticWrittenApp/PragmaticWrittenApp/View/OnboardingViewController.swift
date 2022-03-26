@@ -88,6 +88,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc private func showRegisterVC() {
-        print("123")
+        let registerVC = RegisterViewController()
+        present(registerVC, animated: true, completion: nil)
     }
 }
