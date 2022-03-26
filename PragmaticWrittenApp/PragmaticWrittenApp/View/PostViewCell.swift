@@ -89,7 +89,7 @@ class PostCollectionViewCell: MagazineLayoutCollectionViewCell {
     }
     
     private func setupStyles(){
-        backgroundColor = .lightGray
+        backgroundColor = Colors.secondaryBackgroundColor
         layer.cornerRadius = 5
         layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 3)

@@ -31,7 +31,7 @@ class MainController: UIViewController, UICollectionViewDataSource {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = Colors.backgroundColor
         return collectionView
     }()
     
