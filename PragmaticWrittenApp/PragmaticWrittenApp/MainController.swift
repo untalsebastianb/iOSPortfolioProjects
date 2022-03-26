@@ -51,6 +51,7 @@ class MainController: UIViewController, UICollectionViewDataSource {
         view.backgroundColor = .white
         collectionView.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
         setupCollectionView()
+        setupNavigationBar()
         networkClient.getPost { (post, error ) in
             if let _ = error {
                 print(" there was an error ⚠️")
@@ -59,8 +60,25 @@ class MainController: UIViewController, UICollectionViewDataSource {
             DispatchQueue.main.async {
                 self.fetchedPost = post.results
             }
-           
         }
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "Mi App"
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "pen_paper"), for: .normal)
+        button.addTarget(self, action: #selector(presentLoginAndSignup), for: .touchUpInside)
+        button.tintColor = Colors.primaryColor
+        button.snp.makeConstraints { make in
+            make.size.equalTo(24)
+        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        
+    }
+    
+    @objc private func presentLoginAndSignup() {
+        let onboardingVC = OnboardingViewController()
+        present(onboardingVC, animated: true, completion: nil)
     }
     
     private func setupCollectionView(){
