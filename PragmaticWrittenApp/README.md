@@ -8,3 +8,11 @@ Also for the purpose of this project I've used Carthage as dependency manager an
 
 MagazineLayout<br>
 SnapKit<br>
+
+# Demo
+![Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/PragmaticWrittenApp/ProgramaticWrittenAppDemo.gif)<br>
+
+
+Try the app by your own, and let me know your thoughts about it. Thanks you for being here!!<br>
+
+**Built with** [Swift](https://www.swift.org/)
