@@ -7,6 +7,12 @@
 
 import UIKit
 
+class PrimaryHeader: DesingSystemLabel {
+    override func setup() {
+        font = UIFont.boldSystemFont(ofSize: 32)
+    }
+}
+
 class PrimaryLabel: DesingSystemLabel {
     override func setup() {
         font = UIFont.boldSystemFont(ofSize: 16)
