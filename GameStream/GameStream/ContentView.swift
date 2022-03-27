@@ -66,9 +66,52 @@ struct InicioYRegistroView : View {
 }
 
 struct InicioSesionView: View {
+    
+    @State var correo = ""
+    @State var contrasena = ""
+    
     var body: some View {
-        Text("Soy la vista de inicio")
-            .foregroundColor(.white)
+        
+
+        ScrollView {
+            
+            
+            VStack(alignment: .leading) {
+                Text("Correo Electronico")
+                    .foregroundColor(Color("Dark-Cian"))
+                
+                
+                ZStack(alignment: .leading) {
+                    
+                    if correo.isEmpty {
+                        Text("Escribe tu correo")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    TextField("", text: $correo)
+                    
+                }
+                
+                Divider().frame( height: 1).background(Color("Dark-Cian")).padding(.bottom)
+                
+                ZStack(alignment: .leading) {
+                    
+                    if correo.isEmpty {
+                        Text("Escribe tu password")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    SecureField("", text: $correo)
+                    
+                }
+                
+                Divider().frame( height: 1).background(Color("Dark-Cian")).padding(.bottom)
+                
+            }.padding(.horizontal, 77)
+        }
+    
+    
+    
     }
 }
 
