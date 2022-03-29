@@ -86,6 +86,7 @@ struct SigninView: View {
                             .foregroundColor(.gray)
                     }
                     TextField("", text: $email)
+                        .foregroundColor(.white)
                     
                 }
                 
@@ -102,6 +103,7 @@ struct SigninView: View {
                             .foregroundColor(.gray)
                     }
                     SecureField("", text: $email)
+                        .foregroundColor(.white)
                     
                 }
                 
@@ -125,7 +127,7 @@ struct SigninView: View {
                 
                 Text("Sign in with Social Media ").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom, 40)
-                HStack {
+                HStack(spacing: 30) {
                     Button(action: SignIn) {
                         Text("Facebook")
                             .fontWeight(.bold)
@@ -194,6 +196,7 @@ struct SignupView: View {
                     
                     Text("Email*")
                         .foregroundColor(Color("Dark-Cian"))
+                        .frame(width: 300, alignment: .leading)
                     
                     
                     ZStack(alignment: .leading) {
@@ -204,6 +207,7 @@ struct SignupView: View {
                                 .foregroundColor(.gray)
                         }
                         TextField("", text: $email)
+                            .foregroundColor(.white)
                         
                     }
                     
@@ -220,6 +224,7 @@ struct SignupView: View {
                                 .foregroundColor(.gray)
                         }
                         SecureField("", text: $email)
+                            .foregroundColor(.white)
                         
                     }
                     
@@ -233,6 +238,7 @@ struct SignupView: View {
                     ZStack(alignment: .leading) {
                         
                         SecureField("", text: $email)
+                            .foregroundColor(.white)
                         
                     }
                     
@@ -252,7 +258,7 @@ struct SignupView: View {
                 
                 Text("Sign up with Social Media").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom, 40)
-                HStack {
+                HStack(spacing: 30) {
                     Button(action: signUp) {
                         Text("Facebook")
                             .fontWeight(.bold)
