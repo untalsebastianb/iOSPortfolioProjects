@@ -20,7 +20,7 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 250)
                     .padding(.bottom, 42)
-                InicioYRegistroView()
+                SigninRegisterView()
             }
             
         }
@@ -28,47 +28,43 @@ struct ContentView: View {
 }
 
 
-struct InicioYRegistroView : View {
+struct SigninRegisterView : View {
     
-    @State var tipoInicioSesion = true
+    @State var flowView = false
     var body: some View {
         
         VStack {
             HStack{
                 
                 Spacer()
-                Button("INICIA SESION") {
-                    print("Pantalla inicio sesion")
-                    tipoInicioSesion = true
+                Button("SIGN IN") {
+                    flowView = true
                 }
-                .foregroundColor(tipoInicioSesion ? .white : .gray)
+                .foregroundColor(flowView ? .white : .gray)
                 Spacer()
-                Button("REGISTRATE") {
-                    tipoInicioSesion = false
-                    print("Pantalla de registro")
+                Button("SIGN UP") {
+                    flowView = false
                 }
-                .foregroundColor(tipoInicioSesion ? .gray : .white)
+                .foregroundColor(flowView ? .gray : .white)
                 Spacer()
             }
             
             Spacer(minLength: 42)
-            if tipoInicioSesion == true {
-                //                Aqui muestra la pantalla de inicio Sesion
-                InicioSesionView()
+            if flowView == true {
+                SigninView()
                 
             } else {
-                //                Aqui muestra la pantalla de registro
-                RegistroView()
+                SignupView()
                 
             }
         }
     }
 }
 
-struct InicioSesionView: View {
+struct SigninView: View {
     
-    @State var correo = ""
-    @State var contrasena = ""
+    @State var email = ""
+    @State var password = ""
     
     
     var body: some View {
@@ -78,75 +74,75 @@ struct InicioSesionView: View {
             
             
             VStack(alignment: .leading) {
-                Text("Correo Electronico")
+                Text("Email")
                     .foregroundColor(Color("Dark-Cian"))
                 
                 
                 ZStack(alignment: .leading) {
                     
-                    if correo.isEmpty {
-                        Text("Escribe tu correo")
+                    if email.isEmpty {
+                        Text("Write yor email")
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
-                    TextField("", text: $correo)
+                    TextField("", text: $email)
                     
                 }
                 
                 Divider().frame( height: 1).background(Color("Dark-Cian")).padding(.bottom)
                 
-                Text("Contraseña")
+                Text("Password")
                     .foregroundColor(.white)
                 
                 ZStack(alignment: .leading) {
                     
-                    if correo.isEmpty {
-                        Text("Escribe tu password")
+                    if email.isEmpty {
+                        Text("Write your password")
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
-                    SecureField("", text: $correo)
+                    SecureField("", text: $email)
                     
                 }
                 
                 Divider().frame( height: 1).background(Color("Dark-Cian")).padding(.bottom)
                 
-                Text("Olvidaste tu contraseña")
+                Text("Forget your password?")
                     .font(.footnote)
                     .frame(width: 300, alignment: .trailing)
                     .foregroundColor(Color("Dark-Cian"))
                     .padding(.bottom)
                 
-                Button(action: iniciarSesion) {
-                    Text("INICIAR SESION")
+                Button(action: SignIn) {
+                    Text("SIGN IN")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
                         .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("Dark-Cian"), lineWidth: 1.0).shadow(color: .white, radius: 6))
+                    
+                }.padding(.bottom, 40)
                 
-                }.padding(.bottom, 80)
-                
-                Text("Inicia Sesion con redes sociales").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .center)
+                Text("Sign in with Social Media ").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom, 40)
                 HStack {
-                    Button(action: iniciarSesion) {
+                    Button(action: SignIn) {
                         Text("Facebook")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
-                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(.white, lineWidth: 1.0).shadow(color: .white, radius: 6))
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
                     }
-                    Button(action: iniciarSesion) {
+                    Button(action: SignIn) {
                         Text("Twitter")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
-                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(.white, lineWidth: 1.0).shadow(color: .white, radius: 6))
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
                     }
-
+                    
                 }
                 
             }.padding(.horizontal, 77)
@@ -157,15 +153,136 @@ struct InicioSesionView: View {
     }
 }
 
-func iniciarSesion() {
-    print("Estoy iniciando Sesion")
+func SignIn() {
+    print("Signin in...")
 }
 
-struct RegistroView: View {
+struct SignupView: View {
+    @State var email = ""
+    
     var body: some View {
-        Text("Soy la vista de registro")
-            .foregroundColor(.white)
+        ScrollView {
+            
+            VStack(alignment: .center) {
+                
+                Text("Choose your profile Pic")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                Text("You can edit it later")
+                    .font(.footnote)
+                    .fontWeight(.light)
+                    .foregroundColor(.gray)
+                    .padding(.bottom)
+                
+                Button(action: takePicture) {
+                    ZStack {
+                        Image("profilePic")
+                            .resizable()
+                            .aspectRatio( contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                        
+                        Image(systemName: "camera")
+                            .foregroundColor(.white)
+                    }
+                }.padding(.bottom, 30)
+            }
+            
+            
+            VStack() {
+                
+                VStack(alignment: .leading) {
+                    
+                    Text("Email*")
+                        .foregroundColor(Color("Dark-Cian"))
+                    
+                    
+                    ZStack(alignment: .leading) {
+                        
+                        if email.isEmpty {
+                            Text("Write your email")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                        TextField("", text: $email)
+                        
+                    }
+                    
+                    Divider().frame( height: 1).background(Color("Dark-Cian")).padding(.bottom)
+                    
+                    Text("Password*")
+                        .foregroundColor(.white)
+                    
+                    ZStack(alignment: .leading) {
+                        
+                        if email.isEmpty {
+                            Text("Write your password")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                        SecureField("", text: $email)
+                        
+                    }
+                    
+                    
+                    Divider().frame( height: 1).background(Color("Dark-Cian")).padding(.bottom)
+                    
+                    
+                    Text("Confirm your password*")
+                        .foregroundColor(.white)
+                    
+                    ZStack(alignment: .leading) {
+                        
+                        SecureField("", text: $email)
+                        
+                    }
+                    
+                    Divider().frame( height: 1).background(Color("Dark-Cian")).padding(.bottom, 30)
+                    
+                }
+                
+                Button(action: signUp) {
+                    Text("SIGN UP")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                        .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("Dark-Cian"), lineWidth: 1.0).shadow(color: .white, radius: 6))
+                    
+                }.padding(.bottom, 40)
+                
+                Text("Sign up with Social Media").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.bottom, 40)
+                HStack {
+                    Button(action: signUp) {
+                        Text("Facebook")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
+                    }
+                    Button(action: SignIn) {
+                        Text("Twitter")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
+                    }
+                    
+                }
+                
+            }.padding(.horizontal, 77)
+        }
     }
+}
+
+func takePicture() {
+    print("Taking picture..")
+}
+
+func signUp() {
+    print("Registering user..")
 }
 
 struct ContentView_Previews: PreviewProvider {
