@@ -9,20 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            
-            Spacer()
-            Color(red: 19/255, green: 30/255, blue: 53/255, opacity: 1.0)
-                .ignoresSafeArea()
-            VStack{
-                Image("appLogo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250)
-                    .padding(.bottom, 42)
-                SigninRegisterView()
-            }
-            
+        
+        NavigationView {
+            ZStack {
+                
+                Spacer()
+                Color(red: 19/255, green: 30/255, blue: 53/255, opacity: 1.0)
+                    .ignoresSafeArea()
+                VStack{
+                    Image("appLogo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250)
+                        .padding(.bottom, 42)
+                    SigninRegisterView()
+                }
+                
+            }.navigationBarHidden(true)
         }
     }
 }
@@ -30,7 +33,7 @@ struct ContentView: View {
 
 struct SigninRegisterView : View {
     
-    @State var flowView = false
+    @State var flowView = true
     var body: some View {
         
         VStack {
@@ -65,6 +68,7 @@ struct SigninView: View {
     
     @State var email = ""
     @State var password = ""
+    @State var isHomeActive = false
     
     
     var body: some View {
@@ -148,16 +152,25 @@ struct SigninView: View {
                 }
                 
             }.padding(.horizontal, 77)
+
+            NavigationLink(
+                destination: Home(),
+                isActive: $isHomeActive,
+                label: {
+                EmptyView()
+            })
         }
         
         
         
     }
+    
+    func SignIn() {
+        isHomeActive = true
+    }
 }
 
-func SignIn() {
-    print("Signin in...")
-}
+
 
 struct SignupView: View {
     @State var email = ""
@@ -280,6 +293,10 @@ struct SignupView: View {
                 
             }.padding(.horizontal, 77)
         }
+    }
+    
+    func SignIn() {
+        print("signin in...")
     }
 }
 
