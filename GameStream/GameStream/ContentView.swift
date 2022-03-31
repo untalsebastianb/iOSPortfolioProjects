@@ -171,7 +171,6 @@ struct SigninView: View {
 }
 
 
-
 struct SignupView: View {
     @State var email = ""
     
