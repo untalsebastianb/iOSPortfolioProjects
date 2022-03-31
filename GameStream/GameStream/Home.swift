@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct Home: View {
     @State var selectedTab: Int = 2
@@ -80,15 +81,21 @@ struct HomeScreen: View {
                         }
                         TextField("", text: $searchText).foregroundColor(.white)
                         
+                        
                     }
+                    
                     
                 }
                 .padding([.top, .leading, .bottom], 11.0)
                 .background(Color("Blue-Gray"))
                 .clipShape(Capsule())
                 
+                ScrollView(showsIndicators: false) {
+                    HomeScreenSubModule()
+                }
                 
             }.padding(.horizontal, 18)
+            
             
         }.navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
@@ -96,6 +103,65 @@ struct HomeScreen: View {
     
     func search() {
         print("Searching... \(searchText)")
+    }
+}
+
+struct HomeScreenSubModule: View {
+    
+    @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
+    @State var isPlayerActive = false
+    let urlVideos:[String] = ["https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256671638/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256720061/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256814567/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256705156/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256801252/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256757119/movie480.mp4"]
+    
+    var body: some View {
+        
+        VStack{
+            
+            Text("Populars")
+                .font(.title3)
+                .foregroundColor(.white)
+                .bold()
+                .frame( maxWidth: .infinity, alignment: .leading)
+                .padding(.top)
+            
+            ZStack{
+                
+                Button {
+                    url = urlVideos[0]
+                    print("URL: \(url)")
+                    isPlayerActive = true
+                } label: {
+                    VStack(spacing: 0) {
+                        Image("The Witcher 3")
+                            .resizable()
+                            .scaledToFill()
+                        Text("The Witcher 3")
+                            .frame( maxWidth: .infinity, alignment: .leading)
+                            .background(Color("Blue-Gray"))
+                    }
+                    
+                }
+                
+                Image(systemName: "play.circle.fill")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 42, height: 42)
+            
+
+                
+            }.frame( maxWidth: .infinity, alignment: .center)
+                .padding(.vertical)
+            
+        }
+        
+        
+        NavigationLink(isActive: $isPlayerActive,
+                       destination: {
+                        VideoPlayer(player: AVPlayer(url: URL(string: url)!))
+                        .frame(width: 400, height: 400)
+                        },
+                       label: {
+                        EmptyView()
+                        })
     }
 }
 
