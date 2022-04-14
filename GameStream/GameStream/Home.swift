@@ -151,12 +151,12 @@ struct HomeScreenSubModule: View {
             }.frame( maxWidth: .infinity, alignment: .center)
                 .padding(.vertical)
             
-            
             Text("SUGGESTED CATEGORIES")
                 .font(.title3)
                 .foregroundColor(.white)
                 .bold()
                 .frame( maxWidth: .infinity, alignment: .leading)
+                .padding(.top)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
@@ -206,6 +206,7 @@ struct HomeScreenSubModule: View {
                 .foregroundColor(.white)
                 .bold()
                 .frame( maxWidth: .infinity, alignment: .leading)
+                .padding(.top)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack{
@@ -243,6 +244,42 @@ struct HomeScreenSubModule: View {
                     }
                 }
             }
+            
+            Text("Videos you might like")
+                .font(.title3)
+                .foregroundColor(.white)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack  {
+                    Button(action: {
+                        url = urlVideos[4]
+                        print("URL:", url)
+                        isPlayerActive = true
+                    }) {
+                        Image("Grand Theft Auto V")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                    }
+                    
+                    Button(action: {
+                        url = urlVideos[5]
+                        print("URL:", url)
+                        isPlayerActive = true
+                    }) {
+                        Image("Hades")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                    }
+                }
+            }
+            .padding(.bottom)
+            
+            
             
         }
         
