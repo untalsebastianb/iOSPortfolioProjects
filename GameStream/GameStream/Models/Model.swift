@@ -14,12 +14,12 @@ struct Games: Codable {
 struct Game: Codable {
     var title: String
     var studio: String
-    var contentRating: String
+    var contentRaiting: String
     var publicationYear: String
     var description: String
     var platforms: [String]
     var tags: [String]
-    var videosURL: VideoURL
+    var videosUrls: VideoURL
     var galleryImages: [String]
 }
 

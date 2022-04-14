@@ -25,7 +25,7 @@ struct ContentView: View {
                     SigninRegisterView()
                 }
                 
-            }.navigationBarHidden(true)
+            }.hideNavigationBar()
         }
     }
 }

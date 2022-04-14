@@ -52,6 +52,7 @@ struct Home: View {
     
 }
 
+
 struct HomeScreen: View {
     
     @State var searchText = ""
@@ -97,8 +98,9 @@ struct HomeScreen: View {
             }.padding(.horizontal, 18)
             
             
-        }.navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+        }.hideNavigationBar()
+       
+            
     }
     
     func search() {
