@@ -57,9 +57,12 @@ struct GamesView: View {
                                 print("pulse el juego \(titulo)")
                                 
                             } label: {
-                                Text("\(game.title)")
                                 
-                                KFImage(<#T##url: URL?##URL?#>)
+                                KFImage(URL(string: game.galleryImages[0])!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(RoundedRectangle.init(cornerRadius: 4))
+                                    .padding(.bottom, 12)
                             }
 
                         }

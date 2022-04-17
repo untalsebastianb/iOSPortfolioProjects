@@ -11,6 +11,7 @@ extension View {
     func hideNavigationBar() -> some View {
         self
             .navigationBarTitle("", displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
     }
 }
