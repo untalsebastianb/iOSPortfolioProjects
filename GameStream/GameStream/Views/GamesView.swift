@@ -13,7 +13,7 @@ struct GamesView: View {
     @ObservedObject var games = ViewModel()
     @State var gameViewIsActive: Bool   = false
     @State var url: String              = ""
-    @State var titulo: String           = ""
+    @State var title: String           = ""
     @State var studio: String           = ""
     @State var calification: String     = ""
     @State var publicationYear: String  = ""
@@ -47,14 +47,14 @@ struct GamesView: View {
                             
                             Button {
                                 url = game.videosUrls.mobile
-                                titulo = game.title
+                                title = game.title
                                 calification = game.contentRaiting
                                 publicationYear = game.publicationYear
                                 description = game.description
                                 tags = game.tags
                                 imgsUrl = game.galleryImages
                                 
-                                print("pulse el juego \(titulo)")
+                                gameViewIsActive = true
                                 
                             } label: {
                                 
@@ -73,7 +73,9 @@ struct GamesView: View {
             }.padding(.horizontal)
             
             
-            
+            NavigationLink(destination: GameView(game: gameDTO(url: url, title: title, studio: studio, calification: calification, publicationYear: publicationYear, description: description, tags: tags, imgsUrl: imgsUrl)), isActive: $gameViewIsActive) {
+                EmptyView()
+            }
             
         }.onAppear {
                 print("First element of json: \(games.gamesInfo[0])")
