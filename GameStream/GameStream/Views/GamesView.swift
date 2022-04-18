@@ -53,6 +53,7 @@ struct GamesView: View {
                                 description = game.description
                                 tags = game.tags
                                 imgsUrl = game.galleryImages
+                                studio = game.studio
                                 
                                 gameViewIsActive = true
                                 
@@ -73,7 +74,7 @@ struct GamesView: View {
             }.padding(.horizontal)
             
             
-            NavigationLink(destination: GameView(game: gameDTO(url: url, title: title, studio: studio, calification: calification, publicationYear: publicationYear, description: description, tags: tags, imgsUrl: imgsUrl)), isActive: $gameViewIsActive) {
+            NavigationLink(destination: GameView(game: GameDTO(url: url, title: title, studio: studio, calification: calification, publicationYear: publicationYear, description: description, tags: tags, imgsUrl: imgsUrl)), isActive: $gameViewIsActive) {
                 EmptyView()
             }
             
