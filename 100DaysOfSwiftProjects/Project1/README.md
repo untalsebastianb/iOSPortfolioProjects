@@ -10,3 +10,5 @@ I've covered the next topics:<br>
 Building a detail screen and loading images with UIImage<br>
 
 Final tweaks: hidesBarsOnTap, safe area margins<br>
+
+![Project evidence](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/100DaysOfSwiftProjects/Project1/av2.gif)
