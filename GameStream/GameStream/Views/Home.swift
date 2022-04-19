@@ -87,8 +87,9 @@ struct HomeScreenSubModule: View {
     @State var isPlayerActive = false
     @State var searchText = ""
     @State var isGameInfoEmpty = false
-    
-    let urlVideos:[String] = ["https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256671638/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256720061/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256814567/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256705156/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256801252/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256757119/movie480.mp4"]
+    @ObservedObject var endpoint = SearchGame()
+    @State var isGameViewActive = false
+    @State var foundGame: GameDTO?
     
     var body: some View {
         
@@ -98,7 +99,6 @@ struct HomeScreenSubModule: View {
                 
                 Button(action: {
                     searchGame(name: searchText)
-                    
                     
                 },
                        label: {
@@ -133,9 +133,7 @@ struct HomeScreenSubModule: View {
             ZStack{
                 
                 Button {
-                    url = urlVideos[0]
-                    print("URL: \(url)")
-                    isPlayerActive = true
+                    searchGame(name: "The Witcher 3")
                 } label: {
                     VStack(spacing: 0) {
                         Image("The Witcher 3")
@@ -218,9 +216,7 @@ struct HomeScreenSubModule: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack{
                     Button(action: {
-                        url = urlVideos[1]
-                        print("URL: \(url)")
-                        isPlayerActive = true
+                        searchGame(name: "Abzu")
                     }) {
                         Image("Abzu")
                             .resizable()
@@ -229,9 +225,7 @@ struct HomeScreenSubModule: View {
                     }
                     
                     Button(action: {
-                        url = urlVideos[2]
-                        print("URL: \(url)")
-                        isPlayerActive = true
+                        searchGame(name: "Crash Bandicoot")
                     }) {
                         Image("Crash Bandicoot")
                             .resizable()
@@ -240,9 +234,7 @@ struct HomeScreenSubModule: View {
                     }
                     
                     Button(action: {
-                        url = urlVideos[3]
-                        print("URL: \(url)")
-                        isPlayerActive = true
+                        searchGame(name: "DEATH STRANDING")
                     }) {
                         Image("DEATH STRANDING")
                             .resizable()
@@ -262,9 +254,7 @@ struct HomeScreenSubModule: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack  {
                     Button(action: {
-                        url = urlVideos[4]
-                        print("URL:", url)
-                        isPlayerActive = true
+                        searchGame(name: "Grand Theft Auto V")
                     }) {
                         Image("Grand Theft Auto V")
                             .resizable()
@@ -273,9 +263,7 @@ struct HomeScreenSubModule: View {
                     }
                     
                     Button(action: {
-                        url = urlVideos[5]
-                        print("URL:", url)
-                        isPlayerActive = true
+                        searchGame(name: "Hades")
                     }) {
                         Image("Hades")
                             .resizable()
@@ -289,10 +277,9 @@ struct HomeScreenSubModule: View {
             
             
         }
-        NavigationLink(isActive: $isPlayerActive,
+        NavigationLink(isActive: $isGameViewActive,
                        destination: {
-                        VideoPlayer(player: AVPlayer(url: URL(string: url)!))
-                        .frame(width: 400, height: 400)
+                        GameView(game: foundGame)
                         },
                        label: {
                         EmptyView()
@@ -300,8 +287,21 @@ struct HomeScreenSubModule: View {
     }
     
     func searchGame(name: String) {
-        print("Searching... \(searchText)")
-        isGameInfoEmpty.toggle()
+        
+        endpoint.search(gameName: name)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+            print("Quantity E: \(endpoint.gameInfo.count)")
+            
+            if endpoint.gameInfo.count == 0 {
+                isGameInfoEmpty = true
+            } else {
+               foundGame = GameDTO(url: endpoint.gameInfo[0].videosUrls.mobile, title: endpoint.gameInfo[0].title, studio: endpoint.gameInfo[0].studio, calification: endpoint.gameInfo[0].contentRaiting, publicationYear: endpoint.gameInfo[0].publicationYear, description: endpoint.gameInfo[0].description, tags: endpoint.gameInfo[0].tags, imgsUrl: endpoint.gameInfo[0].galleryImages)
+                
+                isGameViewActive = true
+            }
+        }
+        
     }
 
 }
