@@ -54,9 +54,7 @@ struct Home: View {
 
 
 struct HomeScreen: View {
-    
-    @State var searchText = ""
-    
+
     var body: some View {
         ZStack {
             Color("Marine-Color").ignoresSafeArea()
@@ -69,27 +67,6 @@ struct HomeScreen: View {
                     .frame(width: 250)
                     .padding(.horizontal, 20.0)
                 
-                HStack{
-                    
-                    Button(action: search, label: {
-                        Image(systemName: "magnifyingglass").foregroundColor(searchText.isEmpty ? Color.yellow : Color("Dark-Cian") )
-                    })
-                    
-                    ZStack(alignment: .leading) {
-                        
-                        if searchText.isEmpty {
-                            Text("Search a video").foregroundColor(.gray)
-                        }
-                        TextField("", text: $searchText).foregroundColor(.white)
-                        
-                        
-                    }
-                    
-                    
-                }
-                .padding([.top, .leading, .bottom], 11.0)
-                .background(Color("Blue-Gray"))
-                .clipShape(Capsule())
                 
                 ScrollView(showsIndicators: false) {
                     HomeScreenSubModule()
@@ -102,21 +79,49 @@ struct HomeScreen: View {
        
             
     }
-    
-    func search() {
-        print("Searching... \(searchText)")
-    }
 }
 
 struct HomeScreenSubModule: View {
     
     @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
     @State var isPlayerActive = false
+    @State var searchText = ""
+    @State var isGameInfoEmpty = false
+    
     let urlVideos:[String] = ["https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256671638/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256720061/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256814567/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256705156/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256801252/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256757119/movie480.mp4"]
     
     var body: some View {
         
         VStack{
+            
+            HStack{
+                
+                Button(action: {
+                    searchGame(name: searchText)
+                    
+                    
+                },
+                       label: {
+                    Image(systemName: "magnifyingglass").foregroundColor(searchText.isEmpty ? Color.yellow : Color("Dark-Cian") )
+                }).alert(isPresented: $isGameInfoEmpty) {
+                    Alert(title: Text("Error"), message: Text("Game not found"), dismissButton: .default(Text("OK")))
+                }
+                
+                ZStack(alignment: .leading) {
+                    
+                    if searchText.isEmpty {
+                        Text("Search a video").foregroundColor(.gray)
+                    }
+                    TextField("", text: $searchText).foregroundColor(.white)
+                    
+                    
+                }
+                
+                
+            }
+            .padding([.top, .leading, .bottom], 11.0)
+            .background(Color("Blue-Gray"))
+            .clipShape(Capsule())
             
             Text("Populars")
                 .font(.title3)
@@ -284,8 +289,6 @@ struct HomeScreenSubModule: View {
             
             
         }
-        
-        
         NavigationLink(isActive: $isPlayerActive,
                        destination: {
                         VideoPlayer(player: AVPlayer(url: URL(string: url)!))
@@ -295,6 +298,12 @@ struct HomeScreenSubModule: View {
                         EmptyView()
                         })
     }
+    
+    func searchGame(name: String) {
+        print("Searching... \(searchText)")
+        isGameInfoEmpty.toggle()
+    }
+
 }
 
 struct Home_Previews: PreviewProvider {
