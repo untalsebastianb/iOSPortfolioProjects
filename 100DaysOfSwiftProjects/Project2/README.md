@@ -1,5 +1,5 @@
 
-On the days 19, 20, 21 of I developed this funny game about guessing the flag<br>
+On the days 19th, 20th, 21st of #100DaysOfSwift challenge, I developed this funny game about guessing the flag<br>
 once you start tapping on the flag you'll notify with an alet and automatically raise or decrease your score<br>
 
 I went through:
