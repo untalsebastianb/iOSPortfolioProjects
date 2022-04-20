@@ -10,7 +10,7 @@ I went through:
 ‣ AutoLayout.
 ‣ View controllers, storyboards, UIImage.
 
-Demo: 
+Demo: <br>
 ![Project evidence] (https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/100DaysOfSwiftProjects/Project2/Evidence3.gif)
 
 Thanks for your time 🕰
