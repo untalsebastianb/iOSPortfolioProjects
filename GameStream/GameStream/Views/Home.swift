@@ -16,7 +16,7 @@ struct Home: View {
         TabView(selection: $selectedTab) {
            
             
-            Text("Profile")
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
