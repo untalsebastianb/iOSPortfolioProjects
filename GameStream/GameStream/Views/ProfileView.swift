@@ -33,7 +33,7 @@ struct ProfileView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                     
-                }.padding(EdgeInsets(top: 60, leading: 0, bottom: 82, trailing: 0))
+                }.padding(EdgeInsets(top: 40, leading: 0, bottom: 82, trailing: 0))
                 
                 VStack(alignment: .leading) {
                     Text("Settings")
@@ -111,7 +111,7 @@ struct SettingsModule: View {
            
             
             NavigationLink(isActive: $isEditProfileViewActive) {
-                Text("Hello")
+                EditProfileView()
             } label: {
                 EmptyView()
             }
