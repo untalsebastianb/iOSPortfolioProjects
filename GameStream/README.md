@@ -20,34 +20,34 @@ External third parties libraries: <br>
 
 Demo gifs: <br>
 
-UIAllerts:
-![AlertsDemo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/UIAllertsDemo.gif)
+UIAllerts:<br>
+![AlertsDemo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/UIAllertsDemo.gif) <br>
 
-SignIn: 
-![SignIn Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/SignInDemo.gif)
+SignIn: <br>
+![SignIn Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/SignInDemo.gif)<br>
 
-SignUp:
-![SingUp Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/SignUpDemo.gif)
+SignUp:<br>
+![SingUp Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/SignUpDemo.gif)<br>
 
-Home:
-![SingUp Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/HomeSlidesDemo.gif)
+Home:<br>
+![SingUp Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/HomeSlidesDemo.gif)<br>
 
-Search bar:
-![SearchBar Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/SearchBarDemi.gif)
+Search bar:<br>
+![SearchBar Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/SearchBarDemi.gif)<br>
 
-Game view:
-![GameView Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/GamesDemo.gif)
+Game view:<br>
+![GameView Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/GamesDemo.gif)<br>
 
-Favorites view:
-![GameView Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/FavoritesDemo.gif)
+Favorites view:<br>
+![GameView Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/FavoritesDemo.gif)<br>
 
-Profile view:
-![Profile Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/ProfileDemo.gif)
+Profile view:<br>
+![Profile Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/ProfileDemo.gif)<br>
 
-Certification:
-![Certification](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/diploma-swiftui-apps-ios.pdf)
+Certification:<br>
+![Certification](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/diploma-swiftui-apps-ios.pdf)<br>
 
-
+Thank you for your time!
 
 
 
