@@ -98,6 +98,10 @@ struct EditModuleView: View {
 }
 
 struct EditProfileView: View {
+    
+    @State var profilePic: Image? = Image("profilePic")
+    @State var isCameraActive = false
+    
     var body: some View {
         ZStack {
             Color("Marine-Color")
@@ -106,13 +110,22 @@ struct EditProfileView: View {
                 
                 VStack{
                     
-                    Button(action: {}) {
+                    Text("Edit profile")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                   
+                    Button(action: {
+                       isCameraActive = true
+                    }) {
                         ZStack {
-                            Image("profilePic")
+                            profilePic?
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 118, height: 118)
                                 .clipShape(Circle())
+                                .sheet(isPresented: $isCameraActive, content: {
+                                    SUImagePickerView(sourceType: .photoLibrary, image: self.$profilePic, isPresented: $isCameraActive)
+                                })
                             
                             Image(systemName: "camera")
                                 .foregroundColor(.white)
