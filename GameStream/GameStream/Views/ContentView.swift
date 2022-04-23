@@ -189,7 +189,7 @@ struct SigninView: View {
         
         if email.isEmpty && password.isEmpty {
             emptyFields = true
-            alertMessage = "please complete all the fields"
+            alertMessage = "Please complete all the fields"
         }
         
         else if foundUser {
