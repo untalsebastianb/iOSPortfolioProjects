@@ -69,6 +69,9 @@ struct SigninView: View {
     @State var email = ""
     @State var password = ""
     @State var isHomeActive = false
+    @State var emptyFields = false
+    @State var sso = false
+    @State var alertMessage = ""
     
     
     var body: some View {
@@ -91,6 +94,7 @@ struct SigninView: View {
                     }
                     TextField("", text: $email)
                         .foregroundColor(.white)
+                        .textInputAutocapitalization(.never)
                     
                 }
                 
@@ -106,7 +110,7 @@ struct SigninView: View {
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
-                    SecureField("", text: $email)
+                    SecureField("", text: $password)
                         .foregroundColor(.white)
                     
                 }
@@ -128,11 +132,16 @@ struct SigninView: View {
                         .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("Dark-Cian"), lineWidth: 1.0).shadow(color: .white, radius: 6))
                     
                 }.padding(.bottom, 40)
+                    .alert(isPresented: $emptyFields) {
+                        Alert(title: Text("Oops"), message: Text("\(alertMessage)"), dismissButton: .default(Text("OK")))
+                    }
                 
                 Text("Sign in with Social Media ").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom, 40)
                 HStack(spacing: 30) {
-                    Button(action: SignIn) {
+                    Button(action: {
+                        sso = true
+                    }) {
                         Text("Facebook")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -140,7 +149,13 @@ struct SigninView: View {
                             .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
                             .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
                     }
-                    Button(action: SignIn) {
+                    .alert(isPresented: $sso) {
+                        Alert(title: Text("Oops"), message: Text("This feature will be available soon"), dismissButton: .default(Text("OK")))
+                    }
+                    
+                    Button(action: {
+                        sso = true
+                    }) {
                         Text("Twitter")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -148,17 +163,19 @@ struct SigninView: View {
                             .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
                             .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
                     }
-                    
+                    .alert(isPresented: $sso) {
+                        Alert(title: Text("Oops"), message: Text("This feature will be available soon"), dismissButton: .default(Text("OK")))
+                    }
                 }
                 
             }.padding(.horizontal, 77)
-
+            
             NavigationLink(
                 destination: Home(),
                 isActive: $isHomeActive,
                 label: {
-                EmptyView()
-            })
+                    EmptyView()
+                })
         }
         
         
@@ -166,13 +183,33 @@ struct SigninView: View {
     }
     
     func SignIn() {
-        isHomeActive = true
+        let handler = SaveData()
+        let userData = handler.getData()
+        let foundUser = handler.validateData(email: email, password: password)
+        
+        if email.isEmpty && password.isEmpty {
+            emptyFields = true
+            alertMessage = "please complete all the fields"
+        }
+        
+        if foundUser {
+            isHomeActive = true
+        } else {
+            emptyFields = true
+            alertMessage = "User not found"
+        }
     }
 }
 
 
 struct SignupView: View {
     @State var email = ""
+    @State var password = ""
+    @State var confirmPassword = ""
+    @State var isHomeActive = false
+    @State var emptyFields = false
+    @State var sso = false
+    
     
     var body: some View {
         ScrollView {
@@ -220,6 +257,7 @@ struct SignupView: View {
                         }
                         TextField("", text: $email)
                             .foregroundColor(.white)
+                            .textInputAutocapitalization(.never)
                         
                     }
                     
@@ -230,12 +268,12 @@ struct SignupView: View {
                     
                     ZStack(alignment: .leading) {
                         
-                        if email.isEmpty {
+                        if password.isEmpty {
                             Text("Write your password")
                                 .font(.caption)
                                 .foregroundColor(.gray)
                         }
-                        SecureField("", text: $email)
+                        SecureField("", text: $password)
                             .foregroundColor(.white)
                         
                     }
@@ -249,7 +287,7 @@ struct SignupView: View {
                     
                     ZStack(alignment: .leading) {
                         
-                        SecureField("", text: $email)
+                        SecureField("", text: $confirmPassword)
                             .foregroundColor(.white)
                         
                     }
@@ -267,11 +305,17 @@ struct SignupView: View {
                         .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("Dark-Cian"), lineWidth: 1.0).shadow(color: .white, radius: 6))
                     
                 }.padding(.bottom, 40)
+                    .alert(isPresented: $emptyFields) {
+                        Alert(title: Text("Missing information"), message: Text("Please complete all the fields"), dismissButton: .default(Text("OK")))
+                    }
                 
                 Text("Sign up with Social Media").foregroundColor(.white).frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom, 40)
                 HStack(spacing: 30) {
-                    Button(action: signUp) {
+                    Button(action: {
+                        sso = true
+                        
+                    }) {
                         Text("Facebook")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -279,7 +323,13 @@ struct SignupView: View {
                             .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
                             .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
                     }
-                    Button(action: SignIn) {
+                    .alert(isPresented: $sso) {
+                        Alert(title: Text("Oops"), message: Text("This feature will be available soon"), dismissButton: .default(Text("OK")))
+                    }
+                    
+                    Button(action: {
+                        sso = true
+                    }) {
                         Text("Twitter")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -287,15 +337,32 @@ struct SignupView: View {
                             .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
                             .background(RoundedRectangle(cornerRadius: 6).fill(Color("Blue-Gray")))
                     }
+                    .alert(isPresented: $sso) {
+                        Alert(title: Text("Oops"), message: Text("This feature will be available soon"), dismissButton: .default(Text("OK")))
+                    }
                     
                 }
                 
             }.padding(.horizontal, 77)
         }
+        NavigationLink(
+            destination: Home(),
+            isActive: $isHomeActive,
+            label: {
+                EmptyView()
+            })
     }
     
-    func SignIn() {
-        print("signin in...")
+    
+    func signUp() {
+        let handler = SaveData()
+        
+        if email.count > 0 && password.count > 0 && confirmPassword.count > 0 {
+            let result = handler.saveData(email: email, password: password, name: "")
+            isHomeActive = result ? true : false
+        } else {
+            emptyFields = true
+        }
     }
 }
 
@@ -303,9 +370,7 @@ func takePicture() {
     print("Taking picture..")
 }
 
-func signUp() {
-    print("Registering user..")
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

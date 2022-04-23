@@ -83,14 +83,17 @@ struct EditModuleView: View {
             
             
             
-
             
-             
+            
+            
         }.padding(.horizontal, 42.0)
     }
     
     func update(){
-        print("saving data user")
+        print("calling....")
+        let handler = SaveData()
+        let result = handler.saveData(email: email, password: password, name: name)
+        print("saving data.... \(result)")
     }
 }
 
@@ -109,7 +112,7 @@ struct EditProfileView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 118, height: 118)
-                            .clipShape(Circle())
+                                .clipShape(Circle())
                             
                             Image(systemName: "camera")
                                 .foregroundColor(.white)
