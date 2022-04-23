@@ -45,9 +45,9 @@ Profile view:<br>
 ![Profile Demo](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/ProfileDemo.gif)<br>
 
 Certification:<br>
-![Certification](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/diploma-swiftui-apps-ios.pdf)<br>
+![Certification](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/GameStream/SwiftUI%20Certification.png)<br>
 
-Thank you for your time!
+Thank you for your time and I hope you like my work.
 
 
 
