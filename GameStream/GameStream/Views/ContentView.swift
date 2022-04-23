@@ -192,7 +192,7 @@ struct SigninView: View {
             alertMessage = "please complete all the fields"
         }
         
-        if foundUser {
+        else if foundUser {
             isHomeActive = true
         } else {
             emptyFields = true
