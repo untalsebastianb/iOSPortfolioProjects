@@ -27,8 +27,16 @@ class ViewController: UIViewController {
         button1.layer.borderColor = UIColor.lightGray.cgColor
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(systemName: "info.circle"), style: .done, target: self, action: #selector(getScore))
 
         askQuestion()
+    }
+    
+    @objc func getScore() {
+        let ac = UIAlertController(title: "Info", message: "Your score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
+        present(ac, animated: true)
     }
 
     func askQuestion(action: UIAlertAction! = nil){
