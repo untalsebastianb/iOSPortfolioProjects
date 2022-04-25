@@ -13,4 +13,10 @@ I went through: <br>
 Demo: <br>
 ![Project evidence](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/100DaysOfSwiftProjects/Project2/Evidence3.gif)
 
+On day 22nd, I added the rightBarButtonItem to show the user score. <br>
+
+Demo: <br>
+![Project evidence](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/100DaysOfSwiftProjects/Project2/InfoScoreButtonGif.gif)
+
+
 Thanks for your time 🕰
