@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         let ac = UIAlertController(title: "Info", message: "Your score is \(score)", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
         present(ac, animated: true)
+        
     }
 
     func askQuestion(action: UIAlertAction! = nil){
