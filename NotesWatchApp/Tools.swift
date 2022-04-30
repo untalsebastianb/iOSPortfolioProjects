@@ -15,11 +15,8 @@ class Tools {
     private init(){ }
     
     func save(notes: [Note]) {
-        print("Data sin encodear", notes)
-        
         let data = notes.map{ try? JSONEncoder().encode($0) }
-        
-        print("Data encodeada", data)
+    
         UserDefaults.standard.set(data, forKey: key)
     }
     
