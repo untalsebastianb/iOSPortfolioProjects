@@ -21,7 +21,7 @@ struct ContentView: View {
             } label: {
                 Text("Check notes")
             }
-        }
+        }.navigationTitle("Notes App")
     }
 }
 
