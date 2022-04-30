@@ -17,6 +17,9 @@
 		9E7DC300281C8E11009BCC4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E7DC2FF281C8E11009BCC4A /* Preview Assets.xcassets */; };
 		9E7DC312281CC04E009BCC4A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DC311281CC04E009BCC4A /* Note.swift */; };
 		9E7DC314281CC248009BCC4A /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DC313281CC248009BCC4A /* AddNote.swift */; };
+		9E7DC316281CCA5D009BCC4A /* ListNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DC315281CCA5D009BCC4A /* ListNotes.swift */; };
+		9E7DC318281CCF31009BCC4A /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DC317281CCF31009BCC4A /* NoteDetail.swift */; };
+		9E7DC31A281CD8B4009BCC4A /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DC319281CD8B4009BCC4A /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		9E7DC301281C8E11009BCC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E7DC311281CC04E009BCC4A /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9E7DC313281CC248009BCC4A /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
+		9E7DC315281CCA5D009BCC4A /* ListNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNotes.swift; sourceTree = "<group>"; };
+		9E7DC317281CCF31009BCC4A /* NoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
+		9E7DC319281CD8B4009BCC4A /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 		9E7DC2DB281C8E0E009BCC4A = {
 			isa = PBXGroup;
 			children = (
+				9E7DC319281CD8B4009BCC4A /* Tools.swift */,
+				9E7DC317281CCF31009BCC4A /* NoteDetail.swift */,
+				9E7DC315281CCA5D009BCC4A /* ListNotes.swift */,
 				9E7DC313281CC248009BCC4A /* AddNote.swift */,
 				9E7DC311281CC04E009BCC4A /* Note.swift */,
 				9E7DC2EA281C8E0E009BCC4A /* NotesWatchApp WatchKit App */,
@@ -266,9 +275,12 @@
 			files = (
 				9E7DC314281CC248009BCC4A /* AddNote.swift in Sources */,
 				9E7DC2F7281C8E11009BCC4A /* ContentView.swift in Sources */,
+				9E7DC318281CCF31009BCC4A /* NoteDetail.swift in Sources */,
 				9E7DC2F9281C8E11009BCC4A /* NotesWatchAppApp.swift in Sources */,
 				9E7DC2FB281C8E11009BCC4A /* ComplicationController.swift in Sources */,
 				9E7DC312281CC04E009BCC4A /* Note.swift in Sources */,
+				9E7DC316281CCA5D009BCC4A /* ListNotes.swift in Sources */,
+				9E7DC31A281CD8B4009BCC4A /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
