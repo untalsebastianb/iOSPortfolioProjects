@@ -21,9 +21,8 @@ struct AddNote: View {
                 }
                 let note = Note(title: text)
                 notes.append(note)
+                Tools.shared.save(notes: notes)
                 text = ""
-                
-                print("NOTESS:", notes)
             }
         }
         
