@@ -11,10 +11,11 @@ struct AddNote: View {
     
     @State private var notes = [Note]()
     @State private var text = ""
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
         VStack {
-            TextField("Note", text: $text)
+            TextField("Write a note", text: $text)
             Button("Add note"){
                 guard text.isEmpty == false else {
                     return
@@ -23,7 +24,10 @@ struct AddNote: View {
                 notes.append(note)
                 Tools.shared.save(notes: notes)
                 text = ""
+                presentation.wrappedValue.dismiss()
             }
+        }.onAppear {
+            notes = Tools.shared.load()
         }
         
     }
