@@ -11,25 +11,31 @@ struct ListNotes: View {
     @State var notes = [Note]()
     
     var body: some View {
-        List {
-            ForEach(0..<notes.count, id: \.self) {
-                i in
-                NavigationLink(
-                    destination: NoteDetail(note: notes[i]),
-                    label: {
-                    Text("\(notes[i].title)")
-                        .lineLimit(1)
-                })
+        VStack {
+            Text("Notes: \(notes.count)")
+            List {
+                ForEach(0..<notes.count, id: \.self) {
+                    i in
+                    NavigationLink(
+                        destination: NoteDetail(note: notes[i]),
+                        label: {
+                        Text("\(notes[i].title)")
+                            .lineLimit(1)
+                    })
+                }
+                .onDelete(perform: delete)
             }
-            .onDelete(perform: delete)
+        }.onAppear {
+            notes = Tools.shared.load()
         }
+        
     }
     
     func delete(offset: IndexSet) {
         withAnimation {
             notes.remove(atOffsets: offset)
         }
-        
+        Tools.shared.save(notes: notes)
     }
 }
 
