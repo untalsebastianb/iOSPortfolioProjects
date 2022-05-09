@@ -18,7 +18,7 @@ class ViewController: UITableViewController {
     enum Error {
         static let alreadyUse = "Word already used"
         static let sameTitleWord = "You cannot use the same word"
-        static let shortWord = "Your world should have more that 3 letters"
+        static let shortWord = "Your world should have more than 3 letters"
         static let makeUpWord = "You can't just make them up, you know!"
         static let notPossible = "You can't spell that word from the given word"
         
@@ -116,7 +116,7 @@ class ViewController: UITableViewController {
         guard let currentWord = title?.lowercased() else { return false }
 
         if usedWords.contains(word) {
-            errorTitle = "Word already used"
+            errorTitle = "Be more original"
             errorMessage = Error.alreadyUse
             return false
         } else if (word == currentWord) {
