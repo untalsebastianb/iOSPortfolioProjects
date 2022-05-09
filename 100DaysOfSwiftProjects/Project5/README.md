@@ -1,5 +1,5 @@
 ## Hi 🙋🏼‍♂️
-On the days 27th, 28th, 29th of #100DaysOfSwift, I built a World Scramble game. <br>
+On the days 27th, 28th, 29th of #100DaysOfSwift, I built a Word Scramble game. <br>
 
 To do that, I applied some knowledge and good practices, on the game you are able to: <br>
 
