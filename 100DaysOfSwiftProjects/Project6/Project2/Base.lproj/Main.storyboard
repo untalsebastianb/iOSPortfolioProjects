@@ -18,6 +18,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-a6-eZE">
                                 <rect key="frame" x="95" y="100" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mpp-a6-eZE" secondAttribute="height" multiplier="112:57" id="Ma5-Uy-w9E"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -26,6 +29,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh7-g7-xkn">
                                 <rect key="frame" x="95" y="244" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bh7-g7-xkn" secondAttribute="height" multiplier="112:57" id="Qnu-v2-ffH"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="france"/>
                                 <connections>
@@ -34,6 +40,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx5-4H-ey4">
                                 <rect key="frame" x="95" y="388" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dx5-4H-ey4" secondAttribute="height" multiplier="112:57" id="1Nj-ia-7mG"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="poland"/>
                                 <connections>
@@ -46,9 +55,12 @@
                         <constraints>
                             <constraint firstItem="Dx5-4H-ey4" firstAttribute="centerX" secondItem="bh7-g7-xkn" secondAttribute="centerX" id="5ks-fn-4GC"/>
                             <constraint firstItem="Dx5-4H-ey4" firstAttribute="top" secondItem="bh7-g7-xkn" secondAttribute="bottom" constant="30" id="PpG-7P-gvH"/>
+                            <constraint firstItem="bh7-g7-xkn" firstAttribute="height" secondItem="Mpp-a6-eZE" secondAttribute="height" id="RBD-Vu-F3X"/>
                             <constraint firstItem="bh7-g7-xkn" firstAttribute="top" secondItem="Mpp-a6-eZE" secondAttribute="bottom" constant="30" id="T7c-TH-YXt"/>
+                            <constraint firstItem="Dx5-4H-ey4" firstAttribute="height" secondItem="bh7-g7-xkn" secondAttribute="height" id="UhJ-5c-WFB"/>
                             <constraint firstItem="bh7-g7-xkn" firstAttribute="centerX" secondItem="Mpp-a6-eZE" secondAttribute="centerX" id="Xr2-A9-kO0"/>
                             <constraint firstItem="Mpp-a6-eZE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="cVT-NK-PVb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Dx5-4H-ey4" secondAttribute="bottom" constant="20" id="iUl-n9-MSI"/>
                             <constraint firstItem="Mpp-a6-eZE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yG3-HN-v8G"/>
                         </constraints>
                     </view>
