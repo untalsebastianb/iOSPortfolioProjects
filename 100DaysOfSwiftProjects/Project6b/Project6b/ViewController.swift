@@ -61,12 +61,26 @@ class ViewController: UIViewController {
         var previous: UILabel?
     
         for label in [label1, label2, label3, label4, label5] {
-            label.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-            label.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-            label.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-            label.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
-            label.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5).isActive = true
+            
+           
+            NSLayoutConstraint.activate([
+                label.leftAnchor.constraint(equalTo: view.leftAnchor),
+                label.rightAnchor.constraint(equalTo: view.rightAnchor),
+                label.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+                label.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+                label.heightAnchor.constraint(equalToConstant: 88),
+                label.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5)
+            ])
+            
+//            This the same as above
+            
+//
+//            label.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//            label.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//            label.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+//            label.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+//            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
+//            label.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5).isActive = true
             
             if let previous = previous {
                 label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
