@@ -13,6 +13,8 @@
 		9EF07395283D0F7D006667D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF07393283D0F7D006667D0 /* Main.storyboard */; };
 		9EF07397283D0F7E006667D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EF07396283D0F7E006667D0 /* Assets.xcassets */; };
 		9EF0739A283D0F7E006667D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF07398283D0F7E006667D0 /* LaunchScreen.storyboard */; };
+		9EF073A3283F03DA006667D0 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9EF073A1283F03DA006667D0 /* level2.txt */; };
+		9EF073A4283F03DA006667D0 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9EF073A2283F03DA006667D0 /* level1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		9EF07396283D0F7E006667D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EF07399283D0F7E006667D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EF0739B283D0F7E006667D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EF073A1283F03DA006667D0 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		9EF073A2283F03DA006667D0 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		9EF0738C283D0F7D006667D0 /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
+				9EF073A2283F03DA006667D0 /* level1.txt */,
+				9EF073A1283F03DA006667D0 /* level2.txt */,
 				9EF0738D283D0F7D006667D0 /* AppDelegate.swift */,
 				9EF0738F283D0F7D006667D0 /* SceneDelegate.swift */,
 				9EF07391283D0F7D006667D0 /* ViewController.swift */,
@@ -125,8 +131,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EF073A4283F03DA006667D0 /* level1.txt in Resources */,
 				9EF0739A283D0F7E006667D0 /* LaunchScreen.storyboard in Resources */,
 				9EF07397283D0F7E006667D0 /* Assets.xcassets in Resources */,
+				9EF073A3283F03DA006667D0 /* level2.txt in Resources */,
 				9EF07395283D0F7D006667D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
