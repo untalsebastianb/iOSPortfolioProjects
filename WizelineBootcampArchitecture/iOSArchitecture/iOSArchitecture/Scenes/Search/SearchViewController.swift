@@ -43,7 +43,7 @@ class SearchViewController: UIViewController {
     }()
     
     private lazy var logoutButton: UIBarButtonItem = {
-        let logoutButton = UIBarButtonItem(image: UIImage(systemName: "xmark.circle"), style: .done, target: self, action: nil)
+        let logoutButton = UIBarButtonItem(image: UIImage(systemName: "xmark.circle"), style: .done, target: self, action: #selector(closeSession))
         logoutButton.tintColor = .white
         return logoutButton
     }()
@@ -71,6 +71,10 @@ class SearchViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         tableView.frame = view.bounds
+    }
+    
+    @objc private func closeSession() {
+        dismiss(animated: true)
     }
     
     private func setupNavigationItems() {
