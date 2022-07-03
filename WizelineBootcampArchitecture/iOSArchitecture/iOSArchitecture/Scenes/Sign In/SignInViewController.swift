@@ -47,6 +47,8 @@ class SignInViewController: NiblessViewController {
     }
     
     private func presentSearchScene() {
-        present(childViewController, animated: true)
+        let vc = childViewController as UINavigationController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }
