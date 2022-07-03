@@ -42,6 +42,12 @@ class SearchViewController: UIViewController {
         return searchController
     }()
     
+    private lazy var logoutButton: UIBarButtonItem = {
+        let logoutButton = UIBarButtonItem(image: UIImage(systemName: "xmark.circle"), style: .done, target: self, action: nil)
+        logoutButton.tintColor = .white
+        return logoutButton
+    }()
+    
     convenience init(viewModel: SearchSongViewModel) {
         self.init()
         self.viewModel = viewModel
@@ -49,8 +55,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Welcome!"
-        navigationItem.searchController = searchController
+        setupNavigationItems()
         view.addSubview(tableView)
         
         tableView.register(SongCell.self, forCellReuseIdentifier: SongCell.reuseIdentifier)
@@ -66,6 +71,12 @@ class SearchViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         tableView.frame = view.bounds
+    }
+    
+    private func setupNavigationItems() {
+        navigationItem.title = "Welcome!"
+        navigationItem.searchController = searchController
+        navigationItem.rightBarButtonItem = logoutButton
     }
     
     private func playDownload(_ song: Song) {
