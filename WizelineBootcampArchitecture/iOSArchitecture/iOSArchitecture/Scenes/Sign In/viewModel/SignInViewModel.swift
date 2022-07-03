@@ -33,7 +33,7 @@ extension SignInViewModel {
         
         var value: String {
             switch self {
-            case .username: return "osmar"
+            case .username: return "sebastian"
             case .password: return "password"
             }
         }
