@@ -15,16 +15,19 @@ struct Song: Decodable {
     let name: String
     let artist: String
     let previewUrl: String
+    let artistID: Int
     
-    init(name: String, artist: String, previewUrl: String = "") {
+    init(name: String, artist: String, previewUrl: String = "", artistID: Int) {
         self.name = name
         self.artist = artist
         self.previewUrl = previewUrl
+        self.artistID = artistID
     }
     
     enum CodingKeys: String, CodingKey {
         case name = "trackName"
         case artist = "artistName"
         case previewUrl = "previewUrl"
+        case artistID = "artistId"
     }
 }

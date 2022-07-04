@@ -31,6 +31,7 @@
 		3532DDF4286BD5CC007EC9CE /* AppDependecyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532DDF3286BD5CC007EC9CE /* AppDependecyContainer.swift */; };
 		3554CEFC286BA3810044AE8B /* List of content.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3554CEFB286BA3810044AE8B /* List of content.pdf */; };
 		3554CEFE286BA4020044AE8B /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554CEFD286BA4020044AE8B /* SongCell.swift */; };
+		9E5A543928734ED700BA9D04 /* AlbumSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A543828734ED700BA9D04 /* AlbumSearchRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		3532DDF3286BD5CC007EC9CE /* AppDependecyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependecyContainer.swift; sourceTree = "<group>"; };
 		3554CEFB286BA3810044AE8B /* List of content.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "List of content.pdf"; sourceTree = "<group>"; };
 		3554CEFD286BA4020044AE8B /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		9E5A543828734ED700BA9D04 /* AlbumSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		350E1AA02863BF9400970C8B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				9E5A543A287352A000BA9D04 /* Album */,
 				350E1AA12863BF9900970C8B /* song */,
 			);
 			path = model;
@@ -200,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				350E1AB62863D47C00970C8B /* MusicSearchRequest.swift */,
+				9E5A543828734ED700BA9D04 /* AlbumSearchRequest.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -271,6 +275,13 @@
 				3532DDF1286BD3B3007EC9CE /* SearchDependencyContainer.swift */,
 			);
 			path = container;
+			sourceTree = "<group>";
+		};
+		9E5A543A287352A000BA9D04 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Album;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 				3532DDE2286BB349007EC9CE /* NiblessViewController.swift in Sources */,
 				3532DDF2286BD3B3007EC9CE /* SearchDependencyContainer.swift in Sources */,
 				350E1AB02863CE6700970C8B /* NetworkError.swift in Sources */,
+				9E5A543928734ED700BA9D04 /* AlbumSearchRequest.swift in Sources */,
 				350E1A8B2863BEDD00970C8B /* SceneDelegate.swift in Sources */,
 				350E1AAE2863CCE000970C8B /* RequestProtocol.swift in Sources */,
 				350E1ABA2863D99A00970C8B /* SearchRepository.swift in Sources */,

@@ -23,6 +23,7 @@ class SearchSongViewModel {
     
     @Published public var songInput: String = ""
     @Published public private(set) var songResults: [Song] = []
+    @Published public private(set) var isSearchByArtist: Bool = false
     
     private func searchForSong(_ song: String) {
         musicSearchRepository.search(song)
@@ -36,5 +37,15 @@ class SearchSongViewModel {
     
     private func updateSongResult(_ songResults: [Song]) {
         self.songResults = songResults
+        print(songResults)
+        searchByArtist()
     }
+    
+    private func searchByArtist() -> Void {
+        let first5 = self.songResults.prefix(5)
+        guard let artistID = first5.first?.artistID else { return }
+        let haveSameArtist = first5.allSatisfy { $0.artistID == artistID }
+        self.isSearchByArtist = haveSameArtist
+    }
+    
 }

@@ -114,6 +114,8 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let songCell = cell as? SongCell else { print("Error trying to display a custom cell"); return }
         let song = viewModel.songResults[indexPath.row]
+        print("🎮", viewModel.isSearchByArtist)
+        print(viewModel.songResults)
         songCell.configureUI(with: song)
     }
     
@@ -124,7 +126,17 @@ extension SearchViewController: UITableViewDelegate {
 }
 
 extension SearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("😎",viewModel.songResults.count)
         return viewModel.songResults.count
     }
     
