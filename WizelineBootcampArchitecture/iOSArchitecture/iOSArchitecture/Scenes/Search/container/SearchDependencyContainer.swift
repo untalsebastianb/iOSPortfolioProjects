@@ -17,10 +17,15 @@ final class SearchDependencyContainer {
         return MusicNetworkManager()
     }
     
+    private func makeAlbumSearchRequest() -> AlbumSearchRequest {
+        return AlbumSearchRequest()
+    }
+    
     private func makeMusicSearchRepository() -> MusicSearchRepository {
         let musicSearchRequest = makeMusicSearchRequest()
         let musicNetworkManager = makeMusicNetworkManager()
-        return MusicSearchRepository(musicSearchRequest: musicSearchRequest, musicNetworkManager: musicNetworkManager)
+        let albumSearchRequest = makeAlbumSearchRequest()
+        return MusicSearchRepository(musicSearchRequest: musicSearchRequest, musicNetworkManager: musicNetworkManager, albumSearchRequest: albumSearchRequest)
     }
     
     private func makeSearchSongViewModel() -> SearchSongViewModel {
