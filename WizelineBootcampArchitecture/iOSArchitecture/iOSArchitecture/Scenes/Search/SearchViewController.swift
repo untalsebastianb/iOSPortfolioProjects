@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 class SearchViewController: UIViewController {
-
+    
     private var viewModel: SearchSongViewModel!
     private var subscriptions = Set<AnyCancellable>()
     
@@ -59,6 +59,7 @@ class SearchViewController: UIViewController {
         view.addSubview(tableView)
         
         tableView.register(SongCell.self, forCellReuseIdentifier: SongCell.reuseIdentifier)
+        tableView.register(AlbumCellTableViewCell.self, forCellReuseIdentifier: AlbumCellTableViewCell.reuseIdentifier)
         
         viewModel
             .$songResults
@@ -66,6 +67,21 @@ class SearchViewController: UIViewController {
             .sink { [weak self] _ in
                 self?.tableView.reloadData()
             }.store(in: &subscriptions)
+        
+        viewModel
+            . $albumResult
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &subscriptions)
+        
+        viewModel
+            .$isSearchByArtist
+            .sink { value in
+                print(value)
+            }
+            .store(in: &subscriptions)
     }
     
     override func viewWillLayoutSubviews() {
@@ -112,11 +128,16 @@ extension SearchViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let songCell = cell as? SongCell else { print("Error trying to display a custom cell"); return }
-        let song = viewModel.songResults[indexPath.row]
-        print("🎮", viewModel.isSearchByArtist)
-        print(viewModel.songResults)
-        songCell.configureUI(with: song)
+        if cell.reuseIdentifier == SongCell.reuseIdentifier {
+            guard let songCell = cell as? SongCell else { print("Error trying to display a custom cell"); return }
+            let song = viewModel.songResults[indexPath.row]
+            songCell.configureUI(with: song)
+            
+        } else if cell.reuseIdentifier == AlbumCellTableViewCell.reuseIdentifier && viewModel.isSearchByArtist == true {
+            guard let albumCell = cell as? AlbumCellTableViewCell else { print("Error trying to display a custom cell"); return }
+            let album = viewModel.albumResult[indexPath.row]
+            albumCell.configureUI(with: album)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -127,20 +148,42 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerLabel = UILabel()
+        if section == 0 {
+            if viewModel.isSearchByArtist {
+                headerLabel.text = "Albums"
+                headerLabel.backgroundColor =  #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1)
+                headerLabel.tintColor = .black
+            }
+        } else {
+            headerLabel.text = "Songs"
+            headerLabel.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1)
+            headerLabel.tintColor = .black
+        }
+        return headerLabel
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 20
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("😎",viewModel.songResults.count)
-        return viewModel.songResults.count
+        if section == 0  {
+            return viewModel.albumResult.count
+        } else {
+            return viewModel.songResults.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: AlbumCellTableViewCell.reuseIdentifier, for: indexPath) as! AlbumCellTableViewCell
+        }
         return tableView.dequeueReusableCell(withIdentifier: SongCell.reuseIdentifier, for: indexPath)
     }
 }
