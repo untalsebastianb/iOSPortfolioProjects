@@ -23,6 +23,7 @@ class SearchSongViewModel {
     
     @Published public var songInput: String = ""
     @Published public private(set) var songResults: [Song] = []
+    @Published public private(set) var albumResult: [Album] = []
     @Published public private(set) var isSearchByArtist: Bool = false
     
     private func searchForSong(_ song: String) {
@@ -31,14 +32,36 @@ class SearchSongViewModel {
                 receiveCompletion: { _ in },
                 receiveValue: { [weak self] songList in
                     self?.updateSongResult(songList.results)
+                    if self?.isSearchByArtist == true {
+                        guard let artistID = self?.getArtistID() else { return }
+                        self?.searchForAlmbum(artistID)
+                    } else {
+                        self?.albumResult = []
+                    }
+                       
                 }
             ).store(in: &subscriptions)
     }
     
+    private func searchForAlmbum(_ id: Int){
+        musicSearchRepository.searchAlbum(id)
+            .sink(
+                receiveCompletion: { _ in},
+                receiveValue: { [weak self] albumList in
+                    self?.albumResult = Array(albumList.results.prefix(5))
+                }
+            )
+            .store(in: &subscriptions)
+    }
+    
     private func updateSongResult(_ songResults: [Song]) {
         self.songResults = songResults
-        print(songResults)
         searchByArtist()
+    }
+    
+    private func getArtistID() -> Int {
+        guard let artistID = self.songResults.first?.artistID else { return 0}
+        return artistID
     }
     
     private func searchByArtist() -> Void {
@@ -47,5 +70,4 @@ class SearchSongViewModel {
         let haveSameArtist = first5.allSatisfy { $0.artistID == artistID }
         self.isSearchByArtist = haveSameArtist
     }
-    
 }
