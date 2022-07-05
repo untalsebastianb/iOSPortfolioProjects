@@ -10,4 +10,5 @@ import Foundation
 
 protocol SearchRepository {
     func search(_ song: String) -> AnyPublisher<SongList, Error>
+    func searchAlbum(_ id: Int) -> AnyPublisher<AlbumList, Error>
 }

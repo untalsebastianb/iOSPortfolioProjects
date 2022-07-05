@@ -11,7 +11,7 @@ class AlbumSearchRequest: RequestProtocol {
     
     var id: Int
     
-    init(id: Int) {
+    init(id: Int = 0) {
         self.id = id
     }
     

@@ -33,6 +33,18 @@ class MusicNetworkManager: NetworkManagerProtocol {
         return JSONDecoder()
     }
     
+    func searchAlbum(_ request: URLRequest) -> AnyPublisher<AlbumList, Error> {
+        return apiManager.perform(session, request: request)
+            .tryMap {output -> Data in
+                return output.data
+            }
+            .decode(type: AlbumList.self, decoder: decoder)
+            .mapError { error in
+                return error
+            }
+            .eraseToAnyPublisher()
+    }
+    
     func search(_ request: URLRequest) -> AnyPublisher<SongList, Error> {
         return apiManager.perform(session, request: request)
             .tryMap { output -> Data in
