@@ -13,6 +13,8 @@ final class SongCell: UITableViewCell {
         return String(describing: self)
     }
     
+    var didMoreButtonTapped: (() -> Void)?
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -41,14 +43,19 @@ final class SongCell: UITableViewCell {
         return imageView
     }()
     
-    private let moreButton: UIButton = {
+    private lazy var moreButton: UIButton = {
         let button = UIButton()
         let image = UIImage(systemName: "ellipsis")
         button.setImage(image, for: .normal)
         button.tintColor = .gray
+        button.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc func moreButtonTapped() {
+        didMoreButtonTapped?()
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -132,6 +132,11 @@ extension SearchViewController: UITableViewDelegate {
             guard let songCell = cell as? SongCell else { print("Error trying to display a custom cell"); return }
             let song = viewModel.songResults[indexPath.row]
             songCell.configureUI(with: song)
+            songCell.didMoreButtonTapped = { [weak self] in
+                let alert = UIAlertController(title: "Favorites", message: "Adding the song to favorties", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .cancel))
+                self?.present(alert, animated: true)   
+            }
             
         } else if cell.reuseIdentifier == AlbumCellTableViewCell.reuseIdentifier && viewModel.isSearchByArtist == true {
             guard let albumCell = cell as? AlbumCellTableViewCell else { print("Error trying to display a custom cell"); return }
