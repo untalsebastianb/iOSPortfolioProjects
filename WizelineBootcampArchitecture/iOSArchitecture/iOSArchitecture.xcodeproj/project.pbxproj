@@ -165,6 +165,7 @@
 		350E1AA42863C01000970C8B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9E5A543F28792E8D00BA9D04 /* Favorites */,
 				3532DDE3286BB954007EC9CE /* Sign In */,
 				350E1AA52863C01700970C8B /* Search */,
 				3532DDF3286BD5CC007EC9CE /* AppDependecyContainer.swift */,
@@ -288,6 +289,13 @@
 				9E5A543B2873C03900BA9D04 /* Album.swift */,
 			);
 			path = Album;
+			sourceTree = "<group>";
+		};
+		9E5A543F28792E8D00BA9D04 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

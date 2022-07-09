@@ -135,7 +135,7 @@ extension SearchViewController: UITableViewDelegate {
             songCell.didMoreButtonTapped = { [weak self] in
                 let alert = UIAlertController(title: "Favorites", message: "Adding the song to favorties", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Close", style: .cancel))
-                self?.present(alert, animated: true)   
+                self?.present(alert, animated: true)
             }
             
         } else if cell.reuseIdentifier == AlbumCellTableViewCell.reuseIdentifier && viewModel.isSearchByArtist == true {

@@ -14,9 +14,9 @@ class SignInViewController: NiblessViewController {
     
     private var viewModel: SignInViewModel
     
-    private let childViewController: UINavigationController
+    private let childViewController: UITabBarController
     
-    init(viewModel: SignInViewModel, childViewController: UINavigationController) {
+    init(viewModel: SignInViewModel, childViewController: UITabBarController) {
         self.viewModel = viewModel
         self.childViewController = childViewController
         super.init()
@@ -47,8 +47,6 @@ class SignInViewController: NiblessViewController {
     }
     
     private func presentSearchScene() {
-        let vc = childViewController as UINavigationController
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        present(childViewController, animated: true)
     }
 }
