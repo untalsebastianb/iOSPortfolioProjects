@@ -1,7 +1,7 @@
 # Challenge iOS Architecture
 
 Credentials: <br>
-username 🕴: Sebastian <br>
+username 🕴: sebastian <br>
 password 🔐: password <br>
 
 Thank you for participating in the iOS Architecture Bootcamp!
