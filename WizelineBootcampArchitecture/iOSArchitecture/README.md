@@ -1,5 +1,9 @@
 # Challenge iOS Architecture
 
+Credentials:
+username: Sebastian
+password: password
+
 Thank you for participating in the iOS Architecture Bootcamp!
 
 This README file contains the instructions to complete the challenge for the iOS Architecture Bootcamp.
