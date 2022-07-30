@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E5D8E5528958C4D00AC9076 /* CalculatePrimeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D8E5428958C4D00AC9076 /* CalculatePrimeOperation.swift */; };
 		D372759C2446053F0051F3F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372759B2446053F0051F3F8 /* AppDelegate.swift */; };
 		D372759E2446053F0051F3F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372759D2446053F0051F3F8 /* SceneDelegate.swift */; };
 		D37275A02446053F0051F3F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372759F2446053F0051F3F8 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E5D8E5428958C4D00AC9076 /* CalculatePrimeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePrimeOperation.swift; sourceTree = "<group>"; };
 		D37275982446053F0051F3F8 /* ConcurrencyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D372759B2446053F0051F3F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D372759D2446053F0051F3F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				D372759B2446053F0051F3F8 /* AppDelegate.swift */,
 				D372759D2446053F0051F3F8 /* SceneDelegate.swift */,
 				D372759F2446053F0051F3F8 /* ContentView.swift */,
+				9E5D8E5428958C4D00AC9076 /* CalculatePrimeOperation.swift */,
 				D37275A12446053F0051F3F8 /* Assets.xcassets */,
 				D37275A62446053F0051F3F8 /* LaunchScreen.storyboard */,
 				D37275A92446053F0051F3F8 /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5D8E5528958C4D00AC9076 /* CalculatePrimeOperation.swift in Sources */,
 				D372759C2446053F0051F3F8 /* AppDelegate.swift in Sources */,
 				D372759E2446053F0051F3F8 /* SceneDelegate.swift in Sources */,
 				D37275A02446053F0051F3F8 /* ContentView.swift in Sources */,

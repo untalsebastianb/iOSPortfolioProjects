@@ -33,41 +33,62 @@
 import SwiftUI
 
 struct ContentView: View {
-  var body: some View {
-    VStack {
-      Spacer()
-      DatePicker(selection: .constant(Date()), label: { Text("Date")})
-        .labelsHidden()
-      Button(action: calculatePrimes, label: { Text("Calculate Primes") })
-      Spacer()
+    
+    let operation = CalculatePrimeOperation()
+    @State private var calculationDisabled = false
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            DatePicker(selection: .constant(Date()), label: { Text("Date")})
+                .labelsHidden()
+            Button(action: calculatePrimes, label: { Text("Calculate Primes") })
+                .disabled(calculationDisabled)
+            Spacer()
+        }
     }
-  }
-  
-  func calculatePrimes() {
-    for number in 0...1_000_000 {
-      let isPrimeNumber = isPrime(number: number)
-      print("\(number) is prime: \(isPrimeNumber)")
+    
+    func calculatePrimes() {
+        calculationDisabled = true
+        
+        // with GCD
+        DispatchQueue.global(qos: .userInitiated).async {
+            for number in 0...1_000_000 {
+                let isPrimeNumber = self.isPrime(number: number)
+                print("\(number) is prime: \(isPrimeNumber)")
+            }
+        }
+        
+        
+        // create the opetarionQueue
+        let queue = OperationQueue()
+        // add the operation to the Queue - to not create an individual class I can run the code in a clousure
+        queue.addOperation {
+            for number in 0...1_000_000 {
+                let isPrimeNumber = self.isPrime(number: number)
+                print("\(number) is prime: \(isPrimeNumber)")
+            }
+            self.calculationDisabled = false
+        }
     }
-  }
-  
-  func isPrime(number: Int) -> Bool {
-    if number <= 1 {
-      return false
+    
+    func isPrime(number: Int) -> Bool {
+        if number <= 1 {
+            return false
+        }
+        if number <= 3 {
+            return true
+        }
+        var i = 2
+        while i * i <= number {
+            if number % i == 0 {
+                return false
+            }
+            i = i + 2
+        }
+        return true
     }
-    if number <= 3 {
-      return true
-    }
-    var i = 2
-    while i * i <= number {
-      if number % i == 0 {
-        return false
-      }
-      i = i + 2
-    }
-    return true
-  }
-  
-  
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
