@@ -66,6 +66,16 @@ struct SongDetailView: View {
     guard let albumImageUrl = URL(string: musicItem.artwork) else {
       return
     }
+      let task = URLSession.shared.downloadTask(with: albumImageUrl) { location, response, error in
+          guard let location = location,
+                let imageData = try? Data(contentsOf: location),
+                let image = UIImage(data: imageData) else { return }
+          
+          DispatchQueue.main.async {
+              self.musicImage = image
+          }
+      }
+      task.resume()
   }
   
   func downloadButtonTapped() {
