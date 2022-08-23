@@ -36,7 +36,7 @@ struct SongDetailView: View {
     
     @Binding var musicItem: MusicItem
     @State private var playMusic = false
-    @ObservedObject var download = SongDownload()
+    @ObservedObject var download = (UIApplication.shared.delegate as? AppDelegate)?.currentDownload ?? SongDownload()
     @State private var musicImage = UIImage(named: "c_urlsession_card_artwork")!
     
     var body: some View {

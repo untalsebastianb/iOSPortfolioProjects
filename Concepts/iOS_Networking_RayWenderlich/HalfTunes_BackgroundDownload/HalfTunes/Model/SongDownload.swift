@@ -37,7 +37,8 @@ class SongDownload: NSObject, ObservableObject {
     var downloadTask: URLSessionDownloadTask?
     var downloadURL: URL?
     var resumeData: Data?
-    
+    var urlSession: URLSession!
+    var completionHandler: (() -> Void)?
     
     @Published var downloadLocation: URL?
     @Published var downloadedAmount: Float = 0
@@ -50,10 +51,12 @@ class SongDownload: NSObject, ObservableObject {
         case finished
     }
     
-    lazy var urlSession: URLSession = {
-        let configuration = URLSessionConfiguration.default
-        return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-    }()
+    override init() {
+        super.init()
+        let configuration = URLSessionConfiguration.background(withIdentifier: "com.rayWenderlich.background")
+        urlSession = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+        
+    }
     
     func fetchSongAtUrl(_ item: URL) {
         downloadURL = item
@@ -93,6 +96,14 @@ class SongDownload: NSObject, ObservableObject {
 
 extension SongDownload: URLSessionDownloadDelegate {
     
+    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+        DispatchQueue.main.async {
+            guard let completionHandler = self.completionHandler else { return }
+            completionHandler()
+            print("called completion handler")
+        }
+    }
+    
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         
         DispatchQueue.main.async {
@@ -113,10 +124,8 @@ extension SongDownload: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         
         let fileManager = FileManager.default
-        guard let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first,
-              let lastPathComponent = downloadURL?.lastPathComponent else {
-            fatalError()
-        }
+        guard let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { fatalError() }
+        let lastPathComponent = downloadURL?.lastPathComponent ?? "song.m4a"
         
         let destinationUrl = documentsPath.appendingPathComponent(lastPathComponent)
         do {
