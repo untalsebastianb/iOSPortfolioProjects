@@ -33,31 +33,31 @@
 import SwiftUI
 
 struct ContentView: View {
-  
-  @State private var chatMessage = ""
-  @State private var messages: [String] = []
-  
-  var body: some View {
-    VStack {
-      HStack {
-        TextField("Enter a message", text: $chatMessage)
-          .padding([.leading, .top, .bottom])
-        Button("Send", action: {})
-          .padding(.trailing)
-      }
-      
-      List(messages, id:\.self) { message in
-        Text(message)
-      }
+    
+    @State private var chatMessage = ""
+    @State private var messages: [String] = []
+    
+    var body: some View {
+        VStack {
+            HStack {
+                TextField("Enter a message", text: $chatMessage)
+                    .padding([.leading, .top, .bottom])
+                Button("Send", action: {})
+                    .padding(.trailing)
+            }
+            
+            List(messages, id:\.self) { message in
+                Text(message)
+            }
+        }
     }
-  }
-  
-  
+    
+    
 }
 
 struct ChatView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-  }
+    static var previews: some View {
+        ContentView()
+    }
 }
 
