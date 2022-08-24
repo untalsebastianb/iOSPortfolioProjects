@@ -9,6 +9,7 @@ the main idea was to send data to a server using URLSessionWebSocketTask as the 
 setting up the connection and sending messages to the server. <br>
 
 Demo here:
-
+![client side](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/Concepts/iOS_Networking_RayWenderlich/HalfTunes_WebSocket/Screen%20Shot%202022-08-24%20at%209.15.42%20AM.png) <br>
+![server side](https://github.com/untalsebastianb/iOSPortfolioProjects/blob/main/Concepts/iOS_Networking_RayWenderlich/HalfTunes_WebSocket/Screen%20Shot%202022-08-24%20at%209.15.56%20AM.png)
 
 
