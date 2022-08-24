@@ -36,13 +36,14 @@ struct ContentView: View {
     
     @State private var chatMessage = ""
     @State private var messages: [String] = []
+    @State private var webSocketTask: URLSessionWebSocketTask!
     
     var body: some View {
         VStack {
             HStack {
                 TextField("Enter a message", text: $chatMessage)
                     .padding([.leading, .top, .bottom])
-                Button("Send", action: {})
+                Button("Send", action: sendMessageTapped)
                     .padding(.trailing)
             }
             
@@ -50,8 +51,52 @@ struct ContentView: View {
                 Text(message)
             }
         }
+        .onAppear {
+            setupSocket()
+        }
+        .onDisappear {
+            closeSocket()
+        }
     }
     
+    func setupSocket() {
+        let websocketURL = URL(string: "ws://localhost:8080/chat")!
+        webSocketTask = URLSession.shared.webSocketTask(with: websocketURL)
+        listenForMessages()
+        webSocketTask.resume()
+    }
+    
+    func listenForMessages() {
+        self.webSocketTask.receive { result in
+            switch result {
+            case .failure(let error):
+                print("Failed to receive message: \(error)")
+            case .success(let message):
+                switch message {
+                case .string(let text):
+                    self.messages.insert(text, at: 0)
+                case .data(let data):
+                    print("Received binary message: \(data)")
+                @unknown default:
+                    fatalError()
+                }
+                self.listenForMessages()
+            }
+        }
+    }
+    
+    func closeSocket() {
+        webSocketTask.cancel(with: .goingAway, reason: nil)
+    }
+    
+    func sendMessageTapped() {
+        let message = URLSessionWebSocketTask.Message.string(self.chatMessage)
+        self.webSocketTask.send(message) { error in
+            if let error = error {
+                print("error \(error.localizedDescription)")
+            }
+        }
+    }
     
 }
 
