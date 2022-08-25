@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0D9F1928B7A57300C0CE75 /* MediaQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D9F1828B7A57300C0CE75 /* MediaQuery.swift */; };
 		D36E7F8D24200A1800C411FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E7F8C24200A1800C411FA /* AppDelegate.swift */; };
 		D36E7F8F24200A1800C411FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E7F8E24200A1800C411FA /* SceneDelegate.swift */; };
 		D36E7F9124200A1800C411FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E7F9024200A1800C411FA /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E0D9F1828B7A57300C0CE75 /* MediaQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaQuery.swift; sourceTree = "<group>"; };
 		D36E7F8924200A1800C411FA /* HalfTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalfTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36E7F8C24200A1800C411FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36E7F8E24200A1800C411FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				F5FA5851243F081800B1CB3A /* MediaResponse.swift */,
+				9E0D9F1828B7A57300C0CE75 /* MediaQuery.swift */,
 				D36E7F9024200A1800C411FA /* ContentView.swift */,
 				D36E7F9224200A1A00C411FA /* Assets.xcassets */,
 				D36E7F9724200A1A00C411FA /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				F5FA5852243F081800B1CB3A /* MediaResponse.swift in Sources */,
 				D36E7F8D24200A1800C411FA /* AppDelegate.swift in Sources */,
+				9E0D9F1928B7A57300C0CE75 /* MediaQuery.swift in Sources */,
 				D36E7F8F24200A1800C411FA /* SceneDelegate.swift in Sources */,
 				D36E7F9124200A1800C411FA /* ContentView.swift in Sources */,
 			);

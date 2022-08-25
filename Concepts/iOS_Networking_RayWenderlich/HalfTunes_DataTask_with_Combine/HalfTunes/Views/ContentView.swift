@@ -35,13 +35,20 @@ import Combine
 
 struct ContentView: View {
     
+    @ObservedObject var mediaQuery = MediaQuery()
+    
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Search", text: .constant("Search"))
+                TextField("Search", text: $mediaQuery.itunesQuery)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                Spacer()
+                List(mediaQuery.searchResults) { item in
+                    VStack(alignment: .leading) {
+                        Text(item.trackName).font(.headline)
+                        Text(item.artistName).font(.subheadline)
+                    }
+                }
             }
             .navigationBarTitle("Search Music")
         }
