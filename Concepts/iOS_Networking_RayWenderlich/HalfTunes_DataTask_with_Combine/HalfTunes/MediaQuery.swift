@@ -30,7 +30,9 @@ class MediaQuery: ObservableObject {
     
     func fetchMusic(for url: URL ) -> AnyPublisher<[MusicItem], Never> {
         URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data)
+            .map {
+                return $0.data
+            }
             .decode(type: MediaResponse.self, decoder: JSONDecoder())
             .map(\.results)
             .replaceError(with: [])
