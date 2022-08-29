@@ -34,22 +34,22 @@ import UIKit
 import Combine
 
 struct ArtistInfo: Codable {
-  let biography: String
-  let photo: String
+    let biography: String
+    let photo: String
 }
 
 struct Token: Codable {
-  let location: String
+    let location: String
 }
 
 final class ArtistQuery: ObservableObject {
-  
-  @Published var photo = UIImage(named: "c_urlsession_card_artwork")!
-  @Published var bio = ""
-  
-  var cancellables: Set<AnyCancellable> = []
-  
-  init() {
-    let locationUrl = URL(string: "https://api.npoint.io/e0b6213b830ade9ac1f8")!
-  }
+    
+    @Published var photo = UIImage(named: "c_urlsession_card_artwork")!
+    @Published var bio = ""
+    
+    var cancellables: Set<AnyCancellable> = []
+    
+    init() {
+        let locationUrl = URL(string: "https://api.npoint.io/e0b6213b830ade9ac1f8")!
+    }
 }
