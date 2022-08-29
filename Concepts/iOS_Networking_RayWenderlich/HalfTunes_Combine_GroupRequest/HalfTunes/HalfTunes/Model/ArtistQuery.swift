@@ -34,26 +34,27 @@ import UIKit
 import Combine
 
 struct ArtistBio: Codable {
-  let text: String
-  
-  enum CodingKeys: String, CodingKey {
-    case text = "biography"
-  }
+    let text: String
+    
+    enum CodingKeys: String, CodingKey {
+        case text = "biography"
+    }
 }
 
 struct ArtistImage: Codable {
-  let photo: String
+    let photo: String
 }
 
 final class ArtistQuery: ObservableObject {
-  
-  @Published var photo = UIImage(named: "c_urlsession_card_artwork")!
-  @Published var bio = ""
-  
-  var subscriptions: Set<AnyCancellable> = []
-  
-  init() {
-    let bioURL = URL(string: "https://api.npoint.io/94eb9171de74dd682f6c")!
-    let photoUrl = URL(string: "https://api.npoint.io/661957f61f715ef25112")!
-  }
+    
+    @Published var photo = UIImage(named: "c_urlsession_card_artwork")!
+    @Published var bio = ""
+    
+    var subscriptions: Set<AnyCancellable> = []
+    
+    init() {
+        let bioURL = URL(string: "https://api.npoint.io/94eb9171de74dd682f6c")!
+        
+        let photoUrl = URL(string: "https://api.npoint.io/661957f61f715ef25112")!
+    }
 }
