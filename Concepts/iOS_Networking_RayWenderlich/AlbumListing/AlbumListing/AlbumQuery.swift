@@ -45,6 +45,15 @@ final class AlbumQuery: ObservableObject {
     
     init() {
         let albumsURL = URL(string: "https://api.npoint.io/e502540aa6515916620e")!
-        
+        URLSession.shared.dataTaskPublisher(for: albumsURL)
+            .map { $0.data }
+            .decode(type: Albums.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                print(completion)
+            } receiveValue: { album in
+                self.titles = album.titles
+            }
+            .store(in: &cancellables)
     }
 }
