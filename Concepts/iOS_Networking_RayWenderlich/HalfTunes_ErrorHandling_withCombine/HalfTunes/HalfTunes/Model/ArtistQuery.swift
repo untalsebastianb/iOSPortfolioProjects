@@ -36,10 +36,40 @@ import Combine
 struct ArtistInfo: Codable {
     let biography: String
     let photo: String
-    let totalAlbums: Int
 }
 
 final class ArtistQuery: ObservableObject {
+    
+    enum Error: Swift.Error, CustomStringConvertible {
+        case network
+        case parsing
+        case unknown
+        
+        var description: String {
+            switch self {
+            case .network:
+                return "A network error occured."
+            case .parsing:
+                return "Unable to parse server response."
+            case .unknown:
+                return "An unkwnon error ocurred"
+            }
+        }
+        
+        init(_ error: Swift.Error) {
+            switch error {
+            case is URLError:
+                self = .network
+            case is DecodingError:
+                self = .parsing
+            default:
+                self = error as? ArtistQuery.Error ?? .unknown
+            }
+        }
+    }
+    
+    
+    
     
     @Published var photo = UIImage(named: "c_urlsession_card_artwork")!
     @Published var bio = "Loading..."
@@ -51,8 +81,44 @@ final class ArtistQuery: ObservableObject {
     init() {
         
         let locationURL = URL(string: "https://api.npoint.io/f09b834bc4aa9aee035c")!
+        let artistPublisher = URLSession.shared.dataTaskPublisher(for: locationURL)
+            .tryMap { result in
+                guard let response = result.response as? HTTPURLResponse else {
+                  throw ArtistQuery.Error.network
+                }
+                guard (200..<300).contains(response.statusCode) else {
+                  throw ArtistQuery.Error.network
+                }
+                return result.data
+              }
+            .decode(type: ArtistInfo.self, decoder: JSONDecoder())
+            .mapError(ArtistQuery.Error.init)
         
+        let photoPublisher = artistPublisher
+          .compactMap {
+              URL(string: $0.photo)}
+          .flatMap {
+            URLSession.shared.dataTaskPublisher(for: $0)
+              .compactMap { UIImage(data: $0.data)}
+              .mapError(ArtistQuery.Error.init)
+          }
         
+        Publishers.Zip(artistPublisher, photoPublisher)
+          .receive(on: DispatchQueue.main)
+          .sink(receiveCompletion: { completion in
+              print(completion)
+            switch completion {
+            case .failure(let error):
+              self.didFail = true
+              self.errorMessage = error.description
+            default:
+              break
+            }
+          }, receiveValue: { artist, photo in
+            self.bio = artist.biography
+            self.photo = photo
+          })
+          .store(in: &cancellables)
     }
 }
 
