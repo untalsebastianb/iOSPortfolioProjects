@@ -35,16 +35,16 @@ import Foundation
 import Combine
 
 struct Albums: Codable {
-  var titles: [String]
+    var titles: [String]
 }
 
 final class AlbumQuery: ObservableObject {
-  
-  @Published var titles: [String] = []
-  var cancellables: Set<AnyCancellable> = []
-  
-  init() {
-    let albumsURL = URL(string: "https://api.npoint.io/e502540aa6515916620e")!
-
-  }
+    
+    @Published var titles: [String] = []
+    var cancellables: Set<AnyCancellable> = []
+    
+    init() {
+        let albumsURL = URL(string: "https://api.npoint.io/e502540aa6515916620e")!
+        
+    }
 }
