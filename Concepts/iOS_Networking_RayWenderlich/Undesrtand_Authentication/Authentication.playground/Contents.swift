@@ -48,25 +48,91 @@ let newEndpoint = URL(string: "new", relativeTo: baseURL)
 
 //: `Codable` structs for User, Acronym, Auth:
 struct User: Codable {
-  let name: String
-  let email: String
-  let password: String
+    let name: String
+    let email: String
+    let password: String
 }
 
 struct Acronym: Codable {
-  let short: String
-  let long: String
+    let short: String
+    let long: String
 }
 
 struct Auth: Codable {
-  let token: String
+    let token: String
 }
 
 let encoder = JSONEncoder()
 let decoder = JSONDecoder()
 
-//: Prep a new user
 let user = User(name: "jo", email: "jo@razeware.com", password: "password")
+let loginString = "\(user.email):\(user.password)"
+guard let loginData = loginString.data(using: .utf8) else {
+    fatalError()
+}
+let encodedString = loginData.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+
+
+guard let endpontURL = loginEndpoint else {
+    fatalError()
+}
+
+var loginRequest = URLRequest(url: endpontURL)
+loginRequest.httpMethod = "POST"
+
+// set credentials on the authorization header field
+loginRequest.allHTTPHeaderFields = [
+    "accept": "application/json",
+    "content-type": "applicattion/json",
+    "authorization": "Basic \(encodedString)"
+]
+
+var auth = Auth(token: "")
+// config the login request with the credentials
+session.dataTask(with: loginRequest) { data, response, error in
+    guard let response = response, let data = data else {
+        fatalError()
+    }
+    print(response)
+    
+    // receive and set the token for the next request
+    do {
+        auth = try decoder.decode(Auth.self, from: data)
+        auth.token
+    } catch {
+        print(error)
+    }
+    
+    guard let newAcronymURL = newEndpoint else {
+        fatalError()
+    }
+    
+    // config the token request with the token received
+    var tokenAuthRequest = URLRequest(url: newAcronymURL)
+    tokenAuthRequest.httpMethod = "POST"
+    tokenAuthRequest.allHTTPHeaderFields = [
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "Bearer \(auth.token)"
+    ]
+    
+    //inject the acronym to the httpBody
+    let acronym = Acronym(short: "MATH", long: "Mental Assault To Humans")
+    do {
+        tokenAuthRequest.httpBody = try encoder.encode(acronym)
+    } catch {
+        print(error)
+    }
+    
+    session.dataTask(with: tokenAuthRequest) { _, response, _ in
+        guard let response = response else {
+            fatalError()
+        }
+        print(response)
+
+    }.resume()
+}.resume()
+    
 
 
 
