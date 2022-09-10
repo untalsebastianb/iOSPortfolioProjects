@@ -32,31 +32,35 @@
 
 
 import UIKit
+import Foundation
 
 guard let url = URL(string: "https://www.google.com") else {
-  fatalError()
+    fatalError()
 }
 let request = URLRequest(url: url)
 
 let task = URLSession.shared.dataTask(with: request) { data, response, error in
-  if let httpResponse = response as? HTTPURLResponse,
-    let fields = httpResponse.allHeaderFields as? [String: String] {
-    let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url)
-    if let cookie = cookies.first {
-      
-      print("cookie name: \(cookie.name)")
-      print("cookie value: \(cookie.value)")
-      
-      var cookieProperties: [HTTPCookiePropertyKey: Any] = [:]
-      cookieProperties[.name] = cookie.name
-      cookieProperties[.value] = cookie.value
-      cookieProperties[.domain] = cookie.domain
-      
-      if let myCookie = HTTPCookie(properties: cookieProperties) {
-        HTTPCookieStorage.shared.setCookie(myCookie)
-        HTTPCookieStorage.shared.deleteCookie(cookie)
-      }
-      
+//    Gettin cookies from the Response
+    if let httpResponse = response as? HTTPURLResponse,
+       let fields = httpResponse.allHeaderFields as? [String: String] {
+        let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url)
+        if let cookie = cookies.first {
+            print("cookie name \(cookie.name)")
+            print("cookie value \(cookie.value)")
+            
+//            Setting cookies properties
+            var cookieProperties: [HTTPCookiePropertyKey: Any] = [:]
+            cookieProperties[.name] = cookie.name
+            cookieProperties[.value] = cookie.value
+            cookieProperties[.domain] = cookie.domain
+            
+//            Initializing the cookies
+            if let myCookie = HTTPCookie(properties: cookieProperties) {
+//                add cookie to the session , URLSeesion will automatically send the cookie 
+                HTTPCookieStorage.shared.setCookie(myCookie)
+//                Delete the cookie
+                HTTPCookieStorage.shared.deleteCookie(cookie)
+            }
+        }
     }
-  }
 }.resume()
