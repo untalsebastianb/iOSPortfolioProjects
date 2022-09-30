@@ -17,13 +17,13 @@ struct UserModel: Identifiable {
     static func getUsers() -> [UserModel] {
         return [
             .init(username: "untalsebastianbueno", profilePicture: "sebastianDev", city: "Cali, Colombia", isVerified: true),
-            .init(username: "jalonso98", profilePicture: "person-2", city: "Seattle, US", isVerified: true),
+            .init(username: "jalonso98", profilePicture: "person-12", city: "Seattle, US", isVerified: true),
             .init(username: "guga", profilePicture: "person-1", city: "Tokyo, Japan", isVerified: false),
             .init(username: "the_world", profilePicture: "person-7", city: "Tokyo, Japan", isVerified: false),
             .init(username: "ntobon09", profilePicture: "person-4", city: "Tokyo, Japan", isVerified: true),
-            .init(username: "dcorredor", profilePicture: "person-5", city: "Tokyo, Japan", isVerified: false),
+            .init(username: "dcorredor", profilePicture: "person-13", city: "Tokyo, Japan", isVerified: false),
             .init(username: "karenne", profilePicture: "person-6", city: "Tokyo, Japan", isVerified: false),
-            .init(username: "melandrexz", profilePicture: "person-3", city: "Tokyo, Japan", isVerified: true),
+            .init(username: "melandrexz", profilePicture: "person-11", city: "Tokyo, Japan", isVerified: true),
             .init(username: "ozkarinfo", profilePicture: "person-8", city: "Tokyo, Japan", isVerified: true),
         ]
     }
