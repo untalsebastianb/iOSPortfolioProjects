@@ -9,13 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    Text("Hola")
+                }
+                .toolbar {
+                    self.toolbarView()
+                }
+            }
         }
-        .padding()
+    }
+    
+    
+    @ToolbarContentBuilder
+    func toolbarView() -> some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Button(action: {}) {
+                Image("camera-Icon")
+            }
+        }
+        
+        ToolbarItem(placement: .principal) {
+            Image("instagram-logo")
+        }
+        
+        ToolbarItem(placement: .navigationBarTrailing) {
+            HStack {
+                Button(action: {}) {
+                    Image("igtv")
+                }
+                Button(action: {}) {
+                    Image("messanger")
+                }
+            }
+        }
     }
 }
 
