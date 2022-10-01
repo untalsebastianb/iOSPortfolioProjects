@@ -27,7 +27,7 @@ struct ContentView: View {
             VStack(spacing:0) {
                 Divider().overlay(Color("primary")).frame(height: 1).opacity(0.4)
                 ScrollView {
-                    VStack {
+                    VStack(spacing: 0) {
                         storyList
                         Divider().overlay(Color("primary")).frame(height: 1).opacity(0.4)
                         
