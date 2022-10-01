@@ -35,6 +35,8 @@ struct ContentView: View {
                             TimelineView(timeline: timeline)
                                 .padding(.vertical, 8)
                         }
+                        Color.clear
+                            .padding(.bottom, 30)
                     }
                     .toolbar {
                         self.toolbarView()
@@ -51,7 +53,7 @@ struct ContentView: View {
                 ForEach(viewModel.storyList) { story in
                     StoryView(story: story)
                 }
-            } 
+            }
             .padding(.leading, 10)
             .padding(.vertical,12)
         }
