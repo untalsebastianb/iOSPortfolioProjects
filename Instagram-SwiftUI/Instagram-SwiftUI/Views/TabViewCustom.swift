@@ -28,6 +28,7 @@ struct TabViewCustom: View {
         return icon
     }()
     
+    let insets = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first(where: {$0.isKeyWindow})?.safeAreaInsets ?? .zero
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -85,7 +86,7 @@ struct TabViewCustom: View {
                     
                 }
                 .padding(.top, 12)
-                .padding(.bottom, 10)
+                .padding(.bottom, insets.bottom == 0 ? 10 : 0)
                 .padding(.horizontal, 26)
                 .background(Color("tabBar-bg"))
             .frame(maxWidth: .infinity, alignment: .center)
