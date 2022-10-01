@@ -1,7 +1,8 @@
+
 Hi! 🙋🏼‍♂️ <br>
-I wanna to show you this Instagram main page clone I built using SwiftUI to create an entire layout application. <br>
-the app was modularized using the MVVM architecture pattern, also on each view you'll find separate views to increase the code readibilty <br>
-the app is optimize to work on all the apple devices!
+I wanna show you this Instagram main page clone I built using SwiftUI to create an entire layout application. <br>
+the app was modularized using the MVVM architecture pattern, also on each view, you'll find separate views to increase the code readability <br>
+the app is optimized to work on all apple devices! <br>
 
 the followed desing to create the instragram layout : https://www.figma.com/community/file/874574625832268971 <br>
 
