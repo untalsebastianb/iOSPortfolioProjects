@@ -78,7 +78,7 @@ struct TabViewCustom: View {
                 Button {
                     selectedTab = .profile
                 } label: {
-                    Image("person-1")
+                    Image("sebastianDev")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 23, height: 23)
