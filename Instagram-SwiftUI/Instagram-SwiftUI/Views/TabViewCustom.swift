@@ -54,43 +54,49 @@ struct TabViewCustom: View {
                     .tag(TabViewIcons.profile)
                     .ignoresSafeArea()
             }
-            VStack(spacing: 0) {
-                Divider().overlay(Color("primary")).frame(height: 1).opacity(0.4)
-                HStack {
-                    ForEach(icons, id: \.self) { item in
-                        Button {
-                            selectedTab = item
-                        } label: {
-                            let selected = item == selectedTab ? "-selected": ""
-                            Image(item.rawValue+selected)
-                                .renderingMode(.template)
-                                .foregroundColor(Color("primary"))
-                        }
-                        Spacer()
-                    }
+            
+            tabView
+            
+        }
+    }
+    
+    private var tabView: some View {
+        VStack(spacing: 0) {
+            Divider().overlay(Color("primary")).frame(height: 1).opacity(0.4)
+            HStack {
+                ForEach(icons, id: \.self) { item in
                     Button {
-                        selectedTab = .profile
+                        selectedTab = item
                     } label: {
-                        Image("person-1")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 23, height: 23)
-                            .clipShape(Circle())
-                            .overlay {
-                                Circle()
-                                    .stroke(Color("primary"))
-                                    .opacity(selectedTab == .profile ? 1 : 0.1)
-                                    .padding(.all, -4)
-                            }
+                        let selected = item == selectedTab ? "-selected": ""
+                        Image(item.rawValue+selected)
+                            .renderingMode(.template)
+                            .foregroundColor(Color("primary"))
                     }
-                    
+                    Spacer()
                 }
-                .padding(.top, 12)
-                .padding(.bottom, insets.bottom == 0 ? 10 : 0)
-                .padding(.horizontal, 26)
-                .background(Color("tabBar-bg"))
-            .frame(maxWidth: .infinity, alignment: .center)
+                Button {
+                    selectedTab = .profile
+                } label: {
+                    Image("person-1")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 23, height: 23)
+                        .clipShape(Circle())
+                        .overlay {
+                            Circle()
+                                .stroke(Color("primary"))
+                                .opacity(selectedTab == .profile ? 1 : 0.1)
+                                .padding(.all, -4)
+                        }
+                }
+                
             }
+            .padding(.top, 12)
+            .padding(.bottom, insets.bottom == 0 ? 10 : 0)
+            .padding(.horizontal, 26)
+            .background(Color("tabBar-bg"))
+        .frame(maxWidth: .infinity, alignment: .center)
         }
     }
 }
