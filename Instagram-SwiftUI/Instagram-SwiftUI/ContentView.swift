@@ -11,6 +11,17 @@ struct ContentView: View {
     
     @ObservedObject private var viewModel = ViewModel()
     
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "tabBar-bg")
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(spacing:0) {
@@ -22,6 +33,7 @@ struct ContentView: View {
                         
                         ForEach(viewModel.timeLineList) { timeline in
                             TimelineView(timeline: timeline)
+                                .padding(.vertical, 8)
                         }
                     }
                     .toolbar {
@@ -39,9 +51,9 @@ struct ContentView: View {
                 ForEach(viewModel.storyList) { story in
                     StoryView(story: story)
                 }
-            }
+            } 
             .padding(.leading, 10)
-            .padding(.vertical,10)
+            .padding(.vertical,12)
         }
     }
     
