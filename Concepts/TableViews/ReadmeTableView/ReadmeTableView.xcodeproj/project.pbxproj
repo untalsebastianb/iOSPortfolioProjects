@@ -15,6 +15,7 @@
 		9E670B2628F1C0A200C4FA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E670B2428F1C0A200C4FA7D /* LaunchScreen.storyboard */; };
 		9E670B2E28F1C1BD00C4FA7D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B2D28F1C1BD00C4FA7D /* Book.swift */; };
 		9E670B3028F1CA4B00C4FA7D /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B2F28F1CA4B00C4FA7D /* Library.swift */; };
+		9E670B3228F1D12300C4FA7D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B3128F1D12300C4FA7D /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9E670B2728F1C0A200C4FA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E670B2D28F1C1BD00C4FA7D /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		9E670B2F28F1CA4B00C4FA7D /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		9E670B3128F1D12300C4FA7D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				9E670B2428F1C0A200C4FA7D /* LaunchScreen.storyboard */,
 				9E670B2728F1C0A200C4FA7D /* Info.plist */,
 				9E670B2D28F1C1BD00C4FA7D /* Book.swift */,
+				9E670B3128F1D12300C4FA7D /* DetailViewController.swift */,
 			);
 			path = ReadmeTableView;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				9E670B2E28F1C1BD00C4FA7D /* Book.swift in Sources */,
 				9E670B1E28F1C0A100C4FA7D /* LibraryViewController.swift in Sources */,
 				9E670B3028F1CA4B00C4FA7D /* Library.swift in Sources */,
+				9E670B3228F1D12300C4FA7D /* DetailViewController.swift in Sources */,
 				9E670B1A28F1C0A100C4FA7D /* AppDelegate.swift in Sources */,
 				9E670B1C28F1C0A100C4FA7D /* SceneDelegate.swift in Sources */,
 			);

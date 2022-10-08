@@ -9,6 +9,12 @@ import UIKit
 
 class LibraryViewController: UITableViewController {
 
+    @IBSegueAction func showDetailView(_ coder: NSCoder) -> DetailViewController? {
+        guard let indexPath = tableView.indexPathForSelectedRow else { fatalError() }
+        let book = Library.books[indexPath.row]
+        return DetailViewController(coder: coder, book: book)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
