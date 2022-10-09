@@ -9,6 +9,7 @@ import UIKit
 
 class OtherViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +17,8 @@ class OtherViewController: UIViewController {
     }
     
 
+    @IBAction func save(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

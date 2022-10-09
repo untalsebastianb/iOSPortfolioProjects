@@ -25,10 +25,27 @@
                                     <action selector="showOtherVC" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDu-Cm-l7h"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb8-dj-TYi">
+                                <rect key="frame" x="10" y="57" width="370" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="R1Y-3H-DS2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="eb8-dj-TYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="mRj-xn-SpN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eb8-dj-TYi" secondAttribute="trailing" constant="10" id="p8a-36-CAo"/>
+                            <constraint firstItem="eb8-dj-TYi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="q5Y-9A-A5c"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="eb8-dj-TYi" id="QBh-bq-W9h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,9 +58,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ih8-gO-Orh">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tB7-oX-v2z">
+                                <rect key="frame" x="29" y="76" width="341" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="LTQ-0r-Vjn"/>
+                                    <constraint firstAttribute="height" constant="50" id="UUh-bX-ht0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwD-Ny-ceS">
+                                <rect key="frame" x="164.66666666666666" y="154" width="61" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="2QV-J4-hMx" eventType="touchUpInside" id="jKD-qd-1RU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IPM-0d-8Jb"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstItem="IPM-0d-8Jb" firstAttribute="trailing" secondItem="tB7-oX-v2z" secondAttribute="trailing" constant="20" id="3tM-Dt-3xb"/>
+                            <constraint firstItem="tB7-oX-v2z" firstAttribute="leading" secondItem="IPM-0d-8Jb" secondAttribute="leading" constant="29" id="4g3-hP-lJT"/>
+                            <constraint firstItem="DwD-Ny-ceS" firstAttribute="centerX" secondItem="Ih8-gO-Orh" secondAttribute="centerX" id="Rcy-XU-LpT"/>
+                            <constraint firstItem="DwD-Ny-ceS" firstAttribute="top" secondItem="tB7-oX-v2z" secondAttribute="bottom" constant="28" id="T4E-tb-6DC"/>
+                            <constraint firstItem="tB7-oX-v2z" firstAttribute="top" secondItem="IPM-0d-8Jb" secondAttribute="top" constant="29" id="cUt-Dc-NcX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="tB7-oX-v2z" id="gb9-IO-cVT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anf-gf-bDZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
