@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol dataDelegate {
+    func getString(_ text: String?)
+}
+
 class OtherViewController: UIViewController {
+    
+//    passing data through completion handlers or closures
+    var completionHandler: ((String?) -> Void)?
+    
+//    passing data through delegates
+    var delegate: dataDelegate?
 
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
@@ -18,15 +28,10 @@ class OtherViewController: UIViewController {
     
 
     @IBAction func save(_ sender: Any) {
+//        1️⃣ with closure or completion handler
+        completionHandler?(textField.text)
+//        2️⃣ with delegates
+        delegate?.getString(textField.text)
+        dismiss(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     @IBAction func showOtherVC() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "other") as! OtherViewController
         vc.modalPresentationStyle = .fullScreen
+        
+//        Receving data back one to one controller through completion handler
+        vc.completionHandler = { [weak self] text in
+            guard let self = self else { return }
+            self.label.text = text
+        }
         present(vc, animated: true)
     }
     
