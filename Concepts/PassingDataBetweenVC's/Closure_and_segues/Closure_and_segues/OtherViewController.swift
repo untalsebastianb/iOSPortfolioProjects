@@ -22,8 +22,6 @@ class OtherViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -33,5 +31,8 @@ class OtherViewController: UIViewController {
 //        2️⃣ with delegates
         delegate?.getString(textField.text)
         dismiss(animated: true)
+        
+//        3️⃣ using notification center
+        NotificationCenter.default.post(name: Notification.Name("text"), object: textField.text)
     }
 }
