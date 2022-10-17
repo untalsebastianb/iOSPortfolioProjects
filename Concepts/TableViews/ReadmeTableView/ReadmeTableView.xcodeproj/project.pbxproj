@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E1B94CB28FDA3DC00EC82EC /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B94CA28FDA3DC00EC82EC /* BookCell.swift */; };
 		9E670B1A28F1C0A100C4FA7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B1928F1C0A100C4FA7D /* AppDelegate.swift */; };
 		9E670B1C28F1C0A100C4FA7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B1B28F1C0A100C4FA7D /* SceneDelegate.swift */; };
 		9E670B1E28F1C0A100C4FA7D /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B1D28F1C0A100C4FA7D /* LibraryViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E1B94CA28FDA3DC00EC82EC /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		9E670B1628F1C0A100C4FA7D /* ReadmeTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadmeTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E670B1928F1C0A100C4FA7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E670B1B28F1C0A100C4FA7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				9E670B1928F1C0A100C4FA7D /* AppDelegate.swift */,
 				9E670B1B28F1C0A100C4FA7D /* SceneDelegate.swift */,
 				9E670B1D28F1C0A100C4FA7D /* LibraryViewController.swift */,
+				9E1B94CA28FDA3DC00EC82EC /* BookCell.swift */,
 				9E670B2F28F1CA4B00C4FA7D /* Library.swift */,
 				9E670B1F28F1C0A100C4FA7D /* Main.storyboard */,
 				9E670B2228F1C0A200C4FA7D /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				9E670B2E28F1C1BD00C4FA7D /* Book.swift in Sources */,
 				9E670B1E28F1C0A100C4FA7D /* LibraryViewController.swift in Sources */,
 				9E670B3028F1CA4B00C4FA7D /* Library.swift in Sources */,
+				9E1B94CB28FDA3DC00EC82EC /* BookCell.swift in Sources */,
 				9E670B3228F1D12300C4FA7D /* DetailViewController.swift in Sources */,
 				9E670B1A28F1C0A100C4FA7D /* AppDelegate.swift in Sources */,
 				9E670B1C28F1C0A100C4FA7D /* SceneDelegate.swift in Sources */,
