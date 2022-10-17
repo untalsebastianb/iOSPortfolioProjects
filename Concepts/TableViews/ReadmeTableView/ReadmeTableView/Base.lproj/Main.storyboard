@@ -64,34 +64,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="jKv-gt-Q8l">
-                                <rect key="frame" x="91" y="277.66666666666669" width="208" height="346.00000000000006"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jKv-gt-Q8l">
+                                <rect key="frame" x="39" y="235.33333333333334" width="312" height="430.33333333333326"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIx-zm-11t">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="33.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIx-zm-11t">
+                                        <rect key="frame" x="0.0" y="0.0" width="312" height="33.666666666666664"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbD-NF-GGC">
-                                        <rect key="frame" x="0.0" y="75.666666666666629" width="208" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="43.666666666666657" width="312" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Kq-30-73Q">
-                                        <rect key="frame" x="0.0" y="139" width="208" height="206.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="74.999999999999972" width="312" height="310.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3Kq-30-73Q" secondAttribute="height" multiplier="1:1" id="ru7-md-Tef"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7m-LG-At5">
+                                        <rect key="frame" x="0.0" y="396" width="312" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Update image"/>
+                                        <connections>
+                                            <action selector="updateImage" destination="nPA-qs-AUc" eventType="touchUpInside" id="tbc-KM-cI7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0GW-nN-fkK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jKv-gt-Q8l" firstAttribute="width" secondItem="wqV-KS-LfP" secondAttribute="width" multiplier="0.533333" id="9XY-fa-TwA"/>
+                            <constraint firstItem="jKv-gt-Q8l" firstAttribute="width" secondItem="wqV-KS-LfP" secondAttribute="width" multiplier="0.8" id="9XY-fa-TwA"/>
                             <constraint firstItem="jKv-gt-Q8l" firstAttribute="centerY" secondItem="0GW-nN-fkK" secondAttribute="centerY" id="BDw-PY-8Ae"/>
                             <constraint firstItem="jKv-gt-Q8l" firstAttribute="centerX" secondItem="0GW-nN-fkK" secondAttribute="centerX" id="XUH-iI-umE"/>
                         </constraints>
