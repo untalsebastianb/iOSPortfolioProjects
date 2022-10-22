@@ -17,6 +17,7 @@
 		9E670B2E28F1C1BD00C4FA7D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B2D28F1C1BD00C4FA7D /* Book.swift */; };
 		9E670B3028F1CA4B00C4FA7D /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B2F28F1CA4B00C4FA7D /* Library.swift */; };
 		9E670B3228F1D12300C4FA7D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E670B3128F1D12300C4FA7D /* DetailViewController.swift */; };
+		9EC5DC7D2902D7E300DF769A /* NewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5DC7C2902D7E300DF769A /* NewBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9E670B2D28F1C1BD00C4FA7D /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		9E670B2F28F1CA4B00C4FA7D /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		9E670B3128F1D12300C4FA7D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9EC5DC7C2902D7E300DF769A /* NewBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				9E1B94CA28FDA3DC00EC82EC /* BookCell.swift */,
 				9E670B2F28F1CA4B00C4FA7D /* Library.swift */,
 				9E670B1F28F1C0A100C4FA7D /* Main.storyboard */,
+				9EC5DC7C2902D7E300DF769A /* NewBookViewController.swift */,
 				9E670B2228F1C0A200C4FA7D /* Assets.xcassets */,
 				9E670B2428F1C0A200C4FA7D /* LaunchScreen.storyboard */,
 				9E670B2728F1C0A200C4FA7D /* Info.plist */,
@@ -152,6 +155,7 @@
 			files = (
 				9E670B2E28F1C1BD00C4FA7D /* Book.swift in Sources */,
 				9E670B1E28F1C0A100C4FA7D /* LibraryViewController.swift in Sources */,
+				9EC5DC7D2902D7E300DF769A /* NewBookViewController.swift in Sources */,
 				9E670B3028F1CA4B00C4FA7D /* Library.swift in Sources */,
 				9E1B94CB28FDA3DC00EC82EC /* BookCell.swift in Sources */,
 				9E670B3228F1D12300C4FA7D /* DetailViewController.swift in Sources */,
