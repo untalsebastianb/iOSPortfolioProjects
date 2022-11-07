@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol RootPageProtocol: AnyObject {
+    func currentPage(_ index: Int)
+}
+
 class RootPageViewController: UIPageViewController {
     
     private var subviewControllers = [UIViewController]()
+    private var currentIndex: Int = 0
+    weak var rootPageDelegate: RootPageProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +34,7 @@ class RootPageViewController: UIPageViewController {
         ChannelsViewController(),
         AboutViewController()
         ]
-        
+        _ = subviewControllers.enumerated().map { $0.element.view.tag = $0.offset}
         setViewControllerFromIndex(index: 0, direction: .forward)
     }
     
@@ -49,6 +55,14 @@ extension RootPageViewController: UIPageViewControllerDelegate, UIPageViewContro
             return nil
         }
         return subviewControllers[index-1]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        print("Finished:", finished)
+        if let index = pageViewController.viewControllers?.first?.view.tag {
+            currentIndex = index
+            rootPageDelegate?.currentPage(currentIndex)
+        }
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {

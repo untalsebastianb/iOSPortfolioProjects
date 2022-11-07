@@ -29,6 +29,9 @@
 		9E8400C72916AEA700079BC3 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E8400C52916AEA700079BC3 /* ChannelsViewController.xib */; };
 		9E8400CA2916AEB300079BC3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400C82916AEB300079BC3 /* AboutViewController.swift */; };
 		9E8400CB2916AEB300079BC3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E8400C92916AEB300079BC3 /* AboutViewController.xib */; };
+		9E8400CE2919C3E600079BC3 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400CD2919C3E600079BC3 /* ServiceLayer.swift */; };
+		9E8400D02919C3F500079BC3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400CF2919C3F500079BC3 /* NetworkError.swift */; };
+		9E8400D22919C41000079BC3 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400D12919C41000079BC3 /* RequestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		9E8400C52916AEA700079BC3 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		9E8400C82916AEB300079BC3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9E8400C92916AEB300079BC3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		9E8400CD2919C3E600079BC3 /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		9E8400CF2919C3F500079BC3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		9E8400D12919C41000079BC3 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		9E450A022909538E003E2177 /* YoutubeCloneUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9E8400CC2919C3D600079BC3 /* ServiceLayer */,
 				9E8400B72916AD0A00079BC3 /* About */,
 				9E8400B62916AD0400079BC3 /* Channels */,
 				9E8400B52916ACFA00079BC3 /* Playlist */,
@@ -171,6 +178,16 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		9E8400CC2919C3D600079BC3 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9E8400CD2919C3E600079BC3 /* ServiceLayer.swift */,
+				9E8400CF2919C3F500079BC3 /* NetworkError.swift */,
+				9E8400D12919C41000079BC3 /* RequestModel.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,15 +265,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E450A082909538E003E2177 /* ViewController.swift in Sources */,
+				9E8400D02919C3F500079BC3 /* NetworkError.swift in Sources */,
 				9E8400AC29169DB000079BC3 /* ChannelModel.swift in Sources */,
 				9E8400BE2916AE8400079BC3 /* VideosViewController.swift in Sources */,
 				9E8400A72915394200079BC3 /* PlaylistModel.swift in Sources */,
 				9E8400C22916AE9600079BC3 /* PlaylistsViewController.swift in Sources */,
+				9E8400D22919C41000079BC3 /* RequestModel.swift in Sources */,
 				9E450A042909538E003E2177 /* AppDelegate.swift in Sources */,
 				9E8400A9291696C100079BC3 /* VideoModel.swift in Sources */,
 				9E8400BA2916AE7500079BC3 /* HomeViewController.swift in Sources */,
 				9E450A062909538E003E2177 /* SceneDelegate.swift in Sources */,
 				9E8400B22916ABC400079BC3 /* MainViewController.swift in Sources */,
+				9E8400CE2919C3E600079BC3 /* ServiceLayer.swift in Sources */,
 				9E8400CA2916AEB300079BC3 /* AboutViewController.swift in Sources */,
 				9E8400C62916AEA700079BC3 /* ChannelsViewController.swift in Sources */,
 				9E8400AD29169DB000079BC3 /* PlaylistItemsModel.swift in Sources */,

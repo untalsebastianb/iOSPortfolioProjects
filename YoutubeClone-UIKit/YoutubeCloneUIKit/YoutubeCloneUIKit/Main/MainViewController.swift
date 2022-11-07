@@ -19,7 +19,15 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? RootPageViewController {
+            destination.rootPageDelegate = self
             rootPageViewContorller = destination
         }
     }
+}
+
+extension MainViewController: RootPageProtocol {
+    func currentPage(_ index: Int) {
+        print("Current page", index)
+    }
+    
 }
