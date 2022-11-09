@@ -9,5 +9,5 @@ import Foundation
 
 struct Constants {
     static let apiKey = "AIzaSyB36MDztDNJpcAzKjZZx1BLzHmYjroiLaQ"
-
+    static let channelId = "UC_I_lCplbwIf60iUgsTE79g"
 }
