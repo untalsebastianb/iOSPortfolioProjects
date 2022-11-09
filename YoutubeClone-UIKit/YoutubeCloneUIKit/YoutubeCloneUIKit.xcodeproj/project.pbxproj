@@ -29,9 +29,12 @@
 		9E8400C72916AEA700079BC3 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E8400C52916AEA700079BC3 /* ChannelsViewController.xib */; };
 		9E8400CA2916AEB300079BC3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400C82916AEB300079BC3 /* AboutViewController.swift */; };
 		9E8400CB2916AEB300079BC3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E8400C92916AEB300079BC3 /* AboutViewController.xib */; };
-		9E8400CE2919C3E600079BC3 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400CD2919C3E600079BC3 /* ServiceLayer.swift */; };
-		9E8400D02919C3F500079BC3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400CF2919C3F500079BC3 /* NetworkError.swift */; };
-		9E8400D22919C41000079BC3 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400D12919C41000079BC3 /* RequestModel.swift */; };
+		9E8400D52919C4B900079BC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400D42919C4B900079BC3 /* Constants.swift */; };
+		9E8400DA2919C67D00079BC3 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400D72919C67D00079BC3 /* ServiceLayer.swift */; };
+		9E8400DB2919C67D00079BC3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400D82919C67D00079BC3 /* NetworkError.swift */; };
+		9E8400DC2919C67D00079BC3 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400D92919C67D00079BC3 /* RequestModel.swift */; };
+		9E8400E2291A754000079BC3 /* HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400E1291A754000079BC3 /* HomeProvider.swift */; };
+		9E8400E4291A7A1900079BC3 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8400E3291A7A1900079BC3 /* HomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +62,12 @@
 		9E8400C52916AEA700079BC3 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		9E8400C82916AEB300079BC3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9E8400C92916AEB300079BC3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		9E8400CD2919C3E600079BC3 /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
-		9E8400CF2919C3F500079BC3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		9E8400D12919C41000079BC3 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		9E8400D42919C4B900079BC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9E8400D72919C67D00079BC3 /* ServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		9E8400D82919C67D00079BC3 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		9E8400D92919C67D00079BC3 /* RequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		9E8400E1291A754000079BC3 /* HomeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProvider.swift; sourceTree = "<group>"; };
+		9E8400E3291A7A1900079BC3 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +100,8 @@
 		9E450A022909538E003E2177 /* YoutubeCloneUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				9E8400CC2919C3D600079BC3 /* ServiceLayer */,
+				9E8400D62919C67D00079BC3 /* ServiceLayer */,
+				9E8400D32919C49300079BC3 /* Utils */,
 				9E8400B72916AD0A00079BC3 /* About */,
 				9E8400B62916AD0400079BC3 /* Channels */,
 				9E8400B52916ACFA00079BC3 /* Playlist */,
@@ -136,8 +143,9 @@
 		9E8400B32916ACD100079BC3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9E8400B82916AE7500079BC3 /* HomeViewController.swift */,
-				9E8400B92916AE7500079BC3 /* HomeViewController.xib */,
+				9E8400DF291A752400079BC3 /* Presenter */,
+				9E8400DE291A751D00079BC3 /* View */,
+				9E8400DD291A750C00079BC3 /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -178,14 +186,55 @@
 			path = About;
 			sourceTree = "<group>";
 		};
-		9E8400CC2919C3D600079BC3 /* ServiceLayer */ = {
+		9E8400D32919C49300079BC3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9E8400CD2919C3E600079BC3 /* ServiceLayer.swift */,
-				9E8400CF2919C3F500079BC3 /* NetworkError.swift */,
-				9E8400D12919C41000079BC3 /* RequestModel.swift */,
+				9E8400D42919C4B900079BC3 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9E8400D62919C67D00079BC3 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9E8400D72919C67D00079BC3 /* ServiceLayer.swift */,
+				9E8400D82919C67D00079BC3 /* NetworkError.swift */,
+				9E8400D92919C67D00079BC3 /* RequestModel.swift */,
 			);
 			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		9E8400DD291A750C00079BC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E8400E0291A753600079BC3 /* Provider */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9E8400DE291A751D00079BC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E8400B82916AE7500079BC3 /* HomeViewController.swift */,
+				9E8400B92916AE7500079BC3 /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9E8400DF291A752400079BC3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9E8400E3291A7A1900079BC3 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9E8400E0291A753600079BC3 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				9E8400E1291A754000079BC3 /* HomeProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,22 +314,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E450A082909538E003E2177 /* ViewController.swift in Sources */,
-				9E8400D02919C3F500079BC3 /* NetworkError.swift in Sources */,
 				9E8400AC29169DB000079BC3 /* ChannelModel.swift in Sources */,
 				9E8400BE2916AE8400079BC3 /* VideosViewController.swift in Sources */,
+				9E8400E4291A7A1900079BC3 /* HomePresenter.swift in Sources */,
 				9E8400A72915394200079BC3 /* PlaylistModel.swift in Sources */,
 				9E8400C22916AE9600079BC3 /* PlaylistsViewController.swift in Sources */,
-				9E8400D22919C41000079BC3 /* RequestModel.swift in Sources */,
 				9E450A042909538E003E2177 /* AppDelegate.swift in Sources */,
 				9E8400A9291696C100079BC3 /* VideoModel.swift in Sources */,
+				9E8400DB2919C67D00079BC3 /* NetworkError.swift in Sources */,
 				9E8400BA2916AE7500079BC3 /* HomeViewController.swift in Sources */,
+				9E8400DC2919C67D00079BC3 /* RequestModel.swift in Sources */,
 				9E450A062909538E003E2177 /* SceneDelegate.swift in Sources */,
+				9E8400E2291A754000079BC3 /* HomeProvider.swift in Sources */,
 				9E8400B22916ABC400079BC3 /* MainViewController.swift in Sources */,
-				9E8400CE2919C3E600079BC3 /* ServiceLayer.swift in Sources */,
+				9E8400DA2919C67D00079BC3 /* ServiceLayer.swift in Sources */,
 				9E8400CA2916AEB300079BC3 /* AboutViewController.swift in Sources */,
 				9E8400C62916AEA700079BC3 /* ChannelsViewController.swift in Sources */,
 				9E8400AD29169DB000079BC3 /* PlaylistItemsModel.swift in Sources */,
 				9E8400B02916ABB200079BC3 /* RootPageViewController.swift in Sources */,
+				9E8400D52919C4B900079BC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
