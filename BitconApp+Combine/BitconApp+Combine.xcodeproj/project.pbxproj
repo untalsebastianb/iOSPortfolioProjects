@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E9676E9299677580075EE73 /* BitconApp_CombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9676E8299677580075EE73 /* BitconApp_CombineApp.swift */; };
-		9E9676EB299677580075EE73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9676EA299677580075EE73 /* ContentView.swift */; };
+		9E9676EB299677580075EE73 /* BitcoinPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9676EA299677580075EE73 /* BitcoinPriceView.swift */; };
 		9E9676ED299677590075EE73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E9676EC299677590075EE73 /* Assets.xcassets */; };
 		9E9676F0299677590075EE73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E9676EF299677590075EE73 /* Preview Assets.xcassets */; };
 		9E9676F7299677720075EE73 /* PriceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9676F6299677720075EE73 /* PriceDetails.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		9E9676E5299677580075EE73 /* BitconApp+Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitconApp+Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9676E8299677580075EE73 /* BitconApp_CombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitconApp_CombineApp.swift; sourceTree = "<group>"; };
-		9E9676EA299677580075EE73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E9676EA299677580075EE73 /* BitcoinPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceView.swift; sourceTree = "<group>"; };
 		9E9676EC299677590075EE73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E9676EF299677590075EE73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E9676F6299677720075EE73 /* PriceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceDetails.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				9E9676E8299677580075EE73 /* BitconApp_CombineApp.swift */,
-				9E9676EA299677580075EE73 /* ContentView.swift */,
+				9E9676EA299677580075EE73 /* BitcoinPriceView.swift */,
 				9E9676EC299677590075EE73 /* Assets.xcassets */,
 				9E9676EE299677590075EE73 /* Preview Content */,
 			);
@@ -143,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E9676EB299677580075EE73 /* ContentView.swift in Sources */,
+				9E9676EB299677580075EE73 /* BitcoinPriceView.swift in Sources */,
 				9E9676F929967C920075EE73 /* BitcoinPriceViewModel.swift in Sources */,
 				9E9676F7299677720075EE73 /* PriceDetails.swift in Sources */,
 				9E9676E9299677580075EE73 /* BitconApp_CombineApp.swift in Sources */,

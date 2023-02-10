@@ -11,7 +11,7 @@ import SwiftUI
 struct BitconApp_CombineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BitcoinPriceView(viewModel: BitcoinPriceViewModel())
         }
     }
 }
