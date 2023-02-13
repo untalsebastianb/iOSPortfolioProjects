@@ -47,8 +47,6 @@ struct BitcoinPriceView: View {
                             .font(.largeTitle)
                     }
                     .padding(.trailing)
-                    
-                    
                 }
                 .padding(.top)
                 

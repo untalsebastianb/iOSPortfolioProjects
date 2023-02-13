@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E5D4E1F2996B0CE00243D29 /* CoindeskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D4E1E2996B0CE00243D29 /* CoindeskService.swift */; };
 		9E9676E9299677580075EE73 /* BitconApp_CombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9676E8299677580075EE73 /* BitconApp_CombineApp.swift */; };
 		9E9676EB299677580075EE73 /* BitcoinPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9676EA299677580075EE73 /* BitcoinPriceView.swift */; };
 		9E9676ED299677590075EE73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E9676EC299677590075EE73 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E5D4E1E2996B0CE00243D29 /* CoindeskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskService.swift; sourceTree = "<group>"; };
 		9E9676E5299677580075EE73 /* BitconApp+Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitconApp+Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9676E8299677580075EE73 /* BitconApp_CombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitconApp_CombineApp.swift; sourceTree = "<group>"; };
 		9E9676EA299677580075EE73 /* BitcoinPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceView.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 		9E9676DC299677580075EE73 = {
 			isa = PBXGroup;
 			children = (
+				9E5D4E1E2996B0CE00243D29 /* CoindeskService.swift */,
 				9E9676F829967C920075EE73 /* BitcoinPriceViewModel.swift */,
 				9E9676F6299677720075EE73 /* PriceDetails.swift */,
 				9E9676E7299677580075EE73 /* BitconApp+Combine */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5D4E1F2996B0CE00243D29 /* CoindeskService.swift in Sources */,
 				9E9676EB299677580075EE73 /* BitcoinPriceView.swift in Sources */,
 				9E9676F929967C920075EE73 /* BitcoinPriceViewModel.swift in Sources */,
 				9E9676F7299677720075EE73 /* PriceDetails.swift in Sources */,
