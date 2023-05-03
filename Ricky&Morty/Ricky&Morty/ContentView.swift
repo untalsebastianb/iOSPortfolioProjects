@@ -22,7 +22,9 @@ struct ContentView: View {
             }
         }
         .onAppear{
-            viewModel.executeRequest()
+            Task {
+                await viewModel.executeRequestAsync()
+            }
         }
         .padding()
     }

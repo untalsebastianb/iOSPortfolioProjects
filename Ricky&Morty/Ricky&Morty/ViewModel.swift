@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct characterModel: Decodable {
+struct CharacterModel: Decodable {
     let id: Int
     let name: String
     let image: String
@@ -25,12 +25,12 @@ struct characterModel: Decodable {
     }
 
     init(from decoder: Decoder) throws {
-        let container: KeyedDecodingContainer<characterModel.CodingKeys> = try decoder.container(keyedBy: characterModel.CodingKeys.self)
+        let container: KeyedDecodingContainer<CharacterModel.CodingKeys> = try decoder.container(keyedBy: CharacterModel.CodingKeys.self)
 
-        self.id = try container.decode(Int.self, forKey: characterModel.CodingKeys.id)
-        self.name = try container.decode(String.self, forKey: characterModel.CodingKeys.name)
-        self.image = try container.decode(String.self, forKey: characterModel.CodingKeys.image)
-        self.episode = try container.decode([String].self, forKey: characterModel.CodingKeys.episode)
+        self.id = try container.decode(Int.self, forKey: CharacterModel.CodingKeys.id)
+        self.name = try container.decode(String.self, forKey: CharacterModel.CodingKeys.name)
+        self.image = try container.decode(String.self, forKey: CharacterModel.CodingKeys.image)
+        self.episode = try container.decode([String].self, forKey: CharacterModel.CodingKeys.episode)
 
         let locationContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .location)
         self.locationName = try locationContainer.decode(String.self, forKey: .name)
@@ -65,12 +65,37 @@ final class ViewModel: ObservableObject {
 
     @Published var characterBasicInfo: CharacterBasicInfo = .empty
 
+    func executeRequestAsync() async {
+        let characterURL = URL(string: "https://rickandmortyapi.com/api/character/1")!
+        let (data, _) = try! await URLSession.shared.data(from: characterURL)
+        let characterModel = try! JSONDecoder().decode(CharacterModel.self, from: data)
+        print("Character Model \(characterModel)")
+
+        let firstEpisodeURL = URL(string: characterModel.episode.first!)!
+        let (dataFirstEpisode, _) = try! await URLSession.shared.data(from: firstEpisodeURL)
+        let episodeModel = try! JSONDecoder().decode(EpisodeModel.self, from: dataFirstEpisode)
+        print("Episode Model \(episodeModel)")
+
+        let characterLocationURL = URL(string: characterModel.locationURL)!
+        let (dataLocation, _) = try! await URLSession.shared.data(from: characterLocationURL)
+        let locationModel = try! JSONDecoder().decode(LocationModel.self, from: dataLocation)
+        print("Location Model \(locationModel)")
+
+        DispatchQueue.main.async {
+            self.characterBasicInfo = .init(name: characterModel.name,
+                                            image: URL(string: characterModel.image)!,
+                                            fistEpisodeTitle: episodeModel.name,
+                                            dimension: locationModel.dimension)
+        }
+    }
+
+
     func executeRequestCallback() {
 
 //        First call
         let characterURL = URL(string: "https://rickandmortyapi.com/api/character/1")!
         URLSession.shared.dataTask(with: characterURL) { data, response, error in
-            let characterModel = try! JSONDecoder().decode(characterModel.self, from: data!)
+            let characterModel = try! JSONDecoder().decode(CharacterModel.self, from: data!)
             print("character model \(characterModel)")
 
 //            Create 2nd call with data from 1st
