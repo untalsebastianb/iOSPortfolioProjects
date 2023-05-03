@@ -39,13 +39,62 @@ struct characterModel: Decodable {
     }
 }
 
-final class ViewModel {
-    func executeRequest() {
-        let characterURL = URL(string: "https://rickandmortyapi.com/api/character/1")!
+struct EpisodeModel: Decodable {
+    let id: Int
+    let name: String
+}
 
+struct LocationModel: Decodable {
+    let id: Int
+    let name: String
+    let dimension: String
+}
+
+struct CharacterBasicInfo {
+    let name: String
+    let image: URL?
+    let fistEpisodeTitle: String
+    let dimension: String
+
+    static var empty: Self {
+        .init(name: "", image: nil, fistEpisodeTitle: "", dimension: "")
+    }
+}
+
+final class ViewModel: ObservableObject {
+
+    @Published var characterBasicInfo: CharacterBasicInfo = .empty
+
+    func executeRequestCallback() {
+
+//        First call
+        let characterURL = URL(string: "https://rickandmortyapi.com/api/character/1")!
         URLSession.shared.dataTask(with: characterURL) { data, response, error in
             let characterModel = try! JSONDecoder().decode(characterModel.self, from: data!)
             print("character model \(characterModel)")
+
+//            Create 2nd call with data from 1st
+            let firstEpisodeURL = URL(string: characterModel.episode.first!)!
+            URLSession.shared.dataTask(with: firstEpisodeURL) { data, response, error in
+                let episodeModel = try! JSONDecoder().decode(EpisodeModel.self, from: data!)
+                print("Episode Model \(episodeModel)")
+
+//                3rd call
+                let characterLocationURL = URL(string: characterModel.locationURL)!
+
+                URLSession.shared.dataTask(with: characterLocationURL) { data, error, response in
+                    let locationModel =  try! JSONDecoder().decode(LocationModel.self, from: data!)
+                    print("Location Model \(locationModel)")
+                    DispatchQueue.main.async {
+                        self.characterBasicInfo = .init(name: characterModel.name,
+                                                        image: URL(string: characterModel.image)!,
+                                                        fistEpisodeTitle: episodeModel.name,
+                                                        dimension: locationModel.dimension)
+                    }
+                }.resume()
+
+            }.resume()
+
         }.resume()
 
     }

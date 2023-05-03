@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
 
-    let viewModel = ViewModel()
+    @StateObject var viewModel = ViewModel()
 
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Async/Await vs Callbacks")
+            VStack {
+                AsyncImage(url: viewModel.characterBasicInfo.image)
+                Text("Name: \(viewModel.characterBasicInfo.name)")
+                Text("First episode: \(viewModel.characterBasicInfo.fistEpisodeTitle)")
+                Text("Dimension: \(viewModel.characterBasicInfo.dimension)")
+            }
         }
         .onAppear{
             viewModel.executeRequest()
