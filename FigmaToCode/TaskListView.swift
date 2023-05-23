@@ -51,6 +51,19 @@ struct TaskListView: View {
                 .padding(.horizontal, 16)
             }
 
+            VStack {
+                Spacer()
+                HStack{
+                    Spacer()
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .frame(width: 64, height: 64)
+                        .foregroundColor(Color.accentColor)
+                        .padding(.bottom, 28)
+                        .padding(.trailing, 24)
+                }
+            }
+
 
 
         }
