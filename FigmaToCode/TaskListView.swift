@@ -8,24 +8,68 @@
 import SwiftUI
 
 struct TaskListView: View {
+
+    var tasks = Task.getDummyTask()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image("ic-hamburguer")
-                }
 
-                ToolbarItem(placement: .principal) {
-                    Text("Today")
-                        .font(.navTitle)
-                }
+        ZStack {
+            Color("Background")
+                .ignoresSafeArea()
 
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image("ic-dots")
-                }
+            ScrollView {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.white)
+                    VStack{
+                        HStack{
+                            Text("Today")
+                            Spacer()
+                            Text("\(tasks.count)")
+                            Image("ic-chevron")
+                        }
+                        .font(.taskText)
 
+                        ForEach(tasks) { task in
+                            HStack {
+                                Image("ic-checkbox")
+                                Text(task.title)
+                                    .font(.taskText)
+                                Spacer()
+                                VStack (alignment: .trailing, spacing: 3){
+                                    Text("18:00")
+                                        .foregroundColor(Color("Alarm"))
+                                        .font(.taskAlarmText)
+                                    Image("ic-alarm")
+                                }
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                }
+                .padding(.vertical, 10)
+                .padding(.horizontal, 16)
             }
-            .navigationBarTitleDisplayMode(.inline)
+
+
+
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image("ic-hamburguer")
+            }
+
+            ToolbarItem(placement: .principal) {
+                Text("Today")
+                    .font(.navTitle)
+            }
+
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Image("ic-dots")
+            }
+
+        }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

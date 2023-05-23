@@ -18,6 +18,7 @@
 		3DD8FDC12A1CDD470057F1AB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDC02A1CDD470057F1AB /* SettingsView.swift */; };
 		3DD8FDC32A1CDD560057F1AB /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDC22A1CDD560057F1AB /* InboxView.swift */; };
 		3DD8FDC52A1CDD610057F1AB /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDC42A1CDD610057F1AB /* RemindersView.swift */; };
+		3DD8FDC72A1CE6790057F1AB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDC62A1CE6790057F1AB /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3DD8FDC02A1CDD470057F1AB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3DD8FDC22A1CDD560057F1AB /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		3DD8FDC42A1CDD610057F1AB /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
+		3DD8FDC62A1CE6790057F1AB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		3D34B53A2A13AE630078A558 = {
 			isa = PBXGroup;
 			children = (
+				3DD8FDC62A1CE6790057F1AB /* Task.swift */,
 				3DD8FDC42A1CDD610057F1AB /* RemindersView.swift */,
 				3DD8FDC22A1CDD560057F1AB /* InboxView.swift */,
 				3DD8FDC02A1CDD470057F1AB /* SettingsView.swift */,
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD8FDC72A1CE6790057F1AB /* Task.swift in Sources */,
 				3DD8FDC12A1CDD470057F1AB /* SettingsView.swift in Sources */,
 				3DD8FDC52A1CDD610057F1AB /* RemindersView.swift in Sources */,
 				3DD8FDC32A1CDD560057F1AB /* InboxView.swift in Sources */,
