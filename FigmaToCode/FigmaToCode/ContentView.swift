@@ -9,13 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+
+        TabView {
+            NavigationView {
+                TaskListView()
+            }
+            .tabItem {
+                Image("ic-task")
+                    .renderingMode(.template)
+            }
+
+            InboxView()
+                .tabItem {
+                    Image("ic-reminder")
+                        .renderingMode(.template)
+                }
+            RemindersView()
+                .tabItem {
+                    Image("ic-timer")
+                        .renderingMode(.template)
+                }
+            SettingsView()
+                .tabItem {
+                    Image("ic-settings")
+                        .renderingMode(.template)
+                }
         }
-        .padding()
     }
 }
 

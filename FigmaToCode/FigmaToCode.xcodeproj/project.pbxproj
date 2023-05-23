@@ -11,6 +11,13 @@
 		3D34B5492A13AE630078A558 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34B5482A13AE630078A558 /* ContentView.swift */; };
 		3D34B54B2A13AE650078A558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D34B54A2A13AE650078A558 /* Assets.xcassets */; };
 		3D34B54E2A13AE650078A558 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D34B54D2A13AE650078A558 /* Preview Assets.xcassets */; };
+		3DD8FDB92A1CD5040057F1AB /* Inter-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD8FDB72A1CD5040057F1AB /* Inter-SemiBold.otf */; };
+		3DD8FDBA2A1CD5040057F1AB /* Inter-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD8FDB82A1CD5040057F1AB /* Inter-Bold.otf */; };
+		3DD8FDBD2A1CD57E0057F1AB /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDBC2A1CD57E0057F1AB /* FontStyles.swift */; };
+		3DD8FDBF2A1CDD3D0057F1AB /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDBE2A1CDD3D0057F1AB /* TaskListView.swift */; };
+		3DD8FDC12A1CDD470057F1AB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDC02A1CDD470057F1AB /* SettingsView.swift */; };
+		3DD8FDC32A1CDD560057F1AB /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDC22A1CDD560057F1AB /* InboxView.swift */; };
+		3DD8FDC52A1CDD610057F1AB /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8FDC42A1CDD610057F1AB /* RemindersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,14 @@
 		3D34B5482A13AE630078A558 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3D34B54A2A13AE650078A558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D34B54D2A13AE650078A558 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DD8FDB72A1CD5040057F1AB /* Inter-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.otf"; sourceTree = "<group>"; };
+		3DD8FDB82A1CD5040057F1AB /* Inter-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.otf"; sourceTree = "<group>"; };
+		3DD8FDBB2A1CD5300057F1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3DD8FDBC2A1CD57E0057F1AB /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
+		3DD8FDBE2A1CDD3D0057F1AB /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		3DD8FDC02A1CDD470057F1AB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3DD8FDC22A1CDD560057F1AB /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		3DD8FDC42A1CDD610057F1AB /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +50,13 @@
 		3D34B53A2A13AE630078A558 = {
 			isa = PBXGroup;
 			children = (
+				3DD8FDC42A1CDD610057F1AB /* RemindersView.swift */,
+				3DD8FDC22A1CDD560057F1AB /* InboxView.swift */,
+				3DD8FDC02A1CDD470057F1AB /* SettingsView.swift */,
+				3DD8FDBE2A1CDD3D0057F1AB /* TaskListView.swift */,
+				3DD8FDB62A1CD49D0057F1AB /* Fonts */,
 				3D34B5452A13AE630078A558 /* FigmaToCode */,
+				3DD8FDBC2A1CD57E0057F1AB /* FontStyles.swift */,
 				3D34B5442A13AE630078A558 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +72,7 @@
 		3D34B5452A13AE630078A558 /* FigmaToCode */ = {
 			isa = PBXGroup;
 			children = (
+				3DD8FDBB2A1CD5300057F1AB /* Info.plist */,
 				3D34B5462A13AE630078A558 /* FigmaToCodeApp.swift */,
 				3D34B5482A13AE630078A558 /* ContentView.swift */,
 				3D34B54A2A13AE650078A558 /* Assets.xcassets */,
@@ -65,6 +87,15 @@
 				3D34B54D2A13AE650078A558 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DD8FDB62A1CD49D0057F1AB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3DD8FDB82A1CD5040057F1AB /* Inter-Bold.otf */,
+				3DD8FDB72A1CD5040057F1AB /* Inter-SemiBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D34B54E2A13AE650078A558 /* Preview Assets.xcassets in Resources */,
+				3DD8FDBA2A1CD5040057F1AB /* Inter-Bold.otf in Resources */,
 				3D34B54B2A13AE650078A558 /* Assets.xcassets in Resources */,
+				3DD8FDB92A1CD5040057F1AB /* Inter-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD8FDC12A1CDD470057F1AB /* SettingsView.swift in Sources */,
+				3DD8FDC52A1CDD610057F1AB /* RemindersView.swift in Sources */,
+				3DD8FDC32A1CDD560057F1AB /* InboxView.swift in Sources */,
 				3D34B5492A13AE630078A558 /* ContentView.swift in Sources */,
 				3D34B5472A13AE630078A558 /* FigmaToCodeApp.swift in Sources */,
+				3DD8FDBD2A1CD57E0057F1AB /* FontStyles.swift in Sources */,
+				3DD8FDBF2A1CDD3D0057F1AB /* TaskListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +308,7 @@
 				DEVELOPMENT_TEAM = 4C672PN842;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FigmaToCode/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +338,7 @@
 				DEVELOPMENT_TEAM = 4C672PN842;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FigmaToCode/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
