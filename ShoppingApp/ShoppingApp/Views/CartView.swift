@@ -25,10 +25,9 @@ struct CartView: View {
                 .padding()
             } else {
                 Text("Your cart is empty")
-                    .navigationTitle("My Cart")
                     .padding(.top)
             }
-        }
+        }.navigationTitle("My Cart")
     }
 }
 
