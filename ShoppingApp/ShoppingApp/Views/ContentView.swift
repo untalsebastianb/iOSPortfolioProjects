@@ -36,8 +36,14 @@ struct ShopView: View {
             ScrollView {
                 LazyVGrid(columns: column, spacing: 20) {
                     ForEach(productList, id: \.id) { product in
-                        ProductCard(product: product)
-                            .environmentObject(cartManager)
+                        NavigationLink {
+                            Text("\(product.name)")
+                                .navigationTitle(product.name)
+                                .navigationBarTitleDisplayMode(.inline)
+                        } label: {
+                            ProductCard(product: product)
+                                .environmentObject(cartManager)
+                        }
                     }
                 }
                 .padding()
