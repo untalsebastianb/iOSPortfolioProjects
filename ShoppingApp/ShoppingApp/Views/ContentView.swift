@@ -9,8 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var cartManager = CartManager()
-    var column = [GridItem(.adaptive(minimum: 160), spacing: 25)]
 
+    var body: some View {
+        TabView {
+            ShopView()
+                .environmentObject(cartManager)
+                .badge(cartManager.products.count)
+                .tabItem {
+                    Label("Shop", systemImage: "cart")
+                }
+
+            Text("...")
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+
+        }
+    }
+}
+
+struct ShopView: View {
+    @EnvironmentObject var cartManager: CartManager
+    var column = [GridItem(.adaptive(minimum: 160), spacing: 25)]
     var body: some View {
         NavigationView {
             ScrollView {
