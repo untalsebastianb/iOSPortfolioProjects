@@ -14,11 +14,10 @@ struct RecipeCard: View {
             AsyncImage(url: URL(string: "https://www.freepik.com/free-photo/top-view-healthy-food-immunity-boosting-composition_13108499.htm#query=recipes&position=2&from_view=search&track=sph")) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
             } placeholder: {
                 Image(recipe.image)
                     .resizable()
-                    .scaledToFit()
                     .overlay(alignment: .bottom) {
                         Text(recipe.name)
                             .font(.headline)
@@ -39,6 +38,6 @@ struct RecipeCard: View {
 
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCard(recipe: Recipe.all[0])
+        RecipeCard(recipe: Recipe.all[3])
     }
 }

@@ -25,20 +25,26 @@ struct RecipeView: View {
                     .multilineTextAlignment(.center)
 
                 VStack(alignment: .leading, spacing: 30) {
-                    Text(recipe.description)
-
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("Ingredients")
-                            .font(.headline)
-
-                        Text(recipe.ingredients)
+                    if !recipe.description.isEmpty {
+                        Text(recipe.description)
                     }
 
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("Directions")
-                            .font(.headline)
+                    if !recipe.ingredients.isEmpty {
+                        VStack(alignment: .leading, spacing: 20) {
+                            Text("Ingredients")
+                                .font(.headline)
 
-                        Text(recipe.directions)
+                            Text(recipe.ingredients)
+                        }
+                    }
+
+                    if !recipe.directions.isEmpty {
+                        VStack(alignment: .leading, spacing: 20) {
+                            Text("Directions")
+                                .font(.headline)
+
+                            Text(recipe.directions)
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
