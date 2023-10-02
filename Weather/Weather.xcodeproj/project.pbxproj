@@ -13,6 +13,7 @@
 		3D7445CE2AC87DB6007F5803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7445CD2AC87DB6007F5803 /* Preview Assets.xcassets */; };
 		3D7445DC2AC87F25007F5803 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7445DB2AC87F25007F5803 /* Extensions.swift */; };
 		3DC217CF2AC8831D006D7021 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC217CE2AC8831D006D7021 /* HomeView.swift */; };
+		3DC217D12AC88D5D006D7021 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC217D02AC88D5D006D7021 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		3D7445CD2AC87DB6007F5803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D7445DB2AC87F25007F5803 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3DC217CE2AC8831D006D7021 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3DC217D02AC88D5D006D7021 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		3D7445D82AC87EA7007F5803 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				3DC217D02AC88D5D006D7021 /* TabBar.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				3DC217CF2AC8831D006D7021 /* HomeView.swift in Sources */,
 				3D7445DC2AC87F25007F5803 /* Extensions.swift in Sources */,
 				3D7445C72AC87DB3007F5803 /* WeatherApp.swift in Sources */,
+				3DC217D12AC88D5D006D7021 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
