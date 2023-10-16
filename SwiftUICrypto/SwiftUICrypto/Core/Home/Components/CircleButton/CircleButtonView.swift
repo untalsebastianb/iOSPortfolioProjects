@@ -33,7 +33,7 @@ struct CircleButtonView_Previews: PreviewProvider {
             CircleButtonView(iconName: "plus")
                 .padding()
                 .previewLayout(.sizeThatFits)
-                .colorScheme(.dark)
+                .preferredColorScheme(.dark)
         }
     }
 }

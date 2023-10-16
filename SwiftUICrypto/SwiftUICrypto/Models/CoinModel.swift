@@ -50,7 +50,7 @@ Gecko API info
 import Foundation
 
 // MARK: - Welcome
-struct CoinModel: Identifiable, Codable {
+struct CoinModel: Identifiable, Codable { 
     let id, symbol, name: String
     let image: String
     let currentPrice: Double
@@ -128,8 +128,8 @@ struct CoinModel: Identifiable, Codable {
                          currentHoldings: amount )
     }
     
-    var currentHoldingsVAlue: Double {
-        return currentHoldings ?? 0 * currentPrice
+    var currentHoldingsValue: Double {
+        return (currentHoldings ?? 0) * currentPrice
     }
     
     var rank: Int {
