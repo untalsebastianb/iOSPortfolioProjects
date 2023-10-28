@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D3875F42AE75FE700A1A4C3 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3875F32AE75FE700A1A4C3 /* LocalFileManager.swift */; };
+		3D3875F62AE7698F00A1A4C3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3875F52AE7698F00A1A4C3 /* SearchBarView.swift */; };
 		3D644B272ADAFBB400368F2C /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D644B262ADAFBB400368F2C /* CoinModel.swift */; };
 		3D644B292ADD6E8B00368F2C /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D644B282ADD6E8B00368F2C /* CoinRowView.swift */; };
 		3D644B2B2ADD6EF400368F2C /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D644B2A2ADD6EF400368F2C /* PreviewProvider.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		3D3875F32AE75FE700A1A4C3 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		3D3875F52AE7698F00A1A4C3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		3D644B262ADAFBB400368F2C /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		3D644B282ADD6E8B00368F2C /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		3D644B2A2ADD6EF400368F2C /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				3D8132CB2AE3263500D13FD7 /* CoinImage */,
 				3DEB8AC12AD4EAE300888CC8 /* CircleButton */,
+				3D3875F52AE7698F00A1A4C3 /* SearchBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				3D8132CD2AE3264800D13FD7 /* CoinImageView.swift in Sources */,
 				3DBC0AA82AD0A45100EF1BCB /* SwiftUICryptoApp.swift in Sources */,
 				3DEB8AC32AD4EAF700888CC8 /* CircleButtonView.swift in Sources */,
+				3D3875F62AE7698F00A1A4C3 /* SearchBarView.swift in Sources */,
 				3DBC0AB72AD0A6D000EF1BCB /* Color.swift in Sources */,
 				3D644B372AE0098000368F2C /* NetworkingManager.swift in Sources */,
 				3DEB8AC52AD4EFC100888CC8 /* CircleButtonAnimationView.swift in Sources */,
