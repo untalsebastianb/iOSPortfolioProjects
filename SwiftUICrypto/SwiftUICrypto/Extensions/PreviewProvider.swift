@@ -219,4 +219,7 @@ class DeveloperPreview {
            currentHoldings: 1.5)
     
     let homeVM = HomeViewModel()
+    let stat1 = StatisticsModel(title: "Market Cap", value: "$12.5Bn", percentageChange: 25.34)
+    let stat2 = StatisticsModel(title: "Total Volume", value: "33 Trillion")
+    let stat3 = StatisticsModel(title: "Portfolio Value", value: "$50.4K", percentageChange: -12.33)
 }
