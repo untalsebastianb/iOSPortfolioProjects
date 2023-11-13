@@ -36,6 +36,7 @@
 		3DBC0ABD2AD0B02700EF1BCB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC0ABC2AD0B02700EF1BCB /* HomeView.swift */; };
 		3DE23E932B0110F700602A05 /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DE23E912B0110F700602A05 /* PortfolioContainer.xcdatamodeld */; };
 		3DE23E952B01118C00602A05 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE23E942B01118C00602A05 /* PortfolioDataService.swift */; };
+		3DE23E972B02C8A200602A05 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE23E962B02C8A200602A05 /* HapticManager.swift */; };
 		3DEB8AC32AD4EAF700888CC8 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8AC22AD4EAF700888CC8 /* CircleButtonView.swift */; };
 		3DEB8AC52AD4EFC100888CC8 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8AC42AD4EFC100888CC8 /* CircleButtonAnimationView.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		3DBC0ABC2AD0B02700EF1BCB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3DE23E922B0110F700602A05 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		3DE23E942B01118C00602A05 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
+		3DE23E962B02C8A200602A05 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		3DEB8AC22AD4EAF700888CC8 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		3DEB8AC42AD4EFC100888CC8 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 			children = (
 				3D644B362AE0098000368F2C /* NetworkingManager.swift */,
 				3D3875F32AE75FE700A1A4C3 /* LocalFileManager.swift */,
+				3DE23E962B02C8A200602A05 /* HapticManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				3D9B41BA2AF93D360004DA58 /* StatisticsView.swift in Sources */,
 				3DBC0AA82AD0A45100EF1BCB /* SwiftUICryptoApp.swift in Sources */,
 				3DEB8AC32AD4EAF700888CC8 /* CircleButtonView.swift in Sources */,
+				3DE23E972B02C8A200602A05 /* HapticManager.swift in Sources */,
 				3D3875F62AE7698F00A1A4C3 /* SearchBarView.swift in Sources */,
 				3DBC0AB72AD0A6D000EF1BCB /* Color.swift in Sources */,
 				3D509ECB2AFD036700DC24C6 /* CoinLogoView.swift in Sources */,
