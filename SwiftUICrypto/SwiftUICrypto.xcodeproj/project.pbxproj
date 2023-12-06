@@ -25,6 +25,7 @@
 		3D8132CD2AE3264800D13FD7 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8132CC2AE3264800D13FD7 /* CoinImageView.swift */; };
 		3D8132CF2AE3266500D13FD7 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8132CE2AE3266500D13FD7 /* CoinImageViewModel.swift */; };
 		3D8132D12AE69A5700D13FD7 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8132D02AE69A5700D13FD7 /* CoinImageService.swift */; };
+		3D8C3DE42B20A5D7001740F0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C3DE32B20A5D7001740F0 /* String.swift */; };
 		3D8E7E452AFBBA68000276AD /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8E7E442AFBBA68000276AD /* PortfolioView.swift */; };
 		3D8E7E472AFBC2B0000276AD /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8E7E462AFBC2B0000276AD /* XMarkButton.swift */; };
 		3D9B41B62AF6ACA60004DA58 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B41B52AF6ACA60004DA58 /* UIApplication.swift */; };
@@ -66,6 +67,7 @@
 		3D8132CC2AE3264800D13FD7 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		3D8132CE2AE3266500D13FD7 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		3D8132D02AE69A5700D13FD7 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
+		3D8C3DE32B20A5D7001740F0 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3D8E7E442AFBBA68000276AD /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		3D8E7E462AFBC2B0000276AD /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
 		3D9B41B52AF6ACA60004DA58 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				3D644B2C2ADDB53700368F2C /* Double.swift */,
 				3D9B41B52AF6ACA60004DA58 /* UIApplication.swift */,
 				3DE00D842B1DFE6F00E75981 /* Date.swift */,
+				3D8C3DE32B20A5D7001740F0 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				3D9B41C02AFA72BD0004DA58 /* MarketDataService.swift in Sources */,
 				3D644B372AE0098000368F2C /* NetworkingManager.swift in Sources */,
 				3DEB8AC52AD4EFC100888CC8 /* CircleButtonAnimationView.swift in Sources */,
+				3D8C3DE42B20A5D7001740F0 /* String.swift in Sources */,
 				3D644B2B2ADD6EF400368F2C /* PreviewProvider.swift in Sources */,
 				3D8E7E452AFBBA68000276AD /* PortfolioView.swift in Sources */,
 				3D644B2D2ADDB53700368F2C /* Double.swift in Sources */,
