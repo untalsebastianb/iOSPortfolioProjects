@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // Animate right
     @State private var showPortfolioView: Bool = false // show new sheet
+    @State private var showSettingsView: Bool = false
     @State private var selectedCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
     
@@ -19,7 +20,9 @@ struct HomeView: View {
             // background layer
             Color.theme.background
                 .ignoresSafeArea()
-            
+                .sheet(isPresented: $showSettingsView) { 
+                    SettingsView()
+                }
             //  Content layer
             VStack {
                 homeHeader
@@ -60,6 +63,8 @@ extension HomeView {
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
+                    } else {
+                        showSettingsView.toggle()
                     }
                 }
                 .background(
