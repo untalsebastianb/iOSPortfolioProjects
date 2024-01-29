@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8369312B67D996004E07E6 /* AsyncLetBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8369302B67D996004E07E6 /* AsyncLetBootcamp.swift */; };
 		3D8B69B32B46DFFD00F82728 /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B69B22B46DFFD00F82728 /* DownloadImageAsync.swift */; };
 		3DA19A512B4D753B008567BB /* AsyncAwaitBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA19A502B4D753B008567BB /* AsyncAwaitBootcamp.swift */; };
 		3DA4B2442B59666400ED8129 /* TaskBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4B2432B59666400ED8129 /* TaskBootcamp.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D8369302B67D996004E07E6 /* AsyncLetBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLetBootcamp.swift; sourceTree = "<group>"; };
 		3D8B69B22B46DFFD00F82728 /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
 		3DA19A502B4D753B008567BB /* AsyncAwaitBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitBootcamp.swift; sourceTree = "<group>"; };
 		3DA4B2432B59666400ED8129 /* TaskBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBootcamp.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				3D8B69B22B46DFFD00F82728 /* DownloadImageAsync.swift */,
 				3DA19A502B4D753B008567BB /* AsyncAwaitBootcamp.swift */,
 				3DA4B2432B59666400ED8129 /* TaskBootcamp.swift */,
+				3D8369302B67D996004E07E6 /* AsyncLetBootcamp.swift */,
 			);
 			path = SwiftConcurrencyBootcamp;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				3DA4B2442B59666400ED8129 /* TaskBootcamp.swift in Sources */,
 				3DA19A512B4D753B008567BB /* AsyncAwaitBootcamp.swift in Sources */,
 				3DECE78B2B45B7A600427410 /* SwiftConcurrencyBootcampApp.swift in Sources */,
+				3D8369312B67D996004E07E6 /* AsyncLetBootcamp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
