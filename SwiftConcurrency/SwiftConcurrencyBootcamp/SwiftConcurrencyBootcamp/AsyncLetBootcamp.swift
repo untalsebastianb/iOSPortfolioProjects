@@ -38,6 +38,7 @@ struct AsyncLetBootcamp: View {
                         async let fetchImage2 = fetchImage()
                         async let fetchImage3 = fetchImage()
                         async let fetchImage4 = fetchImage()
+                        async let fetchImage5 = fetchImage()
                         
                         // if one of them fails, all of them are gona fail. or marked them as try?
                         let (image1, image2, image3, image4) = await (try fetchImage1, try fetchImage2, try fetchImage3, try fetchImage4)
