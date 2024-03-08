@@ -11,6 +11,7 @@
 		3DE759FD2B98CC7100199CE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE759FC2B98CC7100199CE0 /* ContentView.swift */; };
 		3DE759FF2B98CC7400199CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE759FE2B98CC7400199CE0 /* Assets.xcassets */; };
 		3DE75A022B98CC7400199CE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE75A012B98CC7400199CE0 /* Preview Assets.xcassets */; };
+		3DE75A142B98CD3100199CE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE75A132B98CD3100199CE0 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3DE759FC2B98CC7100199CE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DE759FE2B98CC7400199CE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE75A012B98CC7400199CE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DE75A132B98CD3100199CE0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,12 @@
 		3DE759F92B98CC7100199CE0 /* ThreadsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				3DE759FA2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift */,
-				3DE759FC2B98CC7100199CE0 /* ContentView.swift */,
+				3DE75A0F2B98CCB000199CE0 /* App */,
+				3DE75A0E2B98CCAF00199CE0 /* Core */,
+				3DE75A0D2B98CCAE00199CE0 /* Extensions */,
+				3DE75A0C2B98CCAD00199CE0 /* Model */,
+				3DE75A0B2B98CCAB00199CE0 /* Services */,
+				3DE75A082B98CC9B00199CE0 /* Utils */,
 				3DE759FE2B98CC7400199CE0 /* Assets.xcassets */,
 				3DE75A002B98CC7400199CE0 /* Preview Content */,
 			);
@@ -65,6 +71,75 @@
 				3DE75A012B98CC7400199CE0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DE75A082B98CC9B00199CE0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3DE75A0B2B98CCAB00199CE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3DE75A0C2B98CCAD00199CE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DE75A0D2B98CCAE00199CE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3DE75A0E2B98CCAF00199CE0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3DE75A112B98CCE600199CE0 /* Authentication */,
+				3DE75A102B98CCE400199CE0 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3DE75A0F2B98CCB000199CE0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3DE759FA2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3DE75A102B98CCE400199CE0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				3DE759FC2B98CC7100199CE0 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		3DE75A112B98CCE600199CE0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3DE75A122B98CD0400199CE0 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		3DE75A122B98CD0400199CE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DE75A132B98CD3100199CE0 /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE75A142B98CD3100199CE0 /* LoginView.swift in Sources */,
 				3DE759FD2B98CC7100199CE0 /* ContentView.swift in Sources */,
 				3DE759FB2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift in Sources */,
 			);
