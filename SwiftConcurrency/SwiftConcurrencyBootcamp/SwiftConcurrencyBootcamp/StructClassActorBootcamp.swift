@@ -5,16 +5,118 @@
 //  Created by Juan Sebastian Bueno on 2/28/24.
 //
 
+
+
+/*
+ 
+ 🔗 Links:
+ - https://blog.onewayfirst.com/ios/post...
+ - https://stackoverflow.com/questions/2...
+ - https://stackoverflow.com/questions/2...
+ - https://medium.com/@vinayakkini/swift-basics-struct-vs-class-31b44ade28ae
+ - https://stackoverflow.com/questions/2...
+ - https://stackoverflow.com/questions/2...
+ - https://www.backblaze.com/blog/whats-...
+ - https://medium.com/doyeona/automatic-reference-counting-in-swift-arc-weak-strong-unowned-925f802c1b99
+ 
+ 💰 VALUE TYPES:
+ - Struct, Enum, String, Int, Array, Set
+ - Store in the Stack
+ - Faster
+ - Thread Safe!
+ - when you assing or pass value type a new copy of data is created
+ 
+ 🪬 REFERENCE TYPES:
+ - Class, Function, Actor
+ - Store in the heap
+ - Slower, but synchronized
+ - Not thread safe
+ - When you assign or pass reference type a new reference to original instance will be created (pointer)
+ 
+ ------------------------------
+ 
+ 📚 STACK:
+ - Store Value Types
+ - Variables allocated on the stack are stored directly in the memory
+ - Each thread has it's own stack
+ 
+ 🚀 HEAP:
+ - Store Reference Types
+ - Shared accross threads
+ 
+ ------------------------------
+ 
+ ⛩️ STRUCT:
+ - Based on VALUES
+ - Can be mututated
+ - Store in the Stack
+ 
+ 🏛️ CLASS:
+ - Based on REFERENCES (INSTANCES)
+ - Store in the Heap
+ - Inherit from other Classes
+ 
+ 🕴️ ACTORS:
+ - Same as class but Thread Safe! ( needs to be in Async (TASK {}) environment and AWAIT access
+ 
+ ------------------------------
+ 
+ ⛩️ STRUCTS: Data Models, Views
+ 🏛️ CLASSES: ViewModels.
+ 🕴️ ACTORS: Shared 'Managers', 'Data Store'
+ 
+ 
+ 
+ */
+
 import SwiftUI
 
-struct StructClassActorBootcamp: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onAppear{
-                structTest2()
-            }
+class StructClassActorBootcampHomeViewModel: ObservableObject {
+    @Published private (set)var title: String = "Sebas"
+    init() {
+        print("🔥 ViewModel Init")
+    }
+    
+    func changeTitle() {
+        title = "Pepe"
     }
 }
+
+struct StructClassActorBootcamp: View {
+    @ObservedObject var viewModel: StructClassActorBootcampHomeViewModel
+    let isActive: Bool
+    
+    init(isActive: Bool, viewModel: StructClassActorBootcampHomeViewModel) {
+        print("🔥 view INIT")
+        self.isActive = isActive
+        self.viewModel = viewModel
+    }
+    
+    var body: some View {
+        Text(isActive ? "Pepe" : "Sebas")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea()
+            .background( isActive ? Color.red : Color.blue)
+    }
+
+}
+
+struct StructClassActorBootcampHomeView: View {
+    @StateObject var viewModel = StructClassActorBootcampHomeViewModel()
+    
+    
+    @State private(set) var isActive: Bool = false
+    var body: some View {
+        StructClassActorBootcamp(isActive: isActive, viewModel: viewModel)
+            .onTapGesture {
+                isActive.toggle()
+                viewModel.changeTitle()
+            }
+    }
+    
+}
+
+
 
 extension StructClassActorBootcamp {
     private func runTest() {
@@ -22,6 +124,8 @@ extension StructClassActorBootcamp {
         structTest1()
         printDivider()
         classTest1()
+        printDivider()
+        actorTest1()
     }
     
     private func printDivider() {
@@ -61,7 +165,36 @@ extension StructClassActorBootcamp {
         print("ObjectB: \(objectB.title)")
         
     }
+    
+    
+    private func actorTest1() {
+        Task {
+            print("actorTest1")
+            let objectA = myActor(title: "Starting title")
+            print("ObjectA: \(await objectA.title)")
+            print("Pass the REFERENCE of objectA to objectB")
+            let objectB = objectA
+            print("ObjectB: \(await objectB.title)")
+            
+            await objectB.updateTitle(newTitle: "second title")
+            
+            print("ObjectA: \(await objectA.title)")
+            print("ObjectB: \(await objectB.title)")
+        }
+    }
 }
+
+
+
+
+
+#Preview {
+    StructClassActorBootcamp(isActive: true, viewModel: StructClassActorBootcampHomeViewModel())
+}
+
+// Inmutable struct
+// everything is going to be a let inside the struct
+
 
 struct myStruct {
     var title: String
@@ -73,14 +206,24 @@ class myClass {
     init(title: String) {
         self.title = title
     }
+    
+    func updateTitle(newTitle: String) {
+        title = newTitle
+    }
 }
 
-#Preview {
-    StructClassActorBootcamp()
+actor myActor {
+    var title: String
+    
+    init(title: String) {
+        self.title = title
+    }
+    
+    func updateTitle(newTitle: String) {
+        title = newTitle
+    }
 }
 
-// Inmutable struct
-// everything is going to be a let inside the struct
 struct customStruct {
     let title: String
     
@@ -129,6 +272,23 @@ extension StructClassActorBootcamp {
         print("struct4", struct4.title)
         struct4.updateTitle(newTitle: "title2")
         print("struct4", struct4.title)
+        
+    }
+}
+
+extension StructClassActorBootcamp {
+    private func classTest2() {
+        print("classTest2")
+        
+        let class1 = myClass(title: "Title1")
+        print("class1: \(class1.title)")
+        class1.title = "title2"
+        print("class1: \(class1.title)")
+        
+        let class2 = myClass(title: "Title1")
+        print("class2: \(class2.title)")
+        class2.updateTitle(newTitle: "title2")
+        print("class2: \(class2.title)")
         
     }
 }
