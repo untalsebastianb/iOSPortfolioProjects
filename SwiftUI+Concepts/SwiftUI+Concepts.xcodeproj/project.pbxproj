@@ -53,11 +53,13 @@
 		3D8AD1952BAB6E1400D81F7E /* SwiftUI+Concepts */ = {
 			isa = PBXGroup;
 			children = (
+				3DE4DFA02BAB896D0037D672 /* Advanced */,
+				3DE4DF9F2BAB89650037D672 /* Intermediate */,
+				3DE4DF9E2BAB89410037D672 /* Begginer */,
 				3D8AD1962BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift */,
 				3D8AD1982BAB6E1400D81F7E /* ContentView.swift */,
 				3D8AD19A2BAB6E1800D81F7E /* Assets.xcassets */,
 				3D8AD19C2BAB6E1800D81F7E /* Preview Content */,
-				3D8AD1A42BAB6E5000D81F7E /* IfLetBootcamp.swift */,
 			);
 			path = "SwiftUI+Concepts";
 			sourceTree = "<group>";
@@ -68,6 +70,28 @@
 				3D8AD19D2BAB6E1800D81F7E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DE4DF9E2BAB89410037D672 /* Begginer */ = {
+			isa = PBXGroup;
+			children = (
+				3D8AD1A42BAB6E5000D81F7E /* IfLetBootcamp.swift */,
+			);
+			path = Begginer;
+			sourceTree = "<group>";
+		};
+		3DE4DF9F2BAB89650037D672 /* Intermediate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intermediate;
+			sourceTree = "<group>";
+		};
+		3DE4DFA02BAB896D0037D672 /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Advanced;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
