@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Combine
+//import Combine
 
 class AsyncPublisherDataManager {
     @Published var myData: [String] = []
@@ -38,7 +38,7 @@ class AsyncPublisherDataManager {
 
 class AsyncPublisherBootcampVM: ObservableObject {
     let manager = AsyncPublisherDataManager()
-    var cancellables = Set<AnyCancellable>()
+//    var cancellables = Set<AnyCancellable>()
     @MainActor @Published var dataArray: [String] = []
     
     init() {
