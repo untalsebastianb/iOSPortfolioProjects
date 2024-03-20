@@ -16,6 +16,8 @@
 		3D8AD1812BA693AD00D81F7E /* MVVMBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1802BA693AD00D81F7E /* MVVMBootcamp.swift */; };
 		3D8AD1832BA698B900D81F7E /* RefreshableModifierBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1822BA698B900D81F7E /* RefreshableModifierBootcamp.swift */; };
 		3D8AD1852BA8838300D81F7E /* SearchableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1842BA8838300D81F7E /* SearchableBootcamp.swift */; };
+		3D8AD1872BAA25E900D81F7E /* AsyncStreamBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1862BAA25E900D81F7E /* AsyncStreamBootcamp.swift */; };
+		3D8AD1892BAB366300D81F7E /* ObservableMacroBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1882BAB366300D81F7E /* ObservableMacroBootcamp.swift */; };
 		3D8B69B32B46DFFD00F82728 /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B69B22B46DFFD00F82728 /* DownloadImageAsync.swift */; };
 		3DA19A512B4D753B008567BB /* AsyncAwaitBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA19A502B4D753B008567BB /* AsyncAwaitBootcamp.swift */; };
 		3DA4B2442B59666400ED8129 /* TaskBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4B2432B59666400ED8129 /* TaskBootcamp.swift */; };
@@ -39,6 +41,8 @@
 		3D8AD1802BA693AD00D81F7E /* MVVMBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMBootcamp.swift; sourceTree = "<group>"; };
 		3D8AD1822BA698B900D81F7E /* RefreshableModifierBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableModifierBootcamp.swift; sourceTree = "<group>"; };
 		3D8AD1842BA8838300D81F7E /* SearchableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableBootcamp.swift; sourceTree = "<group>"; };
+		3D8AD1862BAA25E900D81F7E /* AsyncStreamBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStreamBootcamp.swift; sourceTree = "<group>"; };
+		3D8AD1882BAB366300D81F7E /* ObservableMacroBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableMacroBootcamp.swift; sourceTree = "<group>"; };
 		3D8B69B22B46DFFD00F82728 /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
 		3DA19A502B4D753B008567BB /* AsyncAwaitBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitBootcamp.swift; sourceTree = "<group>"; };
 		3DA4B2432B59666400ED8129 /* TaskBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBootcamp.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				3D8369302B67D996004E07E6 /* AsyncLetBootcamp.swift */,
 				3DF56AB62B6BC44200ADD6C9 /* TaskGroupBootcamp.swift */,
 				3DF56ABB2B6D25C000ADD6C9 /* CheckContinuationBootcamp.swift */,
+				3D8AD1862BAA25E900D81F7E /* AsyncStreamBootcamp.swift */,
+				3D8AD1882BAB366300D81F7E /* ObservableMacroBootcamp.swift */,
 				3DB06CF42B8F693A0032F45C /* StructClassActorBootcamp.swift */,
 				3D8AD1762BA494CC00D81F7E /* ActorsBootcamp.swift */,
 				3D8AD1782BA4AC7700D81F7E /* GlobalActorsBootcamp.swift */,
@@ -197,8 +203,10 @@
 				3D8AD1812BA693AD00D81F7E /* MVVMBootcamp.swift in Sources */,
 				3DECE78B2B45B7A600427410 /* SwiftConcurrencyBootcampApp.swift in Sources */,
 				3D8369312B67D996004E07E6 /* AsyncLetBootcamp.swift in Sources */,
+				3D8AD1892BAB366300D81F7E /* ObservableMacroBootcamp.swift in Sources */,
 				3D8AD17F2BA4F8F100D81F7E /* StrongSelfBootcamp.swift in Sources */,
 				3D8AD17D2BA4E97800D81F7E /* AsyncPublisherBootcamp.swift in Sources */,
+				3D8AD1872BAA25E900D81F7E /* AsyncStreamBootcamp.swift in Sources */,
 				3DF56ABC2B6D25C000ADD6C9 /* CheckContinuationBootcamp.swift in Sources */,
 				3D8AD1792BA4AC7700D81F7E /* GlobalActorsBootcamp.swift in Sources */,
 				3D8AD1832BA698B900D81F7E /* RefreshableModifierBootcamp.swift in Sources */,
