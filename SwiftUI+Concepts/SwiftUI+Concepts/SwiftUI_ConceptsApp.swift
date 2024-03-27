@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_ConceptsApp: App {
     var body: some Scene {
         WindowGroup {
-            CodableBootcamp()
+            SubscriberBootcamp()
         }
     }
 }
