@@ -15,6 +15,8 @@
 		3D8AD1A52BAB6E5000D81F7E /* IfLetBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1A42BAB6E5000D81F7E /* IfLetBootcamp.swift */; };
 		3D8AD1A92BAC88DF00D81F7E /* GenericsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1A82BAC88DF00D81F7E /* GenericsBootcamp.swift */; };
 		3D8AD1AB2BAC949500D81F7E /* GeometryReaderBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1AA2BAC949500D81F7E /* GeometryReaderBootcamp.swift */; };
+		3DDEDE572BB3761900AA410A /* EscapingBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDEDE562BB3761900AA410A /* EscapingBootcamp.swift */; };
+		3DDEDE592BB3996B00AA410A /* CodableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDEDE582BB3996B00AA410A /* CodableBootcamp.swift */; };
 		3DF3C7A32BACC54D0043F543 /* HashableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3C7A22BACC54D0043F543 /* HashableBootcamp.swift */; };
 		3DF3C7A52BACCACB0043F543 /* SortFilterMapBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3C7A42BACCACB0043F543 /* SortFilterMapBootcamp.swift */; };
 		3DF3C7A82BADDCC70043F543 /* BackgroundThreadBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3C7A72BADDCC70043F543 /* BackgroundThreadBootcamp.swift */; };
@@ -32,6 +34,8 @@
 		3D8AD1A42BAB6E5000D81F7E /* IfLetBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfLetBootcamp.swift; sourceTree = "<group>"; };
 		3D8AD1A82BAC88DF00D81F7E /* GenericsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsBootcamp.swift; sourceTree = "<group>"; };
 		3D8AD1AA2BAC949500D81F7E /* GeometryReaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderBootcamp.swift; sourceTree = "<group>"; };
+		3DDEDE562BB3761900AA410A /* EscapingBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapingBootcamp.swift; sourceTree = "<group>"; };
+		3DDEDE582BB3996B00AA410A /* CodableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBootcamp.swift; sourceTree = "<group>"; };
 		3DF3C7A22BACC54D0043F543 /* HashableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashableBootcamp.swift; sourceTree = "<group>"; };
 		3DF3C7A42BACCACB0043F543 /* SortFilterMapBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterMapBootcamp.swift; sourceTree = "<group>"; };
 		3DF3C7A72BADDCC70043F543 /* BackgroundThreadBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundThreadBootcamp.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				3DF3C7A72BADDCC70043F543 /* BackgroundThreadBootcamp.swift */,
 				3DF3C7A92BAE59EF0043F543 /* WeakSelfBootcamp.swift */,
 				3DF3C7AB2BAE694D0043F543 /* TypeAliasBootcamp.swift */,
+				3DDEDE562BB3761900AA410A /* EscapingBootcamp.swift */,
+				3DDEDE582BB3996B00AA410A /* CodableBootcamp.swift */,
 			);
 			path = Intermediate;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDEDE572BB3761900AA410A /* EscapingBootcamp.swift in Sources */,
 				3DF3C7A82BADDCC70043F543 /* BackgroundThreadBootcamp.swift in Sources */,
 				3D8AD1A52BAB6E5000D81F7E /* IfLetBootcamp.swift in Sources */,
 				3D8AD1992BAB6E1400D81F7E /* ContentView.swift in Sources */,
@@ -195,6 +202,7 @@
 				3DF3C7AA2BAE59EF0043F543 /* WeakSelfBootcamp.swift in Sources */,
 				3D8AD1A92BAC88DF00D81F7E /* GenericsBootcamp.swift in Sources */,
 				3DF3C7AC2BAE694D0043F543 /* TypeAliasBootcamp.swift in Sources */,
+				3DDEDE592BB3996B00AA410A /* CodableBootcamp.swift in Sources */,
 				3D8AD1972BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift in Sources */,
 				3D8AD1AB2BAC949500D81F7E /* GeometryReaderBootcamp.swift in Sources */,
 				3DF3C7A32BACC54D0043F543 /* HashableBootcamp.swift in Sources */,
