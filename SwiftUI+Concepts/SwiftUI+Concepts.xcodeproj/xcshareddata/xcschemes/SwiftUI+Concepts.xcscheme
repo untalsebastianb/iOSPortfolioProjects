@@ -28,6 +28,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3DDEDE702BB8BCEA00AA410A"
+               BuildableName = "SwiftUI+ConceptsTests.xctest"
+               BlueprintName = "SwiftUI+ConceptsTests"
+               ReferencedContainer = "container:SwiftUI+Concepts.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3DA102AF2BB9FDC20094C31D"
+               BuildableName = "dataService_test.xctest"
+               BlueprintName = "dataService_test"
+               ReferencedContainer = "container:SwiftUI+Concepts.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
