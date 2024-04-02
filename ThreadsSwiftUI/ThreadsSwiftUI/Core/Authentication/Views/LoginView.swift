@@ -23,18 +23,14 @@ struct LoginView: View {
                     .padding()
                 
                 VStack {
+                    
                     TextField("Enter your Email", text: $email)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 24)
+                        .textInputAutocapitalization(.none)
+                        .textFieldModifier()
+                    
                     SecureField("Enter your password", text: $password)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 24)
+                        .textFieldModifier()
+                    
                 } // Vstack
                 
                 NavigationLink {
@@ -49,6 +45,7 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }// Nv Link
                 
+                // login button
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Login")
                         .font(.subheadline)
@@ -57,12 +54,13 @@ struct LoginView: View {
                         .frame(width: 352, height: 44)
                         .background(.black)
                         .cornerRadius(8)
-                })
+                }) // login
                 
                 Spacer()
                 Divider()
                 NavigationLink { 
-                    Text("RegistrationView")
+                    RegistrationView()
+                        .navigationBarBackButtonHidden()
                 } label: { 
                     HStack(spacing: 3) {
                         Text("Don't have an account?")
