@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "carlos-sainz.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
