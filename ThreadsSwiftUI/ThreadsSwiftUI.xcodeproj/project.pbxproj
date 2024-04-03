@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D9F511A2BBCD3E200D4AC55 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F51192BBCD3E200D4AC55 /* ThreadView.swift */; };
+		3D9F511D2BBCECFE00D4AC55 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F511C2BBCECFE00D4AC55 /* CircularProfileImageView.swift */; };
+		3D9F511F2BBCED9A00D4AC55 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F511E2BBCED9A00D4AC55 /* UserCell.swift */; };
 		3DA102BE2BBB5CBD0094C31D /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA102BD2BBB5CBD0094C31D /* RegistrationView.swift */; };
 		3DA102C12BBB5F7B0094C31D /* ThreadsTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA102C02BBB5F7B0094C31D /* ThreadsTextFieldModifier.swift */; };
 		3DA102C42BBC30750094C31D /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA102C32BBC30750094C31D /* ThreadsTabView.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D9F51192BBCD3E200D4AC55 /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
+		3D9F511C2BBCECFE00D4AC55 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		3D9F511E2BBCED9A00D4AC55 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		3DA102BD2BBB5CBD0094C31D /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3DA102C02BBB5F7B0094C31D /* ThreadsTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTextFieldModifier.swift; sourceTree = "<group>"; };
 		3DA102C32BBC30750094C31D /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D9F511B2BBCECEB00D4AC55 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3D9F511C2BBCECFE00D4AC55 /* CircularProfileImageView.swift */,
+				3D9F511E2BBCED9A00D4AC55 /* UserCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		3DA102BF2BBB5F670094C31D /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA102C72BBC34850094C31D /* FeedView.swift */,
+				3D9F51192BBCD3E200D4AC55 /* ThreadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,14 +233,15 @@
 		3DE75A0E2B98CCAF00199CE0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3DA102D52BBC380E0094C31D /* Profile */,
+				3D9F511B2BBCECEB00D4AC55 /* Components */,
 				3DA102D12BBC37F30094C31D /* Activity */,
-				3DA102CD2BBC37BA0094C31D /* ThreadsCreation */,
+				3DE75A112B98CCE600199CE0 /* Authentication */,
 				3DA102C92BBC34AF0094C31D /* Explore */,
 				3DA102C52BBC34770094C31D /* Feed */,
-				3DE75A112B98CCE600199CE0 /* Authentication */,
+				3DA102D52BBC380E0094C31D /* Profile */,
 				3DE75A102B98CCE400199CE0 /* Root */,
 				3DA102C22BBB61CB0094C31D /* TabBar */,
+				3DA102CD2BBC37BA0094C31D /* ThreadsCreation */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -337,7 +354,10 @@
 				3DE759FD2B98CC7100199CE0 /* ContentView.swift in Sources */,
 				3DA102D42BBC38050094C31D /* ActivityView.swift in Sources */,
 				3DA102D02BBC37D90094C31D /* CreateThreadView.swift in Sources */,
+				3D9F511D2BBCECFE00D4AC55 /* CircularProfileImageView.swift in Sources */,
+				3D9F511F2BBCED9A00D4AC55 /* UserCell.swift in Sources */,
 				3DA102C42BBC30750094C31D /* ThreadsTabView.swift in Sources */,
+				3D9F511A2BBCD3E200D4AC55 /* ThreadView.swift in Sources */,
 				3DA102C12BBB5F7B0094C31D /* ThreadsTextFieldModifier.swift in Sources */,
 				3DE759FB2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift in Sources */,
 				3DA102CC2BBC34C80094C31D /* ExploreView.swift in Sources */,
