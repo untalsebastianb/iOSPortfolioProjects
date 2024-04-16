@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    
-    @State private(set) var email = ""
-    @State private(set) var password = ""
-    @State private(set) var fullName = ""
-    @State private(set) var userName = ""
+    @StateObject private var viewModel = RegistrationViewModel()
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -26,24 +22,29 @@ struct RegistrationView: View {
                 
                 VStack {
                     // email
-                    TextField("Enter your Email", text: $email)
-                        .textInputAutocapitalization(.none)
+                    TextField("Enter your Email", text: $viewModel.email)
+                        .textInputAutocapitalization(.never)
                         .textFieldModifier()
                     
+                    
                     // password
-                    SecureField("Enter your password", text: $password)
+                    SecureField("Enter your password", text: $viewModel.password)
                         .textFieldModifier()
                     
                     // full name
-                    SecureField("Enter your full name", text: $fullName)
+                    TextField("Enter your full name", text: $viewModel.fullName)
                         .textFieldModifier()
                     
-                    SecureField("Enter your user name", text: $userName)
+                    TextField("Enter your user name", text: $viewModel.userName)
                         .textFieldModifier()
                     
                     
                     // singup button
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        Task {
+                            try await viewModel.createUser()
+                        }
+                    }, label: {
                         Text("Sign Up")
                             .font(.subheadline)
                             .fontWeight(.semibold)

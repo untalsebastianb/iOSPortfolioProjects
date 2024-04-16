@@ -49,6 +49,8 @@
 		3DA102D02BBC37D90094C31D /* CreateThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA102CF2BBC37D90094C31D /* CreateThreadView.swift */; };
 		3DA102D42BBC38050094C31D /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA102D32BBC38050094C31D /* ActivityView.swift */; };
 		3DA102D82BBC381B0094C31D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA102D72BBC381B0094C31D /* ProfileView.swift */; };
+		3DA941A32BCDEF77003F4AC7 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA941A22BCDEF77003F4AC7 /* ContentViewModel.swift */; };
+		3DA941A52BCDF494003F4AC7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA941A42BCDF494003F4AC7 /* LoginViewModel.swift */; };
 		3DDBAD312BC60440008567F0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDBAD302BC60440008567F0 /* EditProfileView.swift */; };
 		3DE759FB2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE759FA2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift */; };
 		3DE759FD2B98CC7100199CE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE759FC2B98CC7100199CE0 /* ContentView.swift */; };
@@ -73,6 +75,8 @@
 		3DA102CF2BBC37D90094C31D /* CreateThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadView.swift; sourceTree = "<group>"; };
 		3DA102D32BBC38050094C31D /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		3DA102D72BBC381B0094C31D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3DA941A22BCDEF77003F4AC7 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		3DA941A42BCDF494003F4AC7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3DDBAD302BC60440008567F0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		3DE759F72B98CC7100199CE0 /* ThreadsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE759FA2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3D130AEE2BC7406600377F9D /* RegistrationViewModel.swift */,
+				3DA941A42BCDF494003F4AC7 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,6 +257,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3DA941A02BCDEF59003F4AC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DE759FC2B98CC7100199CE0 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DA941A12BCDEF5C003F4AC7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DA941A22BCDEF77003F4AC7 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3DDBAD2E2BC60413008567F0 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +385,8 @@
 		3DE75A102B98CCE400199CE0 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				3DE759FC2B98CC7100199CE0 /* ContentView.swift */,
+				3DA941A12BCDEF5C003F4AC7 /* ViewModel */,
+				3DA941A02BCDEF59003F4AC7 /* View */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -499,10 +521,12 @@
 				3DE759FD2B98CC7100199CE0 /* ContentView.swift in Sources */,
 				3DA102D42BBC38050094C31D /* ActivityView.swift in Sources */,
 				3DA102D02BBC37D90094C31D /* CreateThreadView.swift in Sources */,
+				3DA941A52BCDF494003F4AC7 /* LoginViewModel.swift in Sources */,
 				3D9F511D2BBCECFE00D4AC55 /* CircularProfileImageView.swift in Sources */,
 				3D9F511F2BBCED9A00D4AC55 /* UserCell.swift in Sources */,
 				3DA102C42BBC30750094C31D /* ThreadsTabView.swift in Sources */,
 				3D7C718C2BC2F75D0065968F /* ProfileThreadFilter.swift in Sources */,
+				3DA941A32BCDEF77003F4AC7 /* ContentViewModel.swift in Sources */,
 				3D9F511A2BBCD3E200D4AC55 /* ThreadView.swift in Sources */,
 				3DA102C12BBB5F7B0094C31D /* ThreadsTextFieldModifier.swift in Sources */,
 				3DE759FB2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift in Sources */,
