@@ -11,6 +11,7 @@
 		3D580A1E2BD568BF00DEC29E /* AnimationTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580A1D2BD568BF00DEC29E /* AnimationTiming.swift */; };
 		3D580A202BD5723F00DEC29E /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580A1F2BD5723F00DEC29E /* Transition.swift */; };
 		3D580A222BD57C3000DEC29E /* Sheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580A212BD57C3000DEC29E /* Sheets.swift */; };
+		3D580A242BD5F5BC00DEC29E /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580A232BD5F5BC00DEC29E /* PopOver.swift */; };
 		3D88C6072BAC9F4F00BCFB21 /* MultipleSheetsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C6062BAC9F4F00BCFB21 /* MultipleSheetsBootcamp.swift */; };
 		3D8AD1972BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1962BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift */; };
 		3D8AD1992BAB6E1400D81F7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1982BAB6E1400D81F7E /* ContentView.swift */; };
@@ -64,6 +65,7 @@
 		3D580A1D2BD568BF00DEC29E /* AnimationTiming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTiming.swift; sourceTree = "<group>"; };
 		3D580A1F2BD5723F00DEC29E /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		3D580A212BD57C3000DEC29E /* Sheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheets.swift; sourceTree = "<group>"; };
+		3D580A232BD5F5BC00DEC29E /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		3D88C6062BAC9F4F00BCFB21 /* MultipleSheetsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSheetsBootcamp.swift; sourceTree = "<group>"; };
 		3D8AD1932BAB6E1400D81F7E /* SwiftUI+Concepts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI+Concepts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8AD1962BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ConceptsApp.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				3D580A1D2BD568BF00DEC29E /* AnimationTiming.swift */,
 				3D580A1F2BD5723F00DEC29E /* Transition.swift */,
 				3D580A212BD57C3000DEC29E /* Sheets.swift */,
+				3D580A232BD5F5BC00DEC29E /* PopOver.swift */,
 			);
 			path = UIMaster;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				3DDEDE5D2BB4A16600AA410A /* DownloadWithCombine.swift in Sources */,
 				3DDEDE612BB4C2FB00AA410A /* AligmentGuideBootcamp.swift in Sources */,
 				3DDEDE5F2BB4B09B00AA410A /* SubscriberBootcamp.swift in Sources */,
+				3D580A242BD5F5BC00DEC29E /* PopOver.swift in Sources */,
 				3D8AD1AB2BAC949500D81F7E /* GeometryReaderBootcamp.swift in Sources */,
 				3DF3C7A32BACC54D0043F543 /* HashableBootcamp.swift in Sources */,
 				3DDEDE652BB87BB400AA410A /* ProtocolsBootcamp.swift in Sources */,
