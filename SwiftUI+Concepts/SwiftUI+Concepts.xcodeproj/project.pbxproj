@@ -43,6 +43,7 @@
 		3DF3C7A82BADDCC70043F543 /* BackgroundThreadBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3C7A72BADDCC70043F543 /* BackgroundThreadBootcamp.swift */; };
 		3DF3C7AA2BAE59EF0043F543 /* WeakSelfBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3C7A92BAE59EF0043F543 /* WeakSelfBootcamp.swift */; };
 		3DF3C7AC2BAE694D0043F543 /* TypeAliasBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3C7AB2BAE694D0043F543 /* TypeAliasBootcamp.swift */; };
+		3DFCEE6B2BD9E808007B3CEF /* ContextMenuBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFCEE6A2BD9E808007B3CEF /* ContextMenuBt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		3DF3C7A72BADDCC70043F543 /* BackgroundThreadBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundThreadBootcamp.swift; sourceTree = "<group>"; };
 		3DF3C7A92BAE59EF0043F543 /* WeakSelfBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSelfBootcamp.swift; sourceTree = "<group>"; };
 		3DF3C7AB2BAE694D0043F543 /* TypeAliasBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliasBootcamp.swift; sourceTree = "<group>"; };
+		3DFCEE6A2BD9E808007B3CEF /* ContextMenuBt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuBt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				3D580A232BD5F5BC00DEC29E /* PopOver.swift */,
 				3D4016412BD8507500E76E41 /* Lists.swift */,
 				3D4016432BD96BE600E76E41 /* ActionSheet.swift */,
+				3DFCEE6A2BD9E808007B3CEF /* ContextMenuBt.swift */,
 			);
 			path = UIMaster;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				3D8AD1AB2BAC949500D81F7E /* GeometryReaderBootcamp.swift in Sources */,
 				3DF3C7A32BACC54D0043F543 /* HashableBootcamp.swift in Sources */,
 				3DDEDE652BB87BB400AA410A /* ProtocolsBootcamp.swift in Sources */,
+				3DFCEE6B2BD9E808007B3CEF /* ContextMenuBt.swift in Sources */,
 				3DF3C7A52BACCACB0043F543 /* SortFilterMapBootcamp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
