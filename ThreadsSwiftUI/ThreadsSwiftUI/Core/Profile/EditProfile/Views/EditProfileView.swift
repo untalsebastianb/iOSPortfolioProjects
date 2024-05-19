@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct EditProfileView: View {
+    let user: User
     @Environment(\.dismiss) var dismiss
     @State private var bio = ""
     @State private var link = ""
@@ -27,7 +28,7 @@ struct EditProfileView: View {
                         VStack(alignment: .leading) {
                             Text("Name")
                                 .fontWeight(.semibold)
-                            Text("Charles lecler")
+                            Text(user.fullname)
                         }
                         
                         Spacer()
@@ -39,7 +40,7 @@ struct EditProfileView: View {
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
                             } else {
-                                CircularProfileImageView()
+                                CircularProfileImageView(user: user)
                             }
                         }
                     }
@@ -105,6 +106,6 @@ struct EditProfileView: View {
 
 #Preview {
     NavigationStack {
-        EditProfileView()
+        EditProfileView(user: DeveloperPreview.user)
     }
 }
