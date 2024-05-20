@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 extension PreviewProvider {
     static var dev: DeveloperPreview {
@@ -16,6 +17,6 @@ extension PreviewProvider {
 
 class DeveloperPreview {
     static let shared = DeveloperPreview()
-    
+    static let thread = Thread(ownerUid: "wee2", caption: "Mock thread", timeStamp: Timestamp(), likes: 4)
     static let user = User(id: UUID().uuidString, fullname: "Max Verstappen", email: "maxv@gmail.com", username: "maxverstappen11", profileImageUrl: nil, bio: nil)
 }
