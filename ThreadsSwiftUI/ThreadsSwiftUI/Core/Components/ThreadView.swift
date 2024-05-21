@@ -22,7 +22,7 @@ struct ThreadView: View {
                         
                         Spacer()
                         
-                        Text("10m")
+                        Text(thread.timeStamp.timestampString())
                             .font(.caption)
                             .foregroundStyle(Color(.systemGray3))
                         
@@ -57,8 +57,8 @@ struct ThreadView: View {
             
             Divider()
         }
-        .padding(.vertical, 5)
-        .padding(.horizontal, 16)
+        .padding(.vertical, 4)
+        .padding(.horizontal, 8)
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D095D442BFD398E004BB8C1 /* UserContentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D095D432BFD398E004BB8C1 /* UserContentListViewModel.swift */; };
+		3D095D462BFD3F0A004BB8C1 /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D095D452BFD3F0A004BB8C1 /* TimeStamp.swift */; };
 		3D130AB52BC73C8100377F9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D130AB42BC73C8100377F9D /* GoogleService-Info.plist */; };
 		3D130AB82BC73E3400377F9D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3D130AB72BC73E3400377F9D /* FirebaseAnalytics */; };
 		3D130ABA2BC73E3400377F9D /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 3D130AB92BC73E3400377F9D /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -75,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D095D432BFD398E004BB8C1 /* UserContentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentListViewModel.swift; sourceTree = "<group>"; };
+		3D095D452BFD3F0A004BB8C1 /* TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
 		3D130AB42BC73C8100377F9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D130AEE2BC7406600377F9D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		3D130AF12BC7416200377F9D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -154,6 +158,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D095D412BFD3965004BB8C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DDEA86C2BFA35C900CD04B7 /* ProfileHeaderView.swift */,
+				3DDEA86E2BFA37FE00CD04B7 /* UserContentListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D095D422BFD3973004BB8C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D095D432BFD398E004BB8C1 /* UserContentListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3D130AED2BC7404800377F9D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,8 +220,8 @@
 		3D53D9B82BF4380A00C7314B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3DDEA86C2BFA35C900CD04B7 /* ProfileHeaderView.swift */,
-				3DDEA86E2BFA37FE00CD04B7 /* UserContentListView.swift */,
+				3D095D422BFD3973004BB8C1 /* ViewModel */,
+				3D095D412BFD3965004BB8C1 /* View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				3D9F511C2BBCECFE00D4AC55 /* CircularProfileImageView.swift */,
+				3D9F51192BBCD3E200D4AC55 /* ThreadView.swift */,
 				3D9F511E2BBCED9A00D4AC55 /* UserCell.swift */,
 			);
 			path = Components;
@@ -259,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				3DA102C72BBC34850094C31D /* FeedView.swift */,
-				3D9F51192BBCD3E200D4AC55 /* ThreadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				3D53D9AF2BF42E9A00C7314B /* PreviewProvider.swift */,
+				3D095D452BFD3F0A004BB8C1 /* TimeStamp.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -637,6 +659,7 @@
 				3DDEA86F2BFA37FE00CD04B7 /* UserContentListView.swift in Sources */,
 				3DA102D42BBC38050094C31D /* ActivityView.swift in Sources */,
 				3DA102D02BBC37D90094C31D /* CreateThreadView.swift in Sources */,
+				3D095D442BFD398E004BB8C1 /* UserContentListViewModel.swift in Sources */,
 				3DDEA87C2BFA5B4300CD04B7 /* CreateThreadViewModel.swift in Sources */,
 				3DA941A52BCDF494003F4AC7 /* LoginViewModel.swift in Sources */,
 				3D9F511D2BBCECFE00D4AC55 /* CircularProfileImageView.swift in Sources */,
@@ -648,6 +671,7 @@
 				3DA102C42BBC30750094C31D /* ThreadsTabView.swift in Sources */,
 				3D7C718C2BC2F75D0065968F /* ProfileThreadFilter.swift in Sources */,
 				3DA941A32BCDEF77003F4AC7 /* ContentViewModel.swift in Sources */,
+				3D095D462BFD3F0A004BB8C1 /* TimeStamp.swift in Sources */,
 				3D9F511A2BBCD3E200D4AC55 /* ThreadView.swift in Sources */,
 				3DA102C12BBB5F7B0094C31D /* ThreadsTextFieldModifier.swift in Sources */,
 				3DE759FB2B98CC7100199CE0 /* ThreadsSwiftUIApp.swift in Sources */,
