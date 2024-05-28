@@ -15,7 +15,7 @@ class TaskBootcampViewModel: ObservableObject {
     var fetchImageTask: Task<(), Never>? = nil // this is the way of doing it from vm 
     
     func fetchImage() async {
-        try? await Task.sleep(nanoseconds: 5_000_000_000)
+        try? await Task.sleep(nanoseconds: 20_000_000_000)
         
         
         // TASK Could still running after cancelation, to prevent that you need to 
@@ -36,6 +36,7 @@ class TaskBootcampViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func fetchImage2() async {
         do {
             guard let url = URL(string: "https://fastly.picsum.photos/id/829/200/200.jpg?hmac=UR6WfoHy282eoIXjFzEm86pUeBNLQsX71BUthF-sOvM") else { return }
@@ -43,6 +44,7 @@ class TaskBootcampViewModel: ObservableObject {
             
             let image = UIImage(data: data)
             self.image2 = image
+            print("Image 2 returned succesfully")
             
         } catch  {
             print(error.localizedDescription)
@@ -81,8 +83,18 @@ struct TaskBootcamp: View {
                     .frame(width: 200, height: 200)
             }
         }
-        .task {
-            await viewModel.fetchImage()
+        .task { // here is sincronous guiño guiño code
+            print(Thread.current)
+            // to make the code asynchronous here we need to wrap every function in its own task if not every await will wait for response before executing next step
+
+                await viewModel.fetchImage()
+                await viewModel.fetchImage2()
+            
+            // to make it go to background thread
+            Task.detached { 
+                print("🚨\(Thread.current)")
+            }
+
         }
         .onDisappear {
             viewModel.fetchImageTask?.cancel()

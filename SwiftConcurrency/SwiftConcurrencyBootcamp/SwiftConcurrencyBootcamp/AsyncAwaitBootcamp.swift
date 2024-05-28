@@ -9,7 +9,7 @@ import SwiftUI
 
 class AsyncAwaitBootcampViewModel: ObservableObject {
     
-    @Published var dataArray: [String] = []
+    @MainActor @Published var dataArray: [String] = []
     
     func addTitle1() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -28,7 +28,41 @@ class AsyncAwaitBootcampViewModel: ObservableObject {
         }
     }
     
+    // ACTORS AND MAIN THREAD!!
+    func addAuthor1Actor() async {
+        Task { @MainActor in
+            let author1 = "Author1: \(Thread.current)"
+            self.dataArray.append(author1)            
+        }
+        
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        let author2 =  "Author2: \(Thread.current)"
+        
+        await MainActor.run { 
+            self.dataArray.append(author2)
+            let author3 =  "Author3: \(Thread.current)"
+            self.dataArray.append(author3)
+        }
+        
+        await addSomething()
+    }
+
+    
+    func addSomethingActor() async {
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        let something1 =  "something1: \(Thread.current)"
+        
+        await MainActor.run { 
+            self.dataArray.append(something1)
+            let something2 =  "something2: \(Thread.current)"
+            self.dataArray.append(something2)
+        }
+    }
+    
+//    @MainActor puedo marcar la funcion completa como Main Actor o usar await MainActor.run or Task { @MainActor in }
+    @MainActor
     func addAuthor1() async {
+        
         let author1 = "Author1: \(Thread.current)"
         self.dataArray.append(author1)
         
@@ -70,16 +104,22 @@ struct AsyncAwaitBootcamp: View {
                 Text(data)
             }
         }
-        .onAppear {
-            Task {
-                await viewModel.addAuthor1()
-                await viewModel.addSomething()
+        .task { 
+                await viewModel.addAuthor1Actor()
+                await viewModel.addSomethingActor()
                 let final = "Final Text \(Thread.current)"
                 viewModel.dataArray.append(final)
-            }
-//            viewModel.addTitle1()
-//            viewModel.addTitle2()
         }
+//        .onAppear {
+//            Task {
+//                await viewModel.addAuthor1()
+//                await viewModel.addSomething()
+//                let final = "Final Text \(Thread.current)"
+//                viewModel.dataArray.append(final)
+//            }
+////            viewModel.addTitle1()
+////            viewModel.addTitle2()
+//        }
     }
 }
 

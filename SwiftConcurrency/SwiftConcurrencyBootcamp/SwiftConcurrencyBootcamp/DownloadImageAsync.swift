@@ -54,19 +54,43 @@ class DownloadImageAsyncViewModel: ObservableObject {
     let loader = DownloadImageAsyncLoader()
     var cancellables = Set<AnyCancellable>()
     
+    func fetchImageWithCombine() {
+        // 🌟 using Combine 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30, execute: {
+            print("🔥Se libero el thread \(Thread.current)")
+            self.loader.downloadWithCombine()
+                .receive(on: DispatchQueue.main)
+                .sink { _ in
+                } receiveValue: { [weak self] image in
+                    self?.image = image                                           
+                }
+                .store(in: &self.cancellables)
+        })
+    }
+    
+    func fetchImageWithCompletion() {
+        //         🌟 using completion handlers
+                loader.downloadWithEscaping {[weak self] image, error in
+//                     updates on the main thread
+                    DispatchQueue.main.async {
+                        self?.image = image                                           
+                    }
+                }
+    }
+    
     
     func fetchImage() async {
         
-        let image = try? await loader.downloadWithAsync()
-        await MainActor.run {
-            self.image = image
-        }
+//        let image = try? await loader.downloadWithAsync()
+//        await MainActor.run {
+//            self.image = image
+//        }
         
         
-        // 🌟 using completion handlers
+//         🌟 using completion handlers
         /*
         loader.downloadWithEscaping {[weak self] image, error in
-            // updates on the main thread
+             updates on the main thread
             DispatchQueue.main.async {
                 self?.image = image                                           
             }
@@ -91,6 +115,9 @@ struct DownloadImageAsync: View {
     @StateObject private var viewModel = DownloadImageAsyncViewModel()
     
     var body: some View {
+        ScrollView(content: {
+            Text("Hellooo")
+        })
         ZStack {
             if let image = viewModel.image {
                 Image(uiImage: image)
@@ -100,10 +127,13 @@ struct DownloadImageAsync: View {
             }
         }
         .onAppear(perform: {
-            Task {
-                await viewModel.fetchImage()                
-            }
+            viewModel.fetchImageWithCombine()
         })
+//        .onAppear(perform: {
+//            Task {
+//                await viewModel.fetchImage()                
+//            }
+//        })
     }
 }
 
