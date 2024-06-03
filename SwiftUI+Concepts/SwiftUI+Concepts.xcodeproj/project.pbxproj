@@ -14,6 +14,8 @@
 		3D580A202BD5723F00DEC29E /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580A1F2BD5723F00DEC29E /* Transition.swift */; };
 		3D580A222BD57C3000DEC29E /* Sheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580A212BD57C3000DEC29E /* Sheets.swift */; };
 		3D580A242BD5F5BC00DEC29E /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580A232BD5F5BC00DEC29E /* PopOver.swift */; };
+		3D761D992C0CDF0F00C84018 /* PickerBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D761D982C0CDF0F00C84018 /* PickerBootcamp.swift */; };
+		3D76EAAA2C0912770026D363 /* ForEachBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D76EAA92C0912770026D363 /* ForEachBootCamp.swift */; };
 		3D88C6072BAC9F4F00BCFB21 /* MultipleSheetsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88C6062BAC9F4F00BCFB21 /* MultipleSheetsBootcamp.swift */; };
 		3D8AD1972BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1962BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift */; };
 		3D8AD1992BAB6E1400D81F7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AD1982BAB6E1400D81F7E /* ContentView.swift */; };
@@ -71,6 +73,8 @@
 		3D580A1F2BD5723F00DEC29E /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		3D580A212BD57C3000DEC29E /* Sheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheets.swift; sourceTree = "<group>"; };
 		3D580A232BD5F5BC00DEC29E /* PopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
+		3D761D982C0CDF0F00C84018 /* PickerBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBootcamp.swift; sourceTree = "<group>"; };
+		3D76EAA92C0912770026D363 /* ForEachBootCamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachBootCamp.swift; sourceTree = "<group>"; };
 		3D88C6062BAC9F4F00BCFB21 /* MultipleSheetsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSheetsBootcamp.swift; sourceTree = "<group>"; };
 		3D8AD1932BAB6E1400D81F7E /* SwiftUI+Concepts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI+Concepts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8AD1962BAB6E1400D81F7E /* SwiftUI_ConceptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ConceptsApp.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				3D4016412BD8507500E76E41 /* Lists.swift */,
 				3D4016432BD96BE600E76E41 /* ActionSheet.swift */,
 				3DFCEE6A2BD9E808007B3CEF /* ContextMenuBt.swift */,
+				3D76EAA92C0912770026D363 /* ForEachBootCamp.swift */,
+				3D761D982C0CDF0F00C84018 /* PickerBootcamp.swift */,
 			);
 			path = UIMaster;
 			sourceTree = "<group>";
@@ -381,8 +387,10 @@
 			files = (
 				3D580A202BD5723F00DEC29E /* Transition.swift in Sources */,
 				3DDEDE5B2BB3AC4900AA410A /* DownloadWithEscapingBootcamp.swift in Sources */,
+				3D761D992C0CDF0F00C84018 /* PickerBootcamp.swift in Sources */,
 				3DDEDE672BB8A6A300AA410A /* DependencyInjectionBootcamp.swift in Sources */,
 				3D580A1E2BD568BF00DEC29E /* AnimationTiming.swift in Sources */,
+				3D76EAAA2C0912770026D363 /* ForEachBootCamp.swift in Sources */,
 				3DA941A82BCF0356003F4AC7 /* BackgroundsAndOverlays.swift in Sources */,
 				3DDEDE572BB3761900AA410A /* EscapingBootcamp.swift in Sources */,
 				3DF3C7A82BADDCC70043F543 /* BackgroundThreadBootcamp.swift in Sources */,
