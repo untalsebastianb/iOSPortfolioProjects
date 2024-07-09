@@ -28,7 +28,7 @@ struct Transition: View {
                     .frame(height: UIScreen.main.bounds.height * 0.5)
                     .transition(.asymmetric(insertion: .opacity, 
                                             removal: .move(edge: .bottom)))
-//                    .animation(.easeIn, value: showView)                
+//                    .animation(.easeIn(duration: 20), value: showView)             
             }
             /**
              
