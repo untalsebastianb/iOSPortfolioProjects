@@ -11,6 +11,8 @@
 		3D4DC4FA2C5DE5C400086E0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DC4F92C5DE5C400086E0C /* ContentView.swift */; };
 		3D4DC4FC2C5DE5C700086E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4DC4FB2C5DE5C700086E0C /* Assets.xcassets */; };
 		3D4DC4FF2C5DE5C700086E0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4DC4FE2C5DE5C700086E0C /* Preview Assets.xcassets */; };
+		3D4DC5082C5EB8C600086E0C /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 3D4DC5072C5EB8C600086E0C /* SwiftfulRouting */; };
+		3D4DC50A2C5EB8DA00086E0C /* RoutingBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DC5092C5EB8DA00086E0C /* RoutingBootcamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		3D4DC4F92C5DE5C400086E0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3D4DC4FB2C5DE5C700086E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D4DC4FE2C5DE5C700086E0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3D4DC5092C5EB8DA00086E0C /* RoutingBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingBootcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4DC5082C5EB8C600086E0C /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +55,7 @@
 		3D4DC4F62C5DE5C400086E0C /* OnboardingWithNavigationStack */ = {
 			isa = PBXGroup;
 			children = (
+				3D4DC5052C5EB6CC00086E0C /* Routing */,
 				3D4DC4F72C5DE5C400086E0C /* OnboardingWithNavigationStackApp.swift */,
 				3D4DC4F92C5DE5C400086E0C /* ContentView.swift */,
 				3D4DC4FB2C5DE5C700086E0C /* Assets.xcassets */,
@@ -65,6 +70,14 @@
 				3D4DC4FE2C5DE5C700086E0C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3D4DC5052C5EB6CC00086E0C /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				3D4DC5092C5EB8DA00086E0C /* RoutingBootcamp.swift */,
+			);
+			path = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = OnboardingWithNavigationStack;
+			packageProductDependencies = (
+				3D4DC5072C5EB8C600086E0C /* SwiftfulRouting */,
+			);
 			productName = OnboardingWithNavigationStack;
 			productReference = 3D4DC4F42C5DE5C400086E0C /* OnboardingWithNavigationStack.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 3D4DC4EB2C5DE5C400086E0C;
+			packageReferences = (
+				3D4DC5062C5EB8C600086E0C /* XCRemoteSwiftPackageReference "Swiftfulrouting" */,
+			);
 			productRefGroup = 3D4DC4F52C5DE5C400086E0C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4DC4FA2C5DE5C400086E0C /* ContentView.swift in Sources */,
+				3D4DC50A2C5EB8DA00086E0C /* RoutingBootcamp.swift in Sources */,
 				3D4DC4F82C5DE5C400086E0C /* OnboardingWithNavigationStackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D4DC5062C5EB8C600086E0C /* XCRemoteSwiftPackageReference "Swiftfulrouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/Swiftfulrouting";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D4DC5072C5EB8C600086E0C /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D4DC5062C5EB8C600086E0C /* XCRemoteSwiftPackageReference "Swiftfulrouting" */;
+			productName = SwiftfulRouting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D4DC4EC2C5DE5C400086E0C /* Project object */;
 }
