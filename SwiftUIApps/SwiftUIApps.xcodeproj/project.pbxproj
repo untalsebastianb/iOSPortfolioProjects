@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D468FC22C65BDCF00848C98 /* SpotifyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D468FC12C65BDCF00848C98 /* SpotifyHomeView.swift */; };
+		3D468FC42C65BF8100848C98 /* SpotifyCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D468FC32C65BF8100848C98 /* SpotifyCategoryCell.swift */; };
+		3D468FC72C65C21400848C98 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D468FC62C65C21400848C98 /* Category.swift */; };
 		3D4DC4AD2C5B314000086E0C /* SwiftUIAppsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DC4AC2C5B314000086E0C /* SwiftUIAppsApp.swift */; };
 		3D4DC4AF2C5B314000086E0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DC4AE2C5B314000086E0C /* ContentView.swift */; };
 		3D4DC4B12C5B314400086E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4DC4B02C5B314400086E0C /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D468FC12C65BDCF00848C98 /* SpotifyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHomeView.swift; sourceTree = "<group>"; };
+		3D468FC32C65BF8100848C98 /* SpotifyCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCategoryCell.swift; sourceTree = "<group>"; };
+		3D468FC62C65C21400848C98 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D4DC4A92C5B314000086E0C /* SwiftUIApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4DC4AC2C5B314000086E0C /* SwiftUIAppsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppsApp.swift; sourceTree = "<group>"; };
 		3D4DC4AE2C5B314000086E0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +54,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D468FBE2C65BDAB00848C98 /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				3D468FC52C65C15800848C98 /* Models */,
+				3D468FC02C65BDB900848C98 /* Components */,
+				3D468FBF2C65BDB100848C98 /* Core */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+		3D468FBF2C65BDB100848C98 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3D468FC12C65BDCF00848C98 /* SpotifyHomeView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3D468FC02C65BDB900848C98 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3D468FC32C65BF8100848C98 /* SpotifyCategoryCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3D468FC52C65C15800848C98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D468FC62C65C21400848C98 /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3D4DC4A02C5B314000086E0C = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +107,7 @@
 		3D4DC4AB2C5B314000086E0C /* SwiftUIApps */ = {
 			isa = PBXGroup;
 			children = (
+				3D468FBE2C65BDAB00848C98 /* Spotify */,
 				3D4DC4BD2C5B31D900086E0C /* Shared */,
 				3D4DC4AC2C5B314000086E0C /* SwiftUIAppsApp.swift */,
 				3D4DC4AE2C5B314000086E0C /* ContentView.swift */,
@@ -177,7 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4DC4BF2C5B31EB00086E0C /* ImageLoaderView.swift in Sources */,
+				3D468FC72C65C21400848C98 /* Category.swift in Sources */,
+				3D468FC42C65BF8100848C98 /* SpotifyCategoryCell.swift in Sources */,
 				3D4DC4AF2C5B314000086E0C /* ContentView.swift in Sources */,
+				3D468FC22C65BDCF00848C98 /* SpotifyHomeView.swift in Sources */,
 				3D4DC4AD2C5B314000086E0C /* SwiftUIAppsApp.swift in Sources */,
 				3D4DC4C12C5B32BD00086E0C /* Constants.swift in Sources */,
 				3D4DC4C32C5B363300086E0C /* DataBaseHelper.swift in Sources */,

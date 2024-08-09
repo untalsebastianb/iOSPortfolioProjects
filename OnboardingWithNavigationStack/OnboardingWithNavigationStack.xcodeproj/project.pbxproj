@@ -13,6 +13,9 @@
 		3D4DC4FF2C5DE5C700086E0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4DC4FE2C5DE5C700086E0C /* Preview Assets.xcassets */; };
 		3D4DC5082C5EB8C600086E0C /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 3D4DC5072C5EB8C600086E0C /* SwiftfulRouting */; };
 		3D4DC50A2C5EB8DA00086E0C /* RoutingBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DC5092C5EB8DA00086E0C /* RoutingBootcamp.swift */; };
+		3D4DC50D2C5ECAE200086E0C /* LottieBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DC50C2C5ECAE200086E0C /* LottieBootcamp.swift */; };
+		3D4DC5102C5ECD6500086E0C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3D4DC50F2C5ECD6500086E0C /* Lottie */; };
+		3D4DC5122C5ECE2400086E0C /* StarAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D4DC5112C5ECE2300086E0C /* StarAnimation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,8 @@
 		3D4DC4FB2C5DE5C700086E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D4DC4FE2C5DE5C700086E0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D4DC5092C5EB8DA00086E0C /* RoutingBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingBootcamp.swift; sourceTree = "<group>"; };
+		3D4DC50C2C5ECAE200086E0C /* LottieBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieBootcamp.swift; sourceTree = "<group>"; };
+		3D4DC5112C5ECE2300086E0C /* StarAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StarAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4DC5082C5EB8C600086E0C /* SwiftfulRouting in Frameworks */,
+				3D4DC5102C5ECD6500086E0C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +61,7 @@
 		3D4DC4F62C5DE5C400086E0C /* OnboardingWithNavigationStack */ = {
 			isa = PBXGroup;
 			children = (
+				3D4DC50B2C5ECAD400086E0C /* LottieAnimations */,
 				3D4DC5052C5EB6CC00086E0C /* Routing */,
 				3D4DC4F72C5DE5C400086E0C /* OnboardingWithNavigationStackApp.swift */,
 				3D4DC4F92C5DE5C400086E0C /* ContentView.swift */,
@@ -80,6 +87,15 @@
 			path = Routing;
 			sourceTree = "<group>";
 		};
+		3D4DC50B2C5ECAD400086E0C /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				3D4DC50C2C5ECAE200086E0C /* LottieBootcamp.swift */,
+				3D4DC5112C5ECE2300086E0C /* StarAnimation.json */,
+			);
+			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,6 +114,7 @@
 			name = OnboardingWithNavigationStack;
 			packageProductDependencies = (
 				3D4DC5072C5EB8C600086E0C /* SwiftfulRouting */,
+				3D4DC50F2C5ECD6500086E0C /* Lottie */,
 			);
 			productName = OnboardingWithNavigationStack;
 			productReference = 3D4DC4F42C5DE5C400086E0C /* OnboardingWithNavigationStack.app */;
@@ -129,6 +146,7 @@
 			mainGroup = 3D4DC4EB2C5DE5C400086E0C;
 			packageReferences = (
 				3D4DC5062C5EB8C600086E0C /* XCRemoteSwiftPackageReference "Swiftfulrouting" */,
+				3D4DC50E2C5ECD6500086E0C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 3D4DC4F52C5DE5C400086E0C /* Products */;
 			projectDirPath = "";
@@ -144,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4DC5122C5ECE2400086E0C /* StarAnimation.json in Resources */,
 				3D4DC4FF2C5DE5C700086E0C /* Preview Assets.xcassets in Resources */,
 				3D4DC4FC2C5DE5C700086E0C /* Assets.xcassets in Resources */,
 			);
@@ -157,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4DC4FA2C5DE5C400086E0C /* ContentView.swift in Sources */,
+				3D4DC50D2C5ECAE200086E0C /* LottieBootcamp.swift in Sources */,
 				3D4DC50A2C5EB8DA00086E0C /* RoutingBootcamp.swift in Sources */,
 				3D4DC4F82C5DE5C400086E0C /* OnboardingWithNavigationStackApp.swift in Sources */,
 			);
@@ -372,6 +392,14 @@
 				minimumVersion = 5.3.5;
 			};
 		};
+		3D4DC50E2C5ECD6500086E0C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -379,6 +407,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3D4DC5062C5EB8C600086E0C /* XCRemoteSwiftPackageReference "Swiftfulrouting" */;
 			productName = SwiftfulRouting;
+		};
+		3D4DC50F2C5ECD6500086E0C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D4DC50E2C5ECD6500086E0C /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
