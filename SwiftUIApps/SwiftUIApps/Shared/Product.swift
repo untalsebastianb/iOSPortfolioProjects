@@ -29,3 +29,9 @@ struct Product: Codable, Identifiable {
         images.first ?? Constants.randomImage
     }
 }
+
+struct ProductRow: Identifiable {
+    let id = UUID().uuidString
+    let title: String
+    let products: [Product]
+}

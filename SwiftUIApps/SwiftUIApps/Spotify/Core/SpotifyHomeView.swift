@@ -12,6 +12,7 @@ struct SpotifyHomeView: View {
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
     @State private var products: [Product] = []
+    @State private var productsRow: [ProductRow] = []
     var body: some View {
         ZStack { 
             Color.spotifyBlack.ignoresSafeArea()
@@ -20,21 +21,21 @@ struct SpotifyHomeView: View {
                 LazyVStack(pinnedViews: [.sectionHeaders],
                            content: {
                     Section {
-                        
                         VStack(spacing: 16) {
                             recentSection
+                                .padding(.horizontal, 16)
                             if let product = products.first {
-                                newReleaseSection(product: product)                               
+                                newReleaseSection(product: product)     
+                                    .padding(.horizontal, 16)
                             }
+                            listRows
                         }
-                        .padding(.horizontal, 16)
                     } header: { 
                         header
                     }
 
                 })
                 .padding(.top, 8)
-                
             }
             .scrollIndicators(.hidden)
             .clipped()
@@ -42,6 +43,39 @@ struct SpotifyHomeView: View {
                 await getData()
             }
             .toolbar(.hidden, for: .navigationBar)
+        }
+    }
+    
+    private var listRows: some View {
+        ForEach(productsRow) { row in
+            VStack(spacing: 8,
+                   content: {
+                Text(row.title)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.spotifyWhite)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                /**
+                 To make the scroll view go to the edge of the device, the padding 
+                 is now on the HStack inside Scroll View
+                 */
+                ScrollView(.horizontal) { 
+                    HStack(alignment: .top, spacing: 16) {
+                        ForEach(row.products) { product in
+                            SimpleCardView(
+                                imageName: product.firstImage,
+                                imageSize: 120,
+                                title: product.title
+                            )
+                            .asButton(.press, action: {
+                                
+                            })
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+            })
         }
     }
     
@@ -60,7 +94,13 @@ struct SpotifyHomeView: View {
     private var recentSection: some View {
         NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
             if let product {
-                SpotifyRecentCells(imageName: product.firstImage, title: product.title)
+                SpotifyRecentCells(
+                    imageName: product.firstImage,
+                    title: product.title
+                )
+                .asButton(.press, action: {
+                    
+                })
             }
         }
     }
@@ -100,7 +140,15 @@ struct SpotifyHomeView: View {
     private func getData() async {
         do {
             currentUser = try await DataBaseHelper().getUsers().first
-            products = try await Array(DataBaseHelper().getProducts().prefix(upTo: 8))
+            products = try await Array(DataBaseHelper().getProducts().prefix(upTo: 20))
+            
+            var rows: [ProductRow] = []
+            let allBrands = Set(products.map { $0.brand })
+            for brand in allBrands {
+//                let products = self.products.filter({ $0.brand == brand })
+                rows.append(ProductRow(title: brand?.capitalized ?? "No Brand", products: products))
+            }
+            productsRow = rows
         } catch  {
             print("error: \(error.localizedDescription)")
         }
