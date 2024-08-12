@@ -6,22 +6,28 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct SpotifyHomeView: View {
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
+    @State private var products: [Product] = []
     var body: some View {
         ZStack { 
             Color.spotifyBlack.ignoresSafeArea()
             
             ScrollView(.vertical) { 
-                LazyVStack(pinnedViews: [.sectionHeaders], content: {
-                    Section { 
-                        ForEach(0..<10) { _ in
-                            Rectangle()
-                                .fill(Color.red)
-                                .frame(width: 30, height: 30)
+                LazyVStack(pinnedViews: [.sectionHeaders],
+                           content: {
+                    Section {
+                        
+                        VStack(spacing: 16) {
+                            recentSection
+                            if let product = products.first {
+                                newReleaseSection(product: product)                               
+                            }
                         }
+                        .padding(.horizontal, 16)
                     } header: { 
                         header
                     }
@@ -36,6 +42,26 @@ struct SpotifyHomeView: View {
                 await getData()
             }
             .toolbar(.hidden, for: .navigationBar)
+        }
+    }
+    
+    private func newReleaseSection(product: Product) -> some View {
+        SpotifyNewReleaseCell(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description,
+            onAddToPlayListPressed: nil,
+            onPlayPressed: nil
+        ) 
+    }
+    
+    private var recentSection: some View {
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+            if let product {
+                SpotifyRecentCells(imageName: product.firstImage, title: product.title)
+            }
         }
     }
     
@@ -74,7 +100,7 @@ struct SpotifyHomeView: View {
     private func getData() async {
         do {
             currentUser = try await DataBaseHelper().getUsers().first
-//            products = try await DataBaseHelper().getProducts()
+            products = try await Array(DataBaseHelper().getProducts().prefix(upTo: 8))
         } catch  {
             print("error: \(error.localizedDescription)")
         }

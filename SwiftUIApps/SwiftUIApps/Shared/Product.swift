@@ -24,4 +24,8 @@ struct Product: Codable, Identifiable {
     let minimumOrderQuantity: Int
     let thumbnail: String
     let images: [String]
+
+    var firstImage : String {
+        images.first ?? Constants.randomImage
+    }
 }
