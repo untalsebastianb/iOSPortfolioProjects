@@ -28,6 +28,7 @@
 		3D4DC4CD2C5DB42400086E0C /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3D4DC4CC2C5DB42400086E0C /* SwiftfulUI */; };
 		3D4DC4D02C5DB45700086E0C /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 3D4DC4CF2C5DB45700086E0C /* SwiftfulRouting */; };
 		3D9881012C728D38005E715C /* PlaylistDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9881002C728D38005E715C /* PlaylistDescriptionCell.swift */; };
+		3D9881032C738F6C005E715C /* SpotifySongRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9881022C738F6C005E715C /* SpotifySongRowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		3D4DC4C42C5B3A9E00086E0C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		3D4DC4C62C5B3AD000086E0C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3D9881002C728D38005E715C /* PlaylistDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDescriptionCell.swift; sourceTree = "<group>"; };
+		3D9881022C738F6C005E715C /* SpotifySongRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySongRowCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				3D468FD02C69B1AF00848C98 /* SimpleCardView.swift */,
 				3D1FAFC72C72836800314440 /* PlaylistHeaderCell.swift */,
 				3D9881002C728D38005E715C /* PlaylistDescriptionCell.swift */,
+				3D9881022C738F6C005E715C /* SpotifySongRowCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				3D1FAFC82C72836800314440 /* PlaylistHeaderCell.swift in Sources */,
 				3D468FCF2C690D5800848C98 /* SpotifyNewReleaseCell.swift in Sources */,
 				3D4DC4AF2C5B314000086E0C /* ContentView.swift in Sources */,
+				3D9881032C738F6C005E715C /* SpotifySongRowCell.swift in Sources */,
 				3D468FC22C65BDCF00848C98 /* SpotifyHomeView.swift in Sources */,
 				3D4DC4AD2C5B314000086E0C /* SwiftUIAppsApp.swift in Sources */,
 				3D4DC4C12C5B32BD00086E0C /* Constants.swift in Sources */,

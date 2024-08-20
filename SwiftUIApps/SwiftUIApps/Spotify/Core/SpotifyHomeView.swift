@@ -7,8 +7,23 @@
 
 import SwiftUI
 import SwiftfulUI
+import SwiftfulRouting
+
+final class SpotifyHomeViewModel: ObservableObject {
+    let router: AnyRouter
+    @Published private var currentUser: User? = nil
+    @Published private var selectedCategory: Category? = nil
+    @Published private var products: [Product] = []
+    @Published private var productsRow: [ProductRow] = []
+    
+    init(router: AnyRouter) {
+        self.router = router
+    }
+}
 
 struct SpotifyHomeView: View {
+    @Environment(\.router) var router 
+    @StateObject var viewModel: SpotifyHomeViewModel
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
     @State private var products: [Product] = []
@@ -69,7 +84,7 @@ struct SpotifyHomeView: View {
                                 title: product.title
                             )
                             .asButton(.press, action: {
-                                
+                                goToPlaylistView(product: product)
                             })
                         }
                     }
@@ -87,7 +102,9 @@ struct SpotifyHomeView: View {
             title: product.title,
             subtitle: product.description,
             onAddToPlayListPressed: nil,
-            onPlayPressed: nil
+            onPlayPressed: {
+                goToPlaylistView(product: product)
+            }
         ) 
     }
     
@@ -99,9 +116,16 @@ struct SpotifyHomeView: View {
                     title: product.title
                 )
                 .asButton(.press, action: {
-                    
+                    goToPlaylistView(product: product)
                 })
             }
+        }
+    }
+    
+    private func goToPlaylistView(product: Product) {
+        guard let currentUser else { return }
+        router.showScreen(.push) { _ in
+            SpotifyPlaylistView(product: product, user: currentUser)
         }
     }
     
@@ -114,7 +138,7 @@ struct SpotifyHomeView: View {
                         .background(.spotifyWhite)
                         .clipShape(.circle)
                         .onTapGesture {
-                            
+                            router.dismissScreen()
                         }                    
                 }
             }
@@ -138,6 +162,7 @@ struct SpotifyHomeView: View {
     }
     
     private func getData() async {
+        guard products.isEmpty else { return }
         do {
             currentUser = try await DataBaseHelper().getUsers().first
             products = try await Array(DataBaseHelper().getProducts().prefix(upTo: 20))
@@ -156,5 +181,7 @@ struct SpotifyHomeView: View {
 }
 
 #Preview {
-    SpotifyHomeView()
+    RouterView { router in
+        SpotifyHomeView(viewModel: SpotifyHomeViewModel(router: router))
+    }
 }

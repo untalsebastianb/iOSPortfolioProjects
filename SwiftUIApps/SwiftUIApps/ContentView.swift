@@ -10,32 +10,21 @@ import SwiftfulUI
 import SwiftfulRouting
 
 struct ContentView: View {
-    @State private var users: [User] = []
-    @State private var products: [Product] = []
+    @Environment(\.router) var router 
     
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(products) { product in
-                    Text(product.category)
+        List {
+            Button("Open Spotify") {
+                router.showScreen(.fullScreenCover) { router in
+                    SpotifyHomeView(viewModel: SpotifyHomeViewModel(router: router))
                 }
             }
-        }
-        .padding()
-        .task {
-            await getData()
-        }
-    }
-    private func getData() async {
-        do {
-            users = try await DataBaseHelper().getUsers()
-            products = try await DataBaseHelper().getProducts()
-        } catch  {
-            print("error: \(error.localizedDescription)")
         }
     }
 }
 
 #Preview {
-    ContentView()
+    RouterView { _ in 
+        ContentView()
+    }
 }
