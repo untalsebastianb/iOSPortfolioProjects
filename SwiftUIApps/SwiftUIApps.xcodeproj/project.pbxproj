@@ -42,6 +42,7 @@
 		3D9881082C74255B005E715C /* BumbleHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9881072C74255B005E715C /* BumbleHomeView.swift */; };
 		3D98810A2C742984005E715C /* BumbleFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9881092C742984005E715C /* BumbleFilterView.swift */; };
 		3DEB4D872C838C5B00C16AB7 /* NetflixHeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB4D862C838C5B00C16AB7 /* NetflixHeroCell.swift */; };
+		3DEB4D892C84B7A800C16AB7 /* NetflixMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB4D882C84B7A800C16AB7 /* NetflixMovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		3D9881072C74255B005E715C /* BumbleHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleHomeView.swift; sourceTree = "<group>"; };
 		3D9881092C742984005E715C /* BumbleFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleFilterView.swift; sourceTree = "<group>"; };
 		3DEB4D862C838C5B00C16AB7 /* NetflixHeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHeroCell.swift; sourceTree = "<group>"; };
+		3DEB4D882C84B7A800C16AB7 /* NetflixMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				3D856F7F2C825D4600FF4E9E /* NetflixFilterCell.swift */,
 				3D856F812C825FDD00FF4E9E /* NetflixFilterBarView.swift */,
 				3DEB4D862C838C5B00C16AB7 /* NetflixHeroCell.swift */,
+				3DEB4D882C84B7A800C16AB7 /* NetflixMovieCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				3D856F772C811F7100FF4E9E /* BumbleChatPreviewCell.swift in Sources */,
 				3D4DC4C32C5B363300086E0C /* DataBaseHelper.swift in Sources */,
 				3D4DC4C52C5B3A9E00086E0C /* Product.swift in Sources */,
+				3DEB4D892C84B7A800C16AB7 /* NetflixMovieCell.swift in Sources */,
 				3D4DC4C72C5B3AD000086E0C /* User.swift in Sources */,
 				3DEB4D872C838C5B00C16AB7 /* NetflixHeroCell.swift in Sources */,
 				3D856F752C8100D200FF4E9E /* BumbleProfileImageCell.swift in Sources */,

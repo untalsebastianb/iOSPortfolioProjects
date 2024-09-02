@@ -16,12 +16,42 @@ struct NetflixHomeView: View {
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
     @State private var productsRow: [ProductRow] = []
+    @State private var scrollViewOffset: CGFloat = 0 
+
     var body: some View {
         ZStack(alignment: .top) { 
             Color.netflixBlack.ignoresSafeArea()
             
-            ScrollView(.vertical,
-                       content: {
+            backgroundGradientLayer
+            
+            scrollViewHeader
+                        
+            fullHeaderWithFilter
+            
+        }
+        .task {
+            await getData()
+        }
+    }
+    
+    private var backgroundGradientLayer: some View {
+        ZStack { 
+            LinearGradient(colors: [.netflixDarkGray.opacity(1), .netflixDarkGray.opacity(0),], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            
+            LinearGradient(colors: [.netflixDarRed.opacity(0.5), .netflixDarRed.opacity(0),], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+        }
+        .frame(maxHeight: max(10, 400 + (scrollViewOffset * 0.75)))
+        .opacity(scrollViewOffset < -250 ? 0 : 1)
+        .animation(.easeInOut, value: scrollViewOffset)
+    }
+    
+    private var scrollViewHeader: some View {
+        ScrollViewWithOnScrollChanged(
+            .vertical,
+            showsIndicators: false,
+            content: {
                 VStack(spacing: 8,
                        content: {
                     
@@ -30,25 +60,26 @@ struct NetflixHomeView: View {
                         .frame(height: fullHeaderSize.height)
                     
                     if let heroProduct {
-                        NetflixHeroCell(
-                            imageName: heroProduct.firstImage,
-                            isNetflixFilm: true,
-                            title: heroProduct.title,
-                            categories: [heroProduct.category.capitalized, heroProduct.brand?.capitalized ?? "Comedy"],
-                            onBackgroundPressed: {},
-                            onPlayPressed: {},
-                            onMyListPressed: {}
-                        )
-                        .padding(24)                        
+                        heroCell(heroProduct: heroProduct)
+                            .padding(24)
                     }
+                    
+                    categoryRows
+                    
                 })
+            },
+            onScrollChanged: { offset in
+                scrollViewOffset = min(0, offset.y)
             })
-            .scrollIndicators(.hidden)
+
+    }
+    
+    private var fullHeaderWithFilter: some View {
+        VStack(alignment: .leading, spacing: 0, content: {
+            header
+                .padding(.horizontal, 16)
             
-            VStack(alignment: .leading, spacing: 0, content: {
-                header
-                    .padding(.horizontal, 16)
-                
+            if scrollViewOffset > -20 {
                 NetflixFilterBarView(
                     filters: filters,
                     selectedFilter: selectedFilter) { filterPressed in
@@ -56,21 +87,78 @@ struct NetflixHomeView: View {
                     } onXmarkPressed: { 
                         selectedFilter = nil
                     }
-                    .padding(.top)
-            })
-            .background { 
-                GeometryReader { proxy in
-                    Rectangle()
-                        .onAppear(perform: {
-                            fullHeaderSize = proxy.size
-                        })
-                }
-                
+                    .padding(.top)       
+                    .transition(.move(edge: .top).combined(with: .opacity))
             }
+        })
+        .padding(.bottom, 8)
+        .background(
+            ZStack(content: { 
+                if scrollViewOffset < -70 {
+                    Rectangle()
+                        .fill(.clear)
+                        .ignoresSafeArea()
+                        .background(.ultraThinMaterial)
+                        .brightness(-0.2)
+                }
+            })
+        )
+        .animation(.smooth, value: scrollViewOffset)
+        .background { 
+            GeometryReader { proxy in
+                Rectangle()
+                    .fill(.clear)
+                    .onAppear(perform: {
+                        fullHeaderSize = proxy.size
+                    })
+            }
+            
         }
-        .task {
-            await getData()
-        }
+    }
+
+    private var categoryRows: some View {
+        LazyVStack(spacing: 16,
+                   content: {
+            ForEach(Array(productsRow.enumerated()), id: \.offset) { (rowIndex, row) in
+                VStack(alignment: .leading,
+                       spacing: 6,
+                       content: {
+                    Text(row.title)
+                        .font(.headline)
+                        .padding(.leading, 16)
+                    
+                    ScrollView(.horizontal,
+                               content: {
+                        LazyHStack(content: {
+                            ForEach(Array(row.products.enumerated()), id: \.offset) { (index, product) in
+                                NetflixMovieCell(
+                                    imageName: product.firstImage,
+                                    title: product.title,
+                                    isRecentlyAdded: product.recentlyAdded,
+                                    topTenRanking: rowIndex == 1 ? index + 1 : nil
+                                )
+                            }
+                        })
+                        .padding(.horizontal, 16)
+                    })
+                    .scrollIndicators(.hidden)
+                })
+            }
+        })
+        .foregroundStyle(.netflixWhite)
+
+    }
+    
+    private func heroCell(heroProduct: Product) -> some View {
+        NetflixHeroCell(
+            imageName: heroProduct.firstImage,
+            isNetflixFilm: true,
+            title: heroProduct.title,
+            categories: [heroProduct.category.capitalized, heroProduct.brand?.capitalized ?? "Comedy"],
+            onBackgroundPressed: {},
+            onPlayPressed: {},
+            onMyListPressed: {}
+        )
     }
     
     private func getData() async {
@@ -83,8 +171,7 @@ struct NetflixHomeView: View {
             var rows: [ProductRow] = []
             let allBrands = Set(products.map { $0.brand })
             for brand in allBrands {
-//                let products = self.products.filter({ $0.brand == brand })
-                rows.append(ProductRow(title: brand?.capitalized ?? "No Brand", products: products))
+                rows.append(ProductRow(title: brand?.capitalized ?? "No Brand", products: products.shuffled()))
             }
             productsRow = rows
         } catch  {
