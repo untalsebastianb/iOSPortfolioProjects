@@ -7,8 +7,12 @@
 
 import SwiftUI
 import SwiftfulUI
+import SwiftfulRouting
 
 struct NetflixHomeView: View {
+    @Environment(\.router) var router
+    @State private var showDetailsSheet: Bool = false
+    @State private var selectedProduct: Product?
     @State private var filters = FilterModel.mockArray
     @State private var selectedFilter: FilterModel? = nil
     @State private var fullHeaderSize: CGSize = .zero
@@ -31,6 +35,12 @@ struct NetflixHomeView: View {
         }
         .task {
             await getData()
+        }
+    }
+    
+    private func onProductpressed(product: Product) {
+        router.showScreen(.sheet) { _ in
+            NetflixDetailsView(product: product)
         }
     }
     
@@ -116,13 +126,24 @@ struct NetflixHomeView: View {
         }
     }
 
+    
+    /** to make it work with NavigationStack
+     NavigationLink(destination: NetflixDetailsView(product: product), label: {
+         NetflixMovieCell(
+             imageName: product.firstImage,
+             title: product.title,
+             isRecentlyAdded: product.recentlyAdded,
+             topTenRanking: rowIndex == 1 ? index + 1 : nil
+         )
+         
+     })
+
+     **/
     private var categoryRows: some View {
         LazyVStack(spacing: 16,
                    content: {
             ForEach(Array(productsRow.enumerated()), id: \.offset) { (rowIndex, row) in
-                VStack(alignment: .leading,
-                       spacing: 6,
-                       content: {
+                VStack(alignment: .leading, spacing: 6, content: {
                     Text(row.title)
                         .font(.headline)
                         .padding(.leading, 16)
@@ -137,6 +158,15 @@ struct NetflixHomeView: View {
                                     isRecentlyAdded: product.recentlyAdded,
                                     topTenRanking: rowIndex == 1 ? index + 1 : nil
                                 )
+                                .onTapGesture(perform: { 
+                                    selectedProduct = product
+                                    showDetailsSheet = true
+                                })
+                                .sheet(isPresented: $showDetailsSheet, content: {
+                                    if let selectedProduct {
+                                        NetflixDetailsView(product: selectedProduct)                                        
+                                    }
+                                })
                             }
                         })
                         .padding(.horizontal, 16)
@@ -146,7 +176,6 @@ struct NetflixHomeView: View {
             }
         })
         .foregroundStyle(.netflixWhite)
-
     }
     
     private func heroCell(heroProduct: Product) -> some View {
@@ -155,9 +184,15 @@ struct NetflixHomeView: View {
             isNetflixFilm: true,
             title: heroProduct.title,
             categories: [heroProduct.category.capitalized, heroProduct.brand?.capitalized ?? "Comedy"],
-            onBackgroundPressed: {},
-            onPlayPressed: {},
-            onMyListPressed: {}
+            onBackgroundPressed: {
+                onProductpressed(product: heroProduct)
+            },
+            onPlayPressed: {
+                onProductpressed(product: heroProduct)
+            },
+            onMyListPressed: {
+                onProductpressed(product: heroProduct)
+            }
         )
     }
     
@@ -184,6 +219,9 @@ struct NetflixHomeView: View {
             Text("For You")
                 .font(.title)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .onTapGesture { 
+                    router.dismissScreen()
+                }
             
             HStack(spacing: 16, content: {
                 Image(systemName: "tv.badge.wifi")
@@ -202,5 +240,7 @@ struct NetflixHomeView: View {
 }
 
 #Preview {
-    NetflixHomeView()
+    RouterView { _ in
+        NetflixHomeView()
+    }
 }
