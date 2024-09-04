@@ -38,7 +38,7 @@ These projects are more than just exercises—they represent my commitment to pu
 ## Contact Me
 
 I’m excited to bring these skills and this passion to new opportunities. If you’re interested in collaborating or exploring how I can contribute to your team, please feel free to reach out!
-
+check the demo on my Linkedin profile!
 - [LinkedIn](https://www.linkedin.com/in/untalsebastianb/)
 - [Email](jsebasti.ma@gmail.com)
 
