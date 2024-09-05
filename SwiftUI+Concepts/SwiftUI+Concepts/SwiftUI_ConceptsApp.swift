@@ -12,7 +12,8 @@ struct SwiftUI_ConceptsApp: App {
     let dataService = ProductionDataService(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
     var body: some Scene {
         WindowGroup {
-            PickerBootcamp()
+            AppStorageBootcamp()
+//            PickerBootcamp()
             //DependencyInjectionBootcamp(dataService: dataService)
         }
     }

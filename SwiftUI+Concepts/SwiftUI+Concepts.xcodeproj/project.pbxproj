@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3298532C88FED800E54264 /* AppStorageBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3298522C88FED800E54264 /* AppStorageBootcamp.swift */; };
+		3D3298552C890BD400E54264 /* AnimationWithValueBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3298542C890BD400E54264 /* AnimationWithValueBootcamp.swift */; };
 		3D4016422BD8507500E76E41 /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4016412BD8507500E76E41 /* Lists.swift */; };
 		3D4016442BD96BE600E76E41 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4016432BD96BE600E76E41 /* ActionSheet.swift */; };
 		3D40D7332C3CD12500B66F81 /* TabViewBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40D7322C3CD12500B66F81 /* TabViewBootcamp.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D3298522C88FED800E54264 /* AppStorageBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageBootcamp.swift; sourceTree = "<group>"; };
+		3D3298542C890BD400E54264 /* AnimationWithValueBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationWithValueBootcamp.swift; sourceTree = "<group>"; };
 		3D4016412BD8507500E76E41 /* Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
 		3D4016432BD96BE600E76E41 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		3D40D7322C3CD12500B66F81 /* TabViewBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewBootcamp.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 				3D783FB22C42C7D500749A56 /* DarkModeBootcamp.swift */,
 				3DC40C352C4C110F0001E2AC /* TapGestureBootCamp.swift */,
 				3DC40C372C4C16BE0001E2AC /* ModelBootcamp.swift */,
+				3D3298522C88FED800E54264 /* AppStorageBootcamp.swift */,
+				3D3298542C890BD400E54264 /* AnimationWithValueBootcamp.swift */,
 			);
 			path = Intermediate;
 			sourceTree = "<group>";
@@ -407,10 +413,12 @@
 				3DA941A82BCF0356003F4AC7 /* BackgroundsAndOverlays.swift in Sources */,
 				3DC40C382C4C16BE0001E2AC /* ModelBootcamp.swift in Sources */,
 				3DDEDE572BB3761900AA410A /* EscapingBootcamp.swift in Sources */,
+				3D3298552C890BD400E54264 /* AnimationWithValueBootcamp.swift in Sources */,
 				3DF3C7A82BADDCC70043F543 /* BackgroundThreadBootcamp.swift in Sources */,
 				3D8AD1A52BAB6E5000D81F7E /* IfLetBootcamp.swift in Sources */,
 				3DA102AB2BB9FCF50094C31D /* DataService.swift in Sources */,
 				3D8AD1992BAB6E1400D81F7E /* ContentView.swift in Sources */,
+				3D3298532C88FED800E54264 /* AppStorageBootcamp.swift in Sources */,
 				3D783FB32C42C7D500749A56 /* DarkModeBootcamp.swift in Sources */,
 				3DDEDE6C2BB8BC3400AA410A /* UnitTestingBootcampVM.swift in Sources */,
 				3DDEDE632BB86D4500AA410A /* ViewBuilderBootcamp.swift in Sources */,

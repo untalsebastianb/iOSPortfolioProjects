@@ -14,9 +14,9 @@ struct Transition: View {
             VStack {
                 Button("Button") { 
                     // to make transitions work animation needs to be on the state toggle
-                    withAnimation(.spring) { 
+//                    withAnimation(.spring) { 
                         showView.toggle()
-                    }
+//                    }
                 }
                 Spacer()
             }
@@ -26,9 +26,10 @@ struct Transition: View {
             if showView {
                 RoundedRectangle(cornerSize: CGSize(width: 20, height: 10))
                     .frame(height: UIScreen.main.bounds.height * 0.5)
-                    .transition(.asymmetric(insertion: .opacity, 
-                                            removal: .move(edge: .bottom)))
-//                    .animation(.easeIn(duration: 20), value: showView)             
+                    .transition(.move(edge: .bottom))
+                
+//                    .transition(.asymmetric(insertion: .opacity, 
+//                                            removal: .move(edge: .bottom)))
             }
             /**
              
@@ -43,6 +44,7 @@ struct Transition: View {
              .transition(.opacity)
              */
         }
+        .animation(.bouncy, value: showView)
         .ignoresSafeArea(edges: .bottom)
     }
 }
