@@ -29,7 +29,7 @@ struct DataBaseHelper {
     }
 }
 
-
+// Extension to see what's wrong while decoding
 extension JSONDecoder {
     func decodeWithDetailedError<T: Decodable>(_ type: T.Type, from data: Data) throws -> T {
         do {
